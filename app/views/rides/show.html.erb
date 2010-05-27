@@ -1,0 +1,17 @@
+<h2><%= @ride.name %></h2>
+<table border="1" cellspacing="5" cellpadding="5">
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Description</th>
+  </tr>
+  <% @ride.routes.each do |route| %>
+    <tr>
+      <td><%= route.name %> </td>
+      <td><%= route.date.strftime("%m/%d/%Y") %></td>
+      <td><%= route.date.strftime("%I:%M") %></td>
+      <td><%= route.description %></td>
+    </tr>
+  <% end %>
+</table>

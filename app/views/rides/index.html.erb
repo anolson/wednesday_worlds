@@ -1,0 +1,14 @@
+<h1>Listing rides</h1>
+
+<table border="1" cellspacing="5" cellpadding="5">
+  <tr>
+    <th>Ride</th>
+  </tr>
+
+<% @rides.each do |ride| %>
+  <tr>
+    <td><%= link_to 'Show', ride %></td>
+  </tr>
+<% end %>
+</table>
+
