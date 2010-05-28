@@ -1,6 +1,5 @@
-
-This weeks ride:<br/>
-<h1><%= @this_week.name %></h1> <br/>
-<%= @this_week.location %> <br/>
-<%= @this_week.this_weeks_route.begins_at.strftime("%l%p").downcase %><br/>
-
+<h2><%= @this_week.name %></h2>
+<h1><%= @this_week.location %> <%= @this_week.this_weeks_route.begins_at.strftime("%l%p").downcase %></h1>     
+<div class="route_link">
+  <%= link_to "This week's ride", ride_path(@this_week) %>
+</div>

@@ -9,8 +9,8 @@
   <% @ride.routes.each do |route| %>
     <tr>
       <td><%= route.name %> </td>
-      <td><%= route.date.strftime("%m/%d/%Y") %></td>
-      <td><%= route.date.strftime("%I:%M") %></td>
+      <td><%= route.begins_at.strftime("%m/%d/%Y") %></td>
+      <td><%= route.begins_at.strftime("%I:%M") %></td>
       <td><%= route.description %></td>
     </tr>
   <% end %>

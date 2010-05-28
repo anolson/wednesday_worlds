@@ -1,0 +1,21 @@
+body {font-family:"Lucida Grande"; background:#333 url("/images/background.png") repeat-x;}
+#content {width: 600px; margin: 10px auto;}
+#content h1 {font-size:132px; margin:10px; font-family:"Times"; color:#333;}
+#content h2 {font-size:22px; margin:10px; color:#036; font-family:"Arial";}
+#content .route_link{text-align:right;}
+a {color:#39F; text-decoration:none;}
+
+.center {text-align:center;}
+#footer {width: 600px; margin: 10px auto;padding-top:40px; color:#DDD; font-size:14px;}
+
+
+
+#footer div {width: 45%; margin:5px;}
+#footer h5 {color:#FFF; border-bottom:1px solid #FFF; padding-bottom:5px;}
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+
+
+#header {width:600px; margin:10px auto;}
+#header h2 {font-size:40px; margin:10px; color:#004080;}
