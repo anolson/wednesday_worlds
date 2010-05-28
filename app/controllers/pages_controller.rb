@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @rides = Ride.find(:all)
-    @this_week = Route.find_this_weeks_route
+    @this_week = Ride.find_this_weeks_ride
   end
 
 end

@@ -1,7 +1,6 @@
 
 This weeks ride:<br/>
-<h1><%= @this_week.ride.name %></h1> <br/>
-<%= @this_week.ride.location %> <br/>
-<%= @this_week.begins_at.strftime("%l%p").downcase %><br/>
+<h1><%= @this_week.name %></h1> <br/>
+<%= @this_week.location %> <br/>
+<%= @this_week.this_weeks_route.begins_at.strftime("%l%p").downcase %><br/>
 
-<%= @this_week.name %> <br/>
