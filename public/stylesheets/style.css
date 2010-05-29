@@ -1,25 +1,16 @@
-body {font-family:"Lucida Grande"; margin:0; padding:0;}
-#content {width: 600px; margin: 0px auto; min-height:400px;}
-#content h1 {font-size:132px; margin:0; padding:0; font-family:"Times"; color:#333;}
-#content h2 {font-size:22px; margin:0; padding:10px 0; color:#036; font-family:"Arial";}
-#content .route_link{text-align:right;}
-a {color:#39F; text-decoration:none;}
-
-.center {text-align:center;}
-#footer {width: 600px; margin: 0px auto;padding-top:40px; color:#DDD; font-size:14px;}
-
-
-
-#footer div {width: 45%; padding:5px;}
-#footer h5 {color:#FFF; border-bottom:1px solid #FFF; padding-bottom:5px;}
-.left{float:left;}
-.right{float:right;}
+body{font-family:"Lucida Grande";background:#333;margin:0;padding:0;}
+a{color:#39F;text-decoration:none;}
+.center{text-align:center;}
 .clear{clear:both;}
-
-
-#header {width:600px; margin:10px auto;}
-#header h2 {font-size:40px; margin:10px; color:#004080;}
-
-#wrapper {width:100%;}
-#wrapper.content {background:#84E8FF url("/images/wrapper.png") repeat-x; border-bottom:1px solid #C3F3FF;}
-#wrapper.footer {background:#333 url("/images/footer.png") repeat-x; border-top:1px solid #333;}
+.container{width:600px;margin:0px auto;}
+.left{width:45%;padding:5px;float:left;}
+.right{width:45%;padding:5px;float:right;}
+#content{min-height:400px;background:#9DF;background:-moz-linear-gradient(0% 85% 90deg,#9DF,#DEF);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#DEF),to(#9DF));}
+#content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
+#content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}
+#content .route_link{text-align:right;}
+#footer{padding-top:40px;color:#DDD;font-size:14px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
+#footer h5{color:#FFF;border-bottom:1px solid #FFF;padding-bottom:5px;}
+#wrapper{width:100%;}
+#wrapper.content{border-bottom:1px solid #DEF;}
+#wrapper.footer{background:#333;border-top:1px solid #333;}
