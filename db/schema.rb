@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100527173649) do
+ActiveRecord::Schema.define(:version => 20100601183714) do
+
+  create_table "recurrences", :force => true do |t|
+    t.string   "type"
+    t.datetime "begins_at"
+    t.datetime "ends_at"
+    t.integer  "route_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rides", :force => true do |t|
     t.string   "name"
@@ -21,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20100527173649) do
   create_table "routes", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "begins_at"
     t.string   "map_url"
     t.integer  "ride_id"
     t.datetime "created_at"

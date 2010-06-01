@@ -1,6 +1,7 @@
 class Route < ActiveRecord::Base
   
   belongs_to :ride
+  has_one :recurrence
   
   # def self.find_this_weeks_route
   #   today = Date.today
@@ -15,7 +16,10 @@ class Route < ActiveRecord::Base
   
   def occurs_this_week?
     this_week = Route.this_week
-    return true if((self.begins_at > this_week.begin) and (self.begins_at < this_week.end))
+    recurrence.dates.each do |date|
+      return true if((date > this_week.begin) and (date < this_week.end))
+    end
+    
   end
   
 end

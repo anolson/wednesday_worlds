@@ -1,5 +1,10 @@
-<h2><%= @this_week.name %></h2>
-<h1><%= @this_week.location %> <%= @this_week.this_weeks_route.begins_at.strftime("%l%p").downcase %></h1>     
-<div class="route_link">
-  The ride this week is the <%= link_to @this_week.this_weeks_route.name, ride_path(@this_week) %>.
-</div>
+<% if(@this_week.nil?) %>
+<h1>No ride this week.</h1>
+<% else  %>
+  <h2><%= @this_week.name %></h2>
+  <h1><%= @this_week.location %> <%= @this_week.this_weeks_route.recurrence.begins_at.strftime("%l%p").downcase %></h1>     
+  <div class="route_link">
+    The ride this week is the <%= link_to @this_week.this_weeks_route.name, ride_path(@this_week) %>.
+  </div>
+<% end %>
+
