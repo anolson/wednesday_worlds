@@ -1,6 +1,8 @@
 WednesdayWorlds::Application.routes.draw do |map|
-  get "pages/index"
+  match 'guidelines' => 'pages#guidelines'
+  match 'about' => 'pages#about'
   root :to => "pages#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
