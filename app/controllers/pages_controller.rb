@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @this_week = Ride.find_this_weeks_ride
+    @ride = Ride.find_by_currently_active(true)
   end
 
   def guidelines

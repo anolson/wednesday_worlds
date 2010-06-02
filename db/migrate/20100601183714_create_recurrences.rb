@@ -1,9 +1,10 @@
 class CreateRecurrences < ActiveRecord::Migration
   def self.up
     create_table :recurrences do |t|
-      t.string :type
-      t.datetime :begins_at
-      t.datetime :ends_at
+      t.string :recurrence_type
+      t.date :recurrence_begins_on
+      t.date :recurrence_ends_on
+      t.time :starts_at
       t.references :route
       t.timestamps
     end

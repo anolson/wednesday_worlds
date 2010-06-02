@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: Tabor loop
-  description: 'Out Mt Tabor, back Blacksburg rd.'
-  date: '2010-05-19T6:00:00'
+wednesday_worlds:
+  id: 1
+  name: Wednesday Worlds
+  location: Bollo's
+  currently_active: true
 
-two:
-  name: Traditional route.
-  description: Out and back back on Blacksburg rd.
-  date: '2006-06-09T6:00:00'
+owen_cup:
+  id: 2
+  name: Owen Cup
+  location: Bollo's
+  currently_active: false

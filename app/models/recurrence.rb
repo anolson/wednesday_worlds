@@ -9,6 +9,7 @@ class Recurrence < ActiveRecord::Base
     dates.each do |date|
       return date if date_occurs_during_week?(date, Recurrence.this_week)
     end
+    return nil
   end
   
   
@@ -21,6 +22,7 @@ class Recurrence < ActiveRecord::Base
     dates.each do |date|
       return true if date_occurs_during_week?(date, Recurrence.this_week)
     end
+    return false
   end
   
   def date_occurs_during_week?(date, week)
@@ -31,8 +33,8 @@ class Recurrence < ActiveRecord::Base
   
   def build_dates
     dates = Array.new
-    date = self.begins_at
-    while(date <= self.ends_at)
+    date = self.recurrence_begins_on
+    while(date <= self.recurrence_ends_on)
       dates << date
       date = 1.week.since(date)
     end

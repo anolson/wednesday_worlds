@@ -4,8 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+weekly:
+  id: 1
+  recurrence_begins_on:  2010-06-02
+  recurrence_ends_on:  2010-06-30
+  recurrence_type: weekly
+  starts_at: '18:00'
+  route_id: 1
 # column: value
 #
-two: {}
+ended: 
+  id: 2
+  recurrence_begins_on:  2010-05-05
+  recurrence_ends_on:  2010-05-26
+  recurrence_type: weekly
+  starts_at: '18:00'
+  
+  
 #  column: value

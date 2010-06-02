@@ -12,9 +12,10 @@
 ActiveRecord::Schema.define(:version => 20100601183714) do
 
   create_table "recurrences", :force => true do |t|
-    t.string   "type"
-    t.datetime "begins_at"
-    t.datetime "ends_at"
+    t.string   "recurrence_type"
+    t.date     "recurrence_begins_on"
+    t.date     "recurrence_ends_on"
+    t.time     "starts_at"
     t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20100601183714) do
   create_table "rides", :force => true do |t|
     t.string   "name"
     t.string   "location"
+    t.boolean  "currently_active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

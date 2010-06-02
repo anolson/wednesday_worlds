@@ -2,8 +2,8 @@ require 'test_helper'
 
 class RideTest < ActiveSupport::TestCase
   # Replace this with your real tests.
-  test "this weeks route" do
-    ride = Ride.find_this_weeks_ride
-    assert 'Traditional route', ride.name
+  test "find current ride" do
+    ride = Ride.find_by_currently_active(true)
+    assert_equal 'Wednesday Worlds', ride.name
   end
 end

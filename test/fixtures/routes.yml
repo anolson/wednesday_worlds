@@ -1,13 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyText
-  date: 2010-05-27 13:36:49
-  map_url: MyString
+tabor:
+  id: 1
+  name: Tabor loop
+  description: 'Out Mt Tabor, back Blacksburg rd.'
+  map_url: http://maps.google.com
+  ride_id: 2
 
-two:
-  name: MyString
-  description: MyText
-  date: 2010-05-27 13:36:49
-  map_url: MyString
+blacksburg_rd:
+  id: 2
+  name: Traditional route.
+  description: Out and back back on Blacksburg rd.
+  map_url: http://maps.google.com
+  ride_id: 2

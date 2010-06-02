@@ -1,10 +1,10 @@
-<% if(@this_week.nil?) %>
-<h1>No ride this week.</h1>
+<% if(@ride.nil?) %>
+<h2>There aren't any current rides planned.</h2>
 <% else  %>
-  <h2><%= @this_week.name %></h2>
-  <h1><%= @this_week.location %> <%= @this_week.this_weeks_route.recurrence.begins_at.strftime("%l%p").downcase %></h1>     
+  <h2><%= @ride.name %></h2>
+  <h1><%= @ride.location %> <%= @ride.this_weeks_route.recurrence.starts_at.strftime("%l%p").downcase %></h1>     
   <div class="route_link">
-    The ride this week is the <%= link_to @this_week.this_weeks_route.name, ride_path(@this_week) %>.
+    The ride this week is the <%= link_to @ride.this_weeks_route.name, ride_path(@ride) %>.
   </div>
 <% end %>
 
