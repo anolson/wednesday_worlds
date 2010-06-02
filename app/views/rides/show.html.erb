@@ -9,8 +9,8 @@
   <% @ride.routes.each do |route| %>
     <tr>
       <td><%= route.name %> </td>
-      <td><%= route.recurrence.this_weeks_date.strftime("%m/%d/%Y") %></td>
-      <td><%= route.recurrence.this_weeks_date.strftime("%I:%M") %></td>
+      <td><%= route.occurrence.this_weeks_date.strftime("%m/%d/%Y") %></td>
+      <td><%= route.occurrence.this_weeks_date.strftime("%I:%M") %></td>
       <td><%= route.description %></td>
     </tr>
   <% end %>

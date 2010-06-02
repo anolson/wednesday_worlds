@@ -1,0 +1,35 @@
+weekly_current:
+ id: 1
+ recurrence_ends_at: <%= Date.today.end_of_month %>
+ recurrence_type: weekly
+ recurs: true
+ begins_at: <%= Date.today.beginning_of_month %>
+ route_id: 1
+
+weekly: 
+ id: 2
+ recurrence_ends_at: '2010-06-30 18:00'
+ recurrence_type: weekly
+ recurs: true
+ begins_at: '2010-06-02 18:00'
+    
+biweekly: 
+ id: 3
+ recurrence_ends_at: '2010-06-30 18:00'
+ recurrence_type: bi-weekly
+ recurs: true
+ begins_at: '2010-06-02 18:00'
+
+ended: 
+ id: 4
+ recurrence_ends_at: '2010-05-26 18:00'
+ recurrence_type: weekly
+ recurs: true
+ begins_at: '2010-05-05 18:00'
+
+once: 
+ id: 5
+ recurrence_ends_at: nil
+ recurrence_type: nil
+ recurs: false
+ begins_at: '2010-05-05 18:00'

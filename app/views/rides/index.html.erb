@@ -1,13 +1,15 @@
-<h1>Listing rides</h1>
+<h2>Rides</h2>
 
 <table border="1" cellspacing="5" cellpadding="5">
   <tr>
     <th>Ride</th>
+    <th>Location</th>
   </tr>
 
 <% @rides.each do |ride| %>
   <tr>
-    <td><%= link_to 'Show', ride %></td>
+    <td><%= link_to ride.name, ride %></td>
+    <td><%= ride.location %></td>
   </tr>
 <% end %>
 </table>

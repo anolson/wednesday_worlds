@@ -3,7 +3,7 @@ class Ride < ActiveRecord::Base
   
   def this_weeks_route
     routes.each do |route| 
-      return route if(route.recurrence.occurs_this_week?)
+      return route if(route.occurrence.occurs_this_week?)
     end
   end
   

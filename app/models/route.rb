@@ -1,4 +1,4 @@
 class Route < ActiveRecord::Base
   belongs_to :ride
-  has_one :recurrence
+  has_one :occurrence
 end
