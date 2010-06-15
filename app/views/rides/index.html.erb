@@ -1,5 +1,16 @@
 <h2>Rides</h2>
 
+<% @rides.each do |ride| %>
+  <div class="ride">
+    <h3><%= ride.name %></h3>
+    <ul>
+      <% ride.routes.each do |route| %>
+        <li><%= route.name %> <br/> <%= route.occurrence.begins_at.strftime("%l:%M") %> <br/> <%= route.description %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <table border="1" cellspacing="5" cellpadding="5">
   <tr>
     <th>Ride</th>
