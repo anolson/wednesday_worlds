@@ -30,21 +30,21 @@ class Occurrence < ActiveRecord::Base
     
   private 
   def build_dates
-    dates = Array.new
-    date = self.begins_at
+    dates = [self.begins_at]    
     if(recurs)
-      while((date <=> self.recurrence_ends_at) <= 0)
-        dates << date
-        if(recurrence_type == "weekly")
-          date = 1.week.since(date)
-        else
-          date = 2.week.since(date)
-        end
+      while((dates.last <=> self.recurrence_ends_at) <= 0)
+        dates << next_occurrence(dates.last)
       end
-    else
-      dates << date
     end
     dates
+  end
+  
+  def next_occurrence(date)
+    if(recurrence_type == "weekly")
+      1.week.since(date)
+    else
+      2.week.since(date)
+    end
   end
 
   
