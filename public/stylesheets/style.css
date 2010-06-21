@@ -1,7 +1,6 @@
 body{font-family:"Lucida Grande";background:#333; color: #333;margin:0;padding:0;}
 a{color:#39F;text-decoration:none;}
-ul{padding:0;}
-li{list-style-type:none; padding-bottom:4px;}
+li{padding-bottom:4px;}
 .center{text-align:center;}
 .clear{clear:both;}
 .container{width:600px;margin:0px auto;}
@@ -15,6 +14,8 @@ li{list-style-type:none; padding-bottom:4px;}
 #content .route_link{text-align:right;}
 #footer{padding-top:20px;color:#DDD;font-size:14px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
 #footer h5{color:#FFF;border-bottom:1px solid #FFF;padding-bottom:5px;}
+#footer ul{padding:0;}
+#footer li{list-style-type:none; padding-bottom:4px;}
 #wrapper{width:100%;}
 #wrapper.content{border-bottom:1px solid #DEF;}
 #wrapper.footer{background:#333;border-top:1px solid #333;}
