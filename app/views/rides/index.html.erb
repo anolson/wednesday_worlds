@@ -2,14 +2,7 @@
 
 <div class="box">
   <% @rides.each do |ride| %>
-    <div class="ride">
-      <h3><%= ride.name %></h3>
-      
-      <% ride.routes.each do |route| %>
-        <%= render :partial => "routes/route", :locals => {:route => route, :display_all_dates => false} %>
-      <% end %>
-      
-    </div>
+    <%= render :partial => 'ride', :locals => {:ride => ride, :header => ride.name} %>
   <% end %>
 </div>
 

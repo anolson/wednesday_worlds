@@ -21,8 +21,15 @@ class RidesController < ApplicationController
     end
   end
   
+  # GET /rides/current
+  # GET /rides/current.xml
   def current
     @ride = Ride.find_by_currently_active(true)
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @ride }
+    end
   end
 
 end
