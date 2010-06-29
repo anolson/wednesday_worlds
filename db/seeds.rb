@@ -16,7 +16,7 @@ ride = Ride.create(
 tabor = Route.create(
   :name => 'Tabor loop', 
   :description => 'Out Mt Tabor, back Blacksburg rd.', 
-  :map_url => 'http://maps.google.com',
+  :map_url => 'http://bit.ly/bSpQAT',
   :ride => ride)
   
 tabor_occurrence = Occurrence.create(
@@ -28,7 +28,7 @@ tabor_occurrence = Occurrence.create(
 blacksburg_road = Route.create(
   :name => 'Blacksburg road', 
   :description => 'Out and back on Blacksburg rd.', 
-  :map_url => 'http://maps.google.com', 
+  :map_url => 'http://bit.ly/bCG3Lf', 
   :ride => ride)
   
 blacksburg_road_occurrence = Occurrence.create(
