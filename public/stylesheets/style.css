@@ -12,6 +12,8 @@ li{padding-bottom:4px;}
 .right{width:45%;padding:5px;float:right;}
 .map {font-size:12px;}
 .big {font-size:20px; line-height:16px; vertical-align:top;}
+.light{color:#AAA;}
+.lighter{color:#CCC;}
 #content{min-height:400px;background:#9DF;background:-moz-linear-gradient(0% 85% 90deg,#9DF,#DEF);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#DEF),to(#9DF));}
 #content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
 #content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}

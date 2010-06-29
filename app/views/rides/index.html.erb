@@ -10,8 +10,17 @@
           <p>
             <strong><%= link_to route.name, ride_routes_path(route) %></strong> 
             <small><%= link_to "map", route.map_url %></small> <br/>
-            <%= route.occurrence.begins_at.strftime("%l:%M") %> - <%= ride.location %> <br/> 
-            <%= route.description %> 
+            <span><%= ride.location %></span> <br />
+            <span><%= route.occurrence.begins_at.strftime("%l:%M%p").downcase %></span>
+            
+            
+            <% if(route.occurrence.occurs_this_week?) %>
+              <small class="light"><%= route.occurrence.this_weeks_date.strftime("%m/%d/%Y") %></small>
+              <small class="light">(this week)</small>
+            <% end%>
+            <br/>
+            <span><%= route.description %></span>
+             
           </p>          
         </div>
       <% end %>
