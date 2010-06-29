@@ -6,23 +6,7 @@
       <h3><%= ride.name %></h3>
       
       <% ride.routes.each do |route| %>
-        <div class="route">
-          <p>
-            <strong><%= link_to route.name, ride_route_path(ride, route)%></strong> 
-            <small><%= link_to "map", route.map_url %></small> <br/>
-            <span><%= ride.location %></span> <br />
-            <span><%= route.occurrence.begins_at.strftime("%l:%M%p").downcase %></span>
-            
-            
-            <% if(route.occurrence.occurs_this_week?) %>
-              <small class="light"><%= route.occurrence.this_weeks_date.strftime("%m/%d/%Y") %></small>
-              <small class="light">(this week)</small>
-            <% end%>
-            <br/>
-            <span><%= route.description %></span>
-             
-          </p>          
-        </div>
+        <%= render :partial => "routes/route", :locals => {:route => route, :display_all_dates => false} %>
       <% end %>
       
     </div>

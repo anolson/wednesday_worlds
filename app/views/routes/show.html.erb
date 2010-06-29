@@ -1,5 +1,5 @@
-<p class="notice"><%= notice %></p>
+<h2><%= @route.ride.name %></h2>
 
-
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<div class="box">
+  <%= render :partial => 'route', :locals => {:route => @route, :display_all_dates => true} %>
+</div>

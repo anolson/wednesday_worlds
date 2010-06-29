@@ -10,20 +10,24 @@ class Occurrence < ActiveRecord::Base
     @dates ||= build_dates
   end
   
+  def date_occurs_during_this_week?(date)
+    return date_occurs_during_week?(date, Occurrence.this_week)
+  end
+  
   def date_occurs_during_week?(date, week)
     return ((date > week.begin) and (date < week.end))
   end
-  
+
   def occurs_this_week?
     dates.each do |date|
-      return true if date_occurs_during_week?(date, Occurrence.this_week)
+      return true if date_occurs_during_this_week?(date)
     end
     return false
   end
-  
+
   def this_weeks_date
     dates.each do |date|
-      return date if date_occurs_during_week?(date, Occurrence.this_week)
+      return date if date_occurs_during_this_week?(date)
     end
     return nil
   end
