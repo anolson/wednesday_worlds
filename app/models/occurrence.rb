@@ -36,7 +36,7 @@ class Occurrence < ActiveRecord::Base
   def build_dates
     dates = [self.begins_at]    
     if(recurs)
-      while((dates.last <=> self.recurrence_ends_at) <= 0)
+      while((dates.last <=> self.recurrence_ends_at) < 0)
         dates << next_occurrence(dates.last)
       end
     end

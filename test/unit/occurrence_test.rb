@@ -16,6 +16,7 @@ class OccurrenceTest < ActiveSupport::TestCase
   
   test "weekly occurrence dates" do
     occurrence = Occurrence.find(2)
+    assert_equal 5, occurrence.dates.size
     assert occurrence.dates.include?(Time.parse("2010-06-02 18:00 UTC"))
     assert occurrence.dates.include?(Time.parse("2010-06-09 18:00 UTC"))
     assert occurrence.dates.include?(Time.parse("2010-06-16 18:00 UTC"))
@@ -24,10 +25,11 @@ class OccurrenceTest < ActiveSupport::TestCase
   end
   
   test "biweekly occurrence dates" do
-    occurence = Occurrence.find(3)
-    assert occurence.dates.include?(Time.parse("2010-06-02 18:00 UTC"))
-    assert occurence.dates.include?(Time.parse("2010-06-16 18:00 UTC"))
-    assert occurence.dates.include?(Time.parse("2010-06-30 18:00 UTC"))
+    occurrence = Occurrence.find(3)
+    assert_equal 3, occurrence.dates.size 
+    assert occurrence.dates.include?(Time.parse("2010-06-02 18:00 UTC"))
+    assert occurrence.dates.include?(Time.parse("2010-06-16 18:00 UTC"))
+    assert occurrence.dates.include?(Time.parse("2010-06-30 18:00 UTC"))
   end
   
   test "single occurrence" do
