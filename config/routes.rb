@@ -16,7 +16,12 @@ WednesdayWorlds::Application.routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :rides, :routes
+  resources :rides do
+    get :current, :on => :collection 
+  
+    resources :routes
+  end
+
   
 
   # Sample resource route with options:

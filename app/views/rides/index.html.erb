@@ -8,7 +8,7 @@
       <% ride.routes.each do |route| %>
         <div class="route">
           <p>
-            <strong><%= link_to route.name, route_path(route) %></strong> 
+            <strong><%= link_to route.name, ride_routes_path(route) %></strong> 
             <small><%= link_to "map", route.map_url %></small> <br/>
             <%= route.occurrence.begins_at.strftime("%l:%M") %> - <%= ride.location %> <br/> 
             <%= route.description %> 

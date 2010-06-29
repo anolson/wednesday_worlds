@@ -20,5 +20,9 @@ class RidesController < ApplicationController
       format.xml  { render :xml => @ride }
     end
   end
+  
+  def current
+    @ride = Ride.find_by_currently_active(true)
+  end
 
 end
