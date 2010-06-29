@@ -8,9 +8,33 @@
 
 
 
-ride = Ride.create(:name => 'Wednesday Worlds', :location => 'Bollo\'s', :currently_active => true)
-tabor = Route.create(:name => 'Tabor loop', :description => 'Out Mt Tabor, back Blacksburg rd.', :map_url => 'http://maps.google.com', :ride => ride)
-occurrence = Occurrence.create(:recurs => true, :recurrence_type => 'weekly', :recurrence_ends_at => '2010-06-30 18:00', :begins_at => '2010-05-05 18:00', :route => tabor);
+ride = Ride.create(
+  :name => 'Wednesday Worlds', 
+  :location => 'Bollo\'s', 
+  :currently_active => true)
 
-#Route.create(:name => 'Traditional route', :description => 'Out and back back on Blacksburg rd.', :begins_at => '2010-05-26T18:00:00', :map_url => 'http://maps.google.com', :ride => ride)
+tabor = Route.create(
+  :name => 'Tabor loop', 
+  :description => 'Out Mt Tabor, back Blacksburg rd.', 
+  :map_url => 'http://maps.google.com',
+  :ride => ride)
+  
+tabor_occurrence = Occurrence.create(
+  :recurs => true, :recurrence_type => 'bi-weekly', 
+  :recurrence_ends_at => '2010-10-06 18:00', 
+  :begins_at => '2010-05-05 18:00', 
+  :route => tabor)
+
+blacksburg_road = Route.create(
+  :name => 'Blacksburg road', 
+  :description => 'Out and back on Blacksburg rd.', 
+  :map_url => 'http://maps.google.com', 
+  :ride => ride)
+  
+blacksburg_road_occurrence = Occurrence.create(
+  :recurs => true, 
+  :recurrence_type => 'bi-weekly', 
+  :recurrence_ends_at => '2010-10-13 18:00', 
+  :begins_at => '2010-05-12 18:00', :route => blacksburg_road);
+
 
