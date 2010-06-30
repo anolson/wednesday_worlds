@@ -25,7 +25,7 @@ li{padding-bottom:4px;}
 #content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
 #content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}
 #content .route_link{text-align:right;}
-#footer{padding-top:20px;color:#DDD;font-size:14px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
+#footer{padding-top:20px;color:#DDD;font-size:12px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
 #footer h5{color:#FFF;border-bottom:1px solid #FFF;padding-bottom:5px;}
 #footer ul{padding:0;}
 #footer li{list-style-type:none; padding-bottom:4px;}
