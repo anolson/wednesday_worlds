@@ -1,6 +1,6 @@
 == Wednesday Worlds
 
-This is the Rails 3 web application that runs wednesdayworlds.heroku..com
+This is the Rails 3 web application that runs http://wednesdayworlds.org
 
 === Download the source
   
