@@ -1,0 +1,16 @@
+      <div class="details">
+        <div class="description"><%= route.description %></div>  
+    
+        <div class="all_dates">
+          <table border="1" cellspacing="0" cellpadding="5">
+            <tr><th>All dates</th></tr>
+            <% route.occurrence.dates.each do |date| %>
+              <tr>
+                <td>
+                  <%= date.strftime("%b %e") %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>

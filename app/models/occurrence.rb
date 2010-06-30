@@ -6,12 +6,21 @@ class Occurrence < ActiveRecord::Base
     (today.beginning_of_week..today.end_of_week)
   end
   
+  def self.next_week
+    one_week_from_today = 1.week.since(Date.today)
+    (one_week_from_today.beginning_of_week..one_week_from_today.end_of_week)
+  end
+  
   def dates
     @dates ||= build_dates
   end
   
   def date_occurs_during_this_week?(date)
     return date_occurs_during_week?(date, Occurrence.this_week)
+  end
+  
+  def date_occurs_during_next_week?(date)
+    return date_occurs_during_week?(date, Occurrence.next_week)
   end
   
   def date_occurs_during_week?(date, week)
@@ -25,12 +34,27 @@ class Occurrence < ActiveRecord::Base
     return false
   end
 
+  def occurs_next_week?
+    dates.each do |date|
+      return true if date_occurs_during_next_week?(date)
+    end
+    return false
+  end
+
   def this_weeks_date
     dates.each do |date|
       return date if date_occurs_during_this_week?(date)
     end
     return nil
   end
+  
+  def next_weeks_date
+    dates.each do |date|
+      return date if date_occurs_during_next_week?(date)
+    end
+    return nil
+  end
+  
     
   private 
   def build_dates
