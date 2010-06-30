@@ -1,18 +1,6 @@
 <h2>Routes</h2>
 
-<table>
-  <tr>
-    <th>Route</th>
-    <th>Description</th>
-    <th>Map</th>
-  </tr>
-
-<% @routes.each do |route| %>
-  <tr>
-    <td><%= link_to route.name, route %></td>
-    <td><%= route.description %></td>
-    <td><%= route.map_url %></td>
-  </tr>
-<% end %>
-</table>
+<div class="box">
+  <%= render :partial => 'route', :collection => @routes, :locals => {:display_details => false}%>
+</div>
 
