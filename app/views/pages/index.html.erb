@@ -4,7 +4,7 @@
   <h2><%= @ride.name %></h2>
   <h1><%= @ride.location %> <%= @ride.this_weeks_route.occurrence.begins_at.strftime("%l%p").downcase %></h1>     
   <div class="route_link">
-    The ride this week is the <%= link_to @ride.this_weeks_route.name, ride_path(@ride) %>.
+    The ride this week is the <%= link_to @ride.this_weeks_route.name, ride_path(@ride) %>
   </div>
 <% end %>
 
