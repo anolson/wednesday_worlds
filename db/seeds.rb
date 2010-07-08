@@ -14,8 +14,8 @@ ride = Ride.create(
   :currently_active => true)
 
 tabor = Route.create(
-  :name => 'Tabor loop', 
-  :description => 'Out Mt Tabor, back Blacksburg rd.', 
+  :name => 'Mt Tabor road', 
+  :description => 'Out Mt Tabor Rd, back Blacksburg Rd', 
   :map_url => 'http://bit.ly/bSpQAT',
   :ride => ride)
   
