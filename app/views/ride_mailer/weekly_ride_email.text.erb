@@ -1,7 +1,7 @@
 <%= @ride.location %>
 <%= @ride.this_weeks_route.occurrence.begins_at.strftime("%l:%M%p").downcase.strip %>
 
-The ride this week is the <%= @ride.this_weeks_route.name %>
+The ride this week is <%= @ride.this_weeks_route.name %>
 
 ==========================
 <%= url_for "http://wednesdayworlds.org" %>
