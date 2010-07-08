@@ -3,8 +3,7 @@
       <big><%= link_to route.name, ride_route_path(route.ride, route)%></big> 
       <small><%= link_to "map", route.map_url %></small>
     </div>
-    <span class="light">Location</span> <span><%= route.ride.location %></span> <br />
-    <span class="light">Date</span>      
+    <span class="light">Location:</span> <span><%= route.ride.location %></span> <br /> 
     
     <% if(route.occurrence.occurs_this_week?) %>
       <span><%= route.occurrence.this_weeks_date.strftime("%b %e") %></span> at

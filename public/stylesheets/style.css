@@ -15,8 +15,8 @@ li{padding-bottom:4px;}
 .big {font-size:20px; line-height:16px; vertical-align:top;}
 .light{color:#AAA;}
 .lighter{color:#CCC;}
-.route {font-size:14px; margin:10px 0;}
-.route .details {border-top:1px solid #BBB; margin-top:5px; padding-top:10px;}
+.route {font-size:12px; margin:10px 0;}
+.route .details {border-top:1px solid #BBB; margin-top:5px; padding-top:10px; font-size:14px;}
 .route .title {font-size:16px; margin-bottom:2px;}
 .route .description {margin-bottom:10px;}
 .route .all_dates {font-size:12px;}
