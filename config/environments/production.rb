@@ -39,15 +39,11 @@ WednesdayWorlds::Application.configure do
 
   # Enable threaded mode
   # config.threadsafe!
-  
-  config.action_mailer.delivery_method = :smtp 
-  config.action_mailer.smtp_settings = { 
-    :address => "smtp.gmail.com",  
-    :port => 587,  
-    :domain => 'wednesdayworlds.org',  
-    :user_name => ENV['ACTION_MAILER_USER_NAME'],  
-    :password => ENV['ACTION_MAILER_PASSWORD'],  
-    :authentication => 'plain',  
-    :enable_starttls_auto => true }
-  
+
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # the I18n.default_locale when a translation can not be found)
+  config.i18n.fallbacks = true
+
+  # Send deprecation notices to registered listeners
+  config.active_support.deprecation = :notify
 end
