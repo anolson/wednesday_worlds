@@ -31,8 +31,12 @@ GEM
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
     builder (2.1.2)
+    crack (0.1.6)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    hashie (0.2.2)
+    httparty (0.5.2)
+      crack (= 0.1.6)
     i18n (0.4.1)
     mail (2.2.5)
       activesupport (>= 2.3.6)
@@ -41,6 +45,7 @@ GEM
     memcache-client (1.8.3)
     memcached (0.19.7)
     mime-types (1.16)
+    oauth (0.4.2)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.9)
@@ -65,7 +70,13 @@ GEM
     thor (0.14.0)
     treetop (1.4.5)
       polyglot (>= 0.3.1)
+    twitter (0.9.8)
+      hashie (~> 0.2.0)
+      httparty (~> 0.5.0)
+      oauth (~> 0.4.1)
+      yajl-ruby (~> 0.7.0)
     tzinfo (0.3.22)
+    yajl-ruby (0.7.7)
 
 PLATFORMS
   ruby
@@ -75,3 +86,4 @@ DEPENDENCIES
   memcached (= 0.19.7)
   rails (= 3.0.0.rc)
   sqlite3-ruby
+  twitter
