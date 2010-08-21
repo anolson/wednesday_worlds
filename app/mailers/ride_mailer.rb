@@ -1,4 +1,5 @@
 class RideMailer < ActionMailer::Base
+  helper :application
   default :from => "WednesdayWorlds <hello@wednesdayworlds.org>"
   
   def weekly_ride_email(ride)
