@@ -1,5 +1,5 @@
 <%= @ride.location %>
-<%= @ride.this_weeks_route.occurrence.begins_at.strftime("%l:%M%p").downcase.strip %>
+<%= format_time(@ride.this_weeks_route.occurrence.begins_at) %>
 
 The ride this week is <%= @ride.this_weeks_route.name %>
 

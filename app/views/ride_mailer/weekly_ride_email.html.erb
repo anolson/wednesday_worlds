@@ -5,7 +5,7 @@
   </head>  
   <body>  
     <span><%= @ride.location %></span> <br/>
-    <span><%= @ride.this_weeks_route.occurrence.begins_at.strftime("%l:%M%p").downcase %></span>
+    <span><%= format_time(@ride.this_weeks_route.occurrence.begins_at) %></span>
     <p>
       The ride this week is <%= link_to @ride.this_weeks_route.name, ride_route_url(@ride, @ride.this_weeks_route, :host => 'wednesdayworlds.org') %>
     </p>

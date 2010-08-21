@@ -6,12 +6,12 @@
     <span class="light">Location:</span> <span><%= route.ride.location %></span> <br /> 
     
     <% if(route.occurrence.occurs_this_week?) %>
-      <span><%= route.occurrence.this_weeks_date.strftime("%b %e") %></span> at
-      <span><%= route.occurrence.begins_at.strftime("%l:%M%p").downcase %></span>
+      <span><%= format_date(route.occurrence.this_weeks_date) %></span> at
+      <span><%= format_time(route.occurrence.begins_at) %></span>
       <small class="light">this week</small>
     <% elsif(route.occurrence.occurs_next_week?) %>
-      <span><%= route.occurrence.next_weeks_date.strftime("%b %e") %></span> at
-      <span><%= route.occurrence.begins_at.strftime("%l:%M%p").downcase %></span>
+      <span><%= format_date(route.occurrence.next_weeks_date) %></span> at
+      <span><%= format_time(route.occurrence.begins_at) %></span>
       <small class="light">next week</small>
     <% end%>
 

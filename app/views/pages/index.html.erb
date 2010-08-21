@@ -2,7 +2,7 @@
 <h2>There aren't any current rides planned.</h2>
 <% else  %>
   <h2><%= @ride.name %></h2>
-  <h1><%= @ride.location %> <%= @ride.this_weeks_route.occurrence.begins_at.strftime("%l%p").downcase %></h1>     
+  <h1><%= @ride.location %> <%= format_time_short(@ride.this_weeks_route.occurrence.begins_at) %></h1>     
   <div class="route_link">
     The ride this week is <%= link_to @ride.this_weeks_route.name, ride_route_path(@ride, @ride.this_weeks_route) %>
   </div>
