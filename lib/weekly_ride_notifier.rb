@@ -5,10 +5,12 @@ class WeeklyRideNotifier
   def self.send_weekly_ride_notification
     ride = Ride.find_by_currently_active(true)
     if(ride)
+      #send the weekly ride tweet
       twitter_ride_notifier = TwitterRideNotifier.new
       twitter_ride_notifier.send_notification(ride)
       
-      # RideMailer.weekly_ride_email(ride).deliver
+      #send the weekly ride e-mail
+      RideMailer.weekly_ride_email(ride).deliver
     end
   end
 end
