@@ -5,7 +5,7 @@ class RideMailer < ActionMailer::Base
   def weekly_ride_email(ride)
     @ride = ride
     
-    mail(:to => "vt_cycling@listserv.vt.edu",
+    mail(:to => "wednesdayworlds@googlegroups.com",
          :subject => "WednesdayWorlds - #{@ride.this_weeks_route.occurrence.this_weeks_date.strftime("%b %e")}")
   end
 end

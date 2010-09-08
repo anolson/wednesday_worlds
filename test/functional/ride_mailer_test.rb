@@ -6,6 +6,6 @@ class RideMailerTest < ActionMailer::TestCase
     ride = Ride.find_by_currently_active(true)
     email = RideMailer.weekly_ride_email(ride).deliver
     assert !ActionMailer::Base.deliveries.empty?
-    assert_equal ["vt_cycling@listserv.vt.edu"], email.to
+    assert_equal ["wednesdayworlds@googlegroups.com"], email.to
   end
 end
