@@ -33,3 +33,11 @@ once:
  recurrence_type: nil
  recurs: false
  begins_at: '2010-05-05 18:00'
+ 
+owen_cup_occurence:
+  id: 6
+  recurrence_ends_at: nil
+  recurrence_type: nil
+  recurs: false
+  begins_at: <%= Date.today.end_of_month %>
+  route_id: 2

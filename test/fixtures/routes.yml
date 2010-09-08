@@ -5,7 +5,7 @@ tabor:
   name: Tabor loop
   description: 'Out Mt Tabor, back Blacksburg rd.'
   map_url: http://maps.google.com
-  ride_id: 2
+  ride_id: 1
 
 blacksburg_rd:
   id: 2
