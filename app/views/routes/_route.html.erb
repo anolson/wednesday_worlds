@@ -3,17 +3,22 @@
       <big><%= link_to route.name, ride_route_path(route.ride, route)%></big> 
       <small><%= link_to "map", route.map_url %></small>
     </div>
-    <span class="light">Location:</span> <span><%= route.ride.location %></span> <br /> 
+
+    <div class="location">
+      <span class="light">Location:</span> <span><%= route.ride.location %></span>  
+    </div>
     
-    <% if(route.occurrence.occurs_this_week?) %>
-      <span><%= format_date(route.occurrence.this_weeks_date) %></span> at
-      <span><%= format_time(route.occurrence.begins_at) %></span>
-      <small class="light">this week</small>
-    <% elsif(route.occurrence.occurs_next_week?) %>
-      <span><%= format_date(route.occurrence.next_weeks_date) %></span> at
-      <span><%= format_time(route.occurrence.begins_at) %></span>
-      <small class="light">next week</small>
-    <% end%>
+    <div class="date">
+      <% if(route.occurrence.occurs_this_week?) %>
+        <span><%= format_date(route.occurrence.this_weeks_date) %></span> at
+        <span><%= format_time(route.occurrence.begins_at) %></span>
+        <small class="light">this week</small>
+      <% elsif(route.occurrence.occurs_next_week?) %>
+        <span><%= format_date(route.occurrence.next_weeks_date) %></span> at
+        <span><%= format_time(route.occurrence.begins_at) %></span>
+        <small class="light">next week</small>
+      <% end%>      
+    </div>
 
     <% if(display_details) %>
       <%= render :partial => 'details', :locals => {:route => route} %>
