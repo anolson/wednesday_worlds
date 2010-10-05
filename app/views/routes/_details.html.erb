@@ -1,16 +1,17 @@
       <div class="details">
         <div class="description"><%= route.description %></div>  
-    
-        <div class="all_dates">
-          <table border="1" cellspacing="0" cellpadding="5">
-            <tr><th>All dates</th></tr>
-            <% route.occurrence.dates.each do |date| %>
-              <tr>
-                <td>
-                  <%= date.strftime("%b %e") %>
-                </td>
-              </tr>
-            <% end %>
-          </table>
+        
+        <div id="dateline"></div>
+        <script type="text/javascript" charset="utf-8">
+          
+          var route_dates = new Array();
+          <% route.occurrence.dates.each_with_index do |date, i| %>
+          route_dates[<%= i %>] = "<%="#{format_date(date)}" %>";
+          <% end %>
+          draw_dateline( {
+            'dates' : route_dates, 
+            'highlight' : '<%= route.occurrence.occurs_this_week? && format_date(route.occurrence.this_weeks_date) || nil %>' });
+          
+        </script>
         </div>
       </div>
