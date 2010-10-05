@@ -1,17 +1,15 @@
       <div class="details">
         <div class="description"><%= route.description %></div>  
-        
         <div id="dateline"></div>
         <script type="text/javascript" charset="utf-8">
-          
           var route_dates = new Array();
+          var highlight_date = "<%= format_date(route.occurrence.next_date) %>";
           <% route.occurrence.dates.each_with_index do |date, i| %>
           route_dates[<%= i %>] = "<%="#{format_date(date)}" %>";
           <% end %>
           draw_dateline( {
             'dates' : route_dates, 
-            'highlight' : '<%= route.occurrence.occurs_this_week? && format_date(route.occurrence.this_weeks_date) || nil %>' });
-          
+            'highlight' : highlight_date });
         </script>
         </div>
       </div>

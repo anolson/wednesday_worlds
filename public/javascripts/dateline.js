@@ -14,18 +14,19 @@
 	 for (var i=0; i < dates.length; i++) {
 	   var x = (i * spacing) + offset;
 	   if(dates[i] == highlight) {
-	     circles[i] = dateline.circle(x, 10, 6);
-
-			 circles[i].attr("title", "this week");
+	     circles[i] = dateline.circle(x, 10, 7);
+	     dateline.text(x, 25, dates[i]).attr("fill", "#090").attr("font-size", "11px").attr("font-family", "Lucida Grande");
 	   }
 	   else {
 	     circles[i] = dateline.circle(x, 10, 4);
+
+	     dateline.text(x, 25, dates[i]).attr("fill", "grey").attr("font-size", "11px").attr("font-family", "Lucida Grande");
 	   }
 
 	   circles[i].attr("fill", "grey");
 	   circles[i].attr("stroke", "grey");
 
-	   dateline.text(x, 25, dates[i]).attr("fill", "#036").attr("font-size", "11px").attr("font-family", "Lucida Grande");
+	   
 	 };
 
 	}
