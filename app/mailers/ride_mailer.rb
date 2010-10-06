@@ -1,9 +1,7 @@
-# require 'application_helper'
-
 class RideMailer < ActionMailer::Base
-  # helper :application
-  
   include ApplicationHelper
+  helper :application
+  
   default :from => "WednesdayWorlds <hello@wednesdayworlds.org>"
   
   def weekly_ride_email(ride)
