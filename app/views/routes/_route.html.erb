@@ -9,8 +9,11 @@
     </div>
     
     <div class="date">
-      <span><%= format_date(route.occurrence.next_date) %></span> at
-      <span><%= format_time(route.occurrence.begins_at) %></span>
+      
+      <% if(!route.occurrence.next_date.nil?) %>
+        <span><%= format_date(route.occurrence.next_date) %></span> at
+        <span><%= format_time(route.occurrence.begins_at) %></span>
+      <% end %>
       
       <% if(route.occurrence.occurs_this_week?) %>
         <small class="light">this week</small>
