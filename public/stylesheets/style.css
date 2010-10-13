@@ -6,6 +6,7 @@ li{padding-bottom:4px;}
 .center{text-align:center;}
 .clear{clear:both;}
 .container{width:600px;margin:0px auto; padding-bottom:10px;}
+.copy{font-family:"Helvetica Neue"; font-size:14px;}
 .description {padding-bottom:50px;}
 .left{width:45%;padding:5px;float:left;}
 .light{color:#AAA;}
