@@ -11,3 +11,9 @@ owen_cup:
   name: Owen Cup
   location: Bollo's
   currently_active: false
+  
+wednesday_worlds_expired:
+  id: 3
+  name: Wednesday Worlds
+  location: Bollo's
+  currently_active: false

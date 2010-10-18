@@ -13,3 +13,10 @@ blacksburg_rd:
   description: Out and back back on Blacksburg rd.
   map_url: http://maps.google.com
   ride_id: 2
+  
+blacksburg_rd_expired:
+  id: 3
+  name: Traditional route.
+  description: Out and back back on Blacksburg rd.
+  map_url: http://maps.google.com
+  ride_id: 3

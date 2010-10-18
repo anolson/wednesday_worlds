@@ -5,6 +5,7 @@ class Ride < ActiveRecord::Base
     routes.each do |route| 
       return route if(route.occurrence.occurs_this_week?)
     end
+    return nil
   end
   
 end

@@ -26,6 +26,7 @@ ended:
  recurrence_type: weekly
  recurs: true
  begins_at: '2010-05-05 18:00'
+ route_id: 3
 
 once: 
  id: 5
