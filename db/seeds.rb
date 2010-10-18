@@ -11,7 +11,7 @@
 ride = Ride.create(
   :name => 'Wednesday Worlds', 
   :location => 'Bollo\'s', 
-  :currently_active => true)
+  :currently_active => false)
 
 tabor = Route.create(
   :name => 'Mt Tabor road', 
