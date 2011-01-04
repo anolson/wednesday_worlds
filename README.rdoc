@@ -9,7 +9,7 @@ This is the Rails 3 web application that runs http://wednesdayworlds.org
 === Getting Started
   
   $ cd wednesday_worlds
-  $ rake db:migrate
+  $ rake
   $ rails s
 
 === License
