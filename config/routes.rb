@@ -1,4 +1,4 @@
-WednesdayWorlds::Application.routes.draw do |map|
+WednesdayWorlds::Application.routes.draw do
   match 'guidelines' => 'pages#guidelines'
   match 'about' => 'pages#about'
   match 'contribute' => 'pages#contribute'
