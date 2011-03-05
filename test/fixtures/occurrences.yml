@@ -42,3 +42,19 @@ owen_cup_occurence:
   recurs: false
   begins_at: <%= Date.today.end_of_month %>
   route_id: 2
+  
+next_week:
+  id: 7
+  recurrence_ends_at: <%= Date.today.end_of_month %>
+  recurrence_type: weekly
+  recurs: true
+  begins_at: <%= 1.week.since(Date.today) %>
+  route_id: 1
+
+in_the_future:
+  id: 8
+  recurrence_ends_at: nil
+  recurrence_type: nil
+  recurs: false
+  begins_at: <%= 4.week.since(Date.today) %>
+  route_id: 1

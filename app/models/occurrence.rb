@@ -15,75 +15,79 @@ class Occurrence < ActiveRecord::Base
     @dates ||= build_dates
   end
   
-  def date_occurs_during_this_week?(date)
-    return date_occurs_during_week?(date, Occurrence.this_week)
+  def next_date
+    date = this_weeks_date
+    date ||= next_later_date
   end
   
-  def date_occurs_during_next_week?(date)
-    return date_occurs_during_week?(date, Occurrence.next_week)
+  def this_weeks_date
+    find_next_date { |date| return date if date_occurs_during_this_week?(date) }
   end
-  
-  def date_occurs_during_week?(date, week)
-    return ((date > week.begin) and (date < week.end))
+
+  def next_later_date
+    find_next_date { |date| return date if date_occurs_later?(date) } 
   end
   
   def occurs_this_week?
-    dates.each do |date|
-      return true if date_occurs_during_this_week?(date)
-    end
-    return false
+    occurs? { |date| return true if date_occurs_during_this_week?(date)  }
   end
 
   def occurs_next_week?
-    dates.each do |date|
-      return true if date_occurs_during_next_week?(date)
-    end
-    return false
+    occurs? { |date| return true if date_occurs_during_next_week?(date)  }
   end
 
-  def this_weeks_date
-    dates.each do |date|
-      return date if date_occurs_during_this_week?(date)
-    end
-    return nil
-  end
-  
-  def next_weeks_date
-    dates.each do |date|
-      return date if date_occurs_during_next_week?(date)
-    end
-    return nil
-  end
-  
-  def next_date
-    if(occurs_this_week?)
-      this_weeks_date
-    elsif(occurs_next_week?)
-      next_weeks_date
-    else
-      nil
-    end
+  def occurs_later?
+    occurs? { |date| return true if date_occurs_later?(date) }
   end
     
   private 
-  def build_dates
-    dates = [self.begins_at]    
-    if(recurs)
-      while((dates.last <=> self.recurrence_ends_at) < 0)
-        dates << next_occurrence(dates.last)
+    def build_dates
+      dates = [self.begins_at]    
+      if(recurs)
+        while((dates.last <=> self.recurrence_ends_at) < 0)
+          dates << next_occurrence(dates.last)
+        end
+      end
+      dates
+    end
+  
+    def next_occurrence(date)
+      if(recurrence_type == "weekly")
+        1.week.since(date)
+      else
+        2.week.since(date)
       end
     end
-    dates
-  end
-  
-  def next_occurrence(date)
-    if(recurrence_type == "weekly")
-      1.week.since(date)
-    else
-      2.week.since(date)
+    
+    def find_next_date(&block)
+      dates.each do |date|
+        yield date
+      end
+      nil
     end
-  end
+    
+    def occurs?(&block)
+      dates.each do |date|
+        yield date
+      end
+      return false
+    end
+    
+    def date_occurs_during_this_week?(date)
+      return date_occurs_during_week?(date, Occurrence.this_week)
+    end
 
-  
+    def date_occurs_during_next_week?(date)
+      return date_occurs_during_week?(date, Occurrence.next_week)
+    end
+
+    def date_occurs_later?(date)
+      return date > Date.today
+    end
+
+    def date_occurs_during_week?(date, week)
+      return ((date > week.begin) and (date < week.end))
+    end
+    
 end
 

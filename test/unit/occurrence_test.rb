@@ -4,8 +4,7 @@ class OccurrenceTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "previous occurrence does not occur this week" do
     occurrence = Occurrence.find(4)
-    assert_same false, occurrence.occurs_this_week?
-    assert_nil occurrence.this_weeks_date
+    assert !occurrence.occurs_this_week?
   end
   
   test "current occurrence occurs this week" do
@@ -37,6 +36,19 @@ class OccurrenceTest < ActiveSupport::TestCase
     assert !occurrence.recurs?
     assert 1, occurrence.dates.size
     assert '2010-05-05 18:00', occurrence.dates.first.strftime("%Y-%m-%d %H:%M")
+  end
+  
+  test "next weeks occurrence" do
+    occurrence = Occurrence.find(7)
+    assert !occurrence.occurs_this_week?
+    assert occurrence.occurs_next_week?
+  end
+  
+  test "a future occurrence" do
+    occurrence = Occurrence.find(8)
+    assert !occurrence.occurs_this_week?
+    assert !occurrence.occurs_next_week?
+    assert occurrence.occurs_later?
   end
   
 end
