@@ -12,9 +12,9 @@ li{padding-bottom:4px;}
 .light{color:#AAA;}
 .lighter{color:#CCC;}
 .map {font-size:12px;}
-.ride h3 {padding-left:10px;}
+.ride h3 {padding:0 5px;}
 .right{width:45%;padding:5px;float:right;}
-.route {font-size:13px; margin:10px 0 20px 0; padding-left:10px;}
+.route {font-size:13px; margin:10px 0 20px 0; padding:0 5px;}
 .route .details {border-top:1px dotted #BBB; margin-top:5px; padding-top:10px; font-size:14px;}
 .route .title {font-size:16px; margin-bottom:2px;}
 .route .description {margin-bottom:10px;}
@@ -31,7 +31,7 @@ li{padding-bottom:4px;}
 #content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
 #content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}
 #content .route_link{text-align:right;}
-#dateline{text-align: center;}
+#dateline{text-align: center; overflow:auto; position:relative; border:1px solid #BBB; padding:25px 0 10px 0;}
 #footer{padding-top:20px;color:#DDD;font-size:12px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
 #footer h5{color:#FFF;border-bottom:1px solid #FFF;padding-bottom:5px;}
 #footer ul{padding:0;}
