@@ -12,8 +12,8 @@ blacksburg_road = Route.create(
 blacksburg_road_occurrence = Occurrence.create(
   :recurs => true, 
   :recurrence_type => 'weekly', 
-  :recurrence_ends_at => '2011-10-12 17:30', 
-  :begins_at => '2011-03-16 17:30', 
+  :recurrence_ends_at => '2011-10-12 18:00', 
+  :begins_at => '2011-03-16 18:00', 
   :route => blacksburg_road);
 
 # tabor = Route.create(
