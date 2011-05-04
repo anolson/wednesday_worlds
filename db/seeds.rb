@@ -11,23 +11,23 @@ blacksburg_road = Route.create(
 
 blacksburg_road_occurrence = Occurrence.create(
   :recurs => true, 
-  :recurrence_type => 'weekly', 
-  :recurrence_ends_at => '2011-10-12 18:00', 
-  :begins_at => '2011-03-16 18:00', 
+  :recurrence_type => 'bi-weekly', 
+  :recurrence_ends_at => '2011-10-05 18:00', 
+  :begins_at => '2011-05-04 18:00', 
   :route => blacksburg_road);
 
-# tabor = Route.create(
-#   :name => 'Mt Tabor road', 
-#   :description => 'Out Mt Tabor Rd, back Blacksburg Rd', 
-#   :map_url => 'http://bit.ly/bSpQAT',
-#   :ride => ww)
-#   
-# tabor_occurrence = Occurrence.create(
-#   :recurs => true, 
-#   :recurrence_type => 'bi-weekly', 
-#   :recurrence_ends_at => '2011-10-12 17:30', 
-#   :begins_at => '2011-02-09 17:30', 
-#   :route => tabor)
+tabor = Route.create(
+  :name => 'Mt Tabor road', 
+  :description => 'Out Mt Tabor Rd, back Blacksburg Rd', 
+  :map_url => 'http://bit.ly/bSpQAT',
+  :ride => ww)
+  
+tabor_occurrence = Occurrence.create(
+  :recurs => true, 
+  :recurrence_type => 'bi-weekly', 
+  :recurrence_ends_at => '2011-10-12 18:00', 
+  :begins_at => '2011-05-11 18:00', 
+  :route => tabor)
 # 
 # andrew_gold = Ride.create(
 #   :name => 'Andrew Gold', 
