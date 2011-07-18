@@ -1,8 +1,19 @@
 WednesdayWorlds::Application.routes.draw do
-  resources :rides do
+  resources :rides, :only => [:show, :index] do
     get :current, :on => :collection 
-    resources :routes
+    resources :routes, :only => [:show, :index] 
   end
+  
+  namespace :admin do
+    resource :session, :only => [:create, :new, :destroy]
+    
+    resources :rides do
+      resources :routes
+    end
+  end
+  
+  match 'login' => 'admin/sessions#new'
+  match 'logout' => 'admin/sessions#destroy'
   
   match 'guidelines' => 'pages#guidelines'
   match 'about' => 'pages#about'
