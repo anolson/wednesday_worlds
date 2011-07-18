@@ -1,0 +1,13 @@
+<h2>Admin login</h2>
+
+<div class="box copy">
+  <div class="center">
+    <%= form_tag('/admin/session') do %>
+      <%= submit_tag("Signin with Twitter") %>
+    <% end %>    
+    
+    
+    <p><%= session[:screen_name] if signed_in? %></p>
+    
+  </div>
+</div>

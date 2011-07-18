@@ -5,7 +5,11 @@ WednesdayWorlds::Application.routes.draw do
   end
   
   namespace :admin do
-    resource :session, :only => [:create, :new, :destroy]
+   
+    
+    resource :session, :only => [:create, :new, :destroy] do
+       get :callback, :on => :member
+    end
     
     resources :rides do
       resources :routes
