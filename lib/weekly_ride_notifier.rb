@@ -1,7 +1,6 @@
 require 'twitter_ride_notifier'
 
-class WeeklyRideNotifier
-  include 
+class WeeklyRideNotifier 
   def self.send_weekly_ride_notification
     ride = Ride.find_by_currently_active(true)
     if(ride && ride.this_weeks_route)

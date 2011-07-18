@@ -14,7 +14,8 @@ group :production do
   gem 'memcached', "0.19.7"
 end
 
-gem 'twitter'
+gem 'oauth', '~> 0.4.5'
+gem 'twitter', '~> 1.6.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

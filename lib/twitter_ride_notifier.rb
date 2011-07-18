@@ -5,16 +5,17 @@ require 'twitter'
 class TwitterRideNotifier
   include ApplicationHelper
   
-  attr_accessor :oauth
-  
-  def initialize
-    @oauth = Twitter::OAuth.new(ENV['TWITTER_API_CONSUMER_KEY'], ENV['TWITTER_API_CONSUMER_SECRET'])
-    @oauth.authorize_from_access(ENV['TWITTER_API_ACCESS_TOKEN'], ENV['TWITTER_API_ACCESS_SECRET'])
-  end
-  
   def send_notification(ride)
-    twitter = Twitter::Base.new(@oauth)
-    twitter.update(ride_tweet(ride))
+    Twitter.configure do |config|
+      config.consumer_key = ENV['TWITTER_API_CONSUMER_KEY']
+      config.consumer_secret = ENV['TWITTER_API_CONSUMER_SECRET']
+      config.oauth_token = ENV['TWITTER_API_ACCESS_TOKEN']
+      config.oauth_token_secret = ENV['TWITTER_API_ACCESS_SECRET']
+    end
+    
+    
+    client = Twitter::Client.new
+    client.update(ride_tweet(ride))
   end
   
   def ride_tweet(ride)
