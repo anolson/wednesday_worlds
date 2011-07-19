@@ -41,7 +41,7 @@ class Admin::SessionsController < Admin::AdminController
     end
     
     def oauth_consumer
-      @oauth_consumer ||= OAuth::Consumer.new(ENV['TWITTER_API_CONSUMER_KEY'], ENV['TWITTER_API_CONSUMER_SECRET'], :site => 'http://api.twitter.com', :request_endpoint => 'http://api.twitter.com', :sign_in => true)
+      @oauth_consumer ||= OAuth::Consumer.new(ENV['TWITTER_API_CONSUMER_KEY'], ENV['TWITTER_API_CONSUMER_SECRET'], :site => 'http://api.twitter.com', :authorize_path => '/oauth/authenticate')
     end
     
     def client(access_token)    
