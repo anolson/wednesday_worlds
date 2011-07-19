@@ -1,6 +1,12 @@
 body{font-family:"Lucida Grande";background:#333; color: #333;margin:0;padding:0;}
 a{color:#39F;text-decoration:none;}
 li{padding-bottom:4px;}
+
+input{font-size:16px; padding:5px; margin:5px 0 10px 0;}
+input[type="submit"]{font-size:12px;}
+input[type="checkbox"]{vertical-align:middle;}
+label{display:block; font-weight:bold;}
+
 .big {font-size:20px; line-height:16px; vertical-align:top;}
 .box{border:3px solid #BBB; background-color:#FFF; padding:10px;}
 .center{text-align:center;}

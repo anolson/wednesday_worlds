@@ -1,0 +1,14 @@
+<h2 class="left"><%= @ride.name %></h2>
+
+<div class="clear box">
+  
+  <%= form_for @ride do |f| %>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %><br />
+
+    <%= f.label :location, 'Location' %>
+    <%= f.text_field :location %><br />
+
+  <% end %>
+  
+</div>
