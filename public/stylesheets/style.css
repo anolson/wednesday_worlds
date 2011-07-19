@@ -8,12 +8,14 @@ li{padding-bottom:4px;}
 .container{width:600px;margin:0px auto; padding-bottom:10px;}
 .copy{font-family:"Helvetica Neue"; font-size:14px;}
 .description {padding-bottom:50px;}
-.left{width:45%;padding:5px;float:left;}
+.edit{font-size:12px; margin:21px 5px;}
+.left{float:left;}
 .light{color:#AAA;}
 .lighter{color:#CCC;}
 .map {font-size:12px;}
+.new{font-size:12px; margin:15px 10px;}
 .ride h3 {padding:0 5px;}
-.right{width:45%;padding:5px;float:right;}
+.right{float:right;}
 .route {font-size:13px; margin:10px 0 20px 0; padding:0 5px;}
 .route .details {border-top:1px dotted #BBB; margin-top:5px; padding-top:10px; font-size:14px;}
 .route .title {font-size:16px; margin-bottom:2px;}
@@ -27,6 +29,7 @@ li{padding-bottom:4px;}
 .video {font-size:12px;}
 .video a {color:#999;}
 .video iframe {border:3px solid #BBB;}
+.width_45{width:45%;padding:5px;}
 #content{min-height:400px;background:#9DF;background:-moz-linear-gradient(0% 85% 90deg,#9DF,#DEF);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#DEF),to(#9DF));}
 #content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
 #content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}
