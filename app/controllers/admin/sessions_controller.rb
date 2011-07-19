@@ -1,8 +1,7 @@
 class Admin::SessionsController < Admin::AdminController
-  
   skip_filter :verify_admin_authentication, :only => [:new, :create, :callback]
   
-  rescue_from OAuth::Unauthorized, :with => :redirect_with_error
+  rescue_from OAuth::Unauthorized, :with => :redirect_with_alert
   
   def new; end
   
@@ -25,19 +24,21 @@ class Admin::SessionsController < Admin::AdminController
   end
   
   private  
-    def sign_in_user(screen_name)
+    def sign_in_user(screen_name = "")
       reset_session
       
       # Check that screen name is in the Admin table
-      # admin = Admininistrator.find_by_screen_name(screen_name)
+      admin = Administrator.find_by_twitter_screen_name(screen_name)
       
-      session[:screen_name] = screen_name
-      redirect_to login_path
+      redirect_with_alert("Looks like you don't have admin access.  E-mail hello@wednesdayworlds.com to get access.") if admin.nil?    
+      
+      session[:screen_name] = admin.twitter_screen_name
+      redirect_to_intended_path
     end
   
-    def redirect_with_error
+    def redirect_with_alert(alert = "Awhoops.  Please signin again.")
       reset_session
-      redirect_to login_path, :alert => "Awhoops.  Please signin again."
+      redirect_to login_path, :alert => alert
     end
     
     def oauth_consumer
