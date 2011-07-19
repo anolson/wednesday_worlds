@@ -1,3 +1,5 @@
 class Admin::RidesController < ApplicationController
-  def index; end
+  def index
+    @rides = Ride.all
+  end
 end

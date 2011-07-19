@@ -2,7 +2,7 @@
 
 <div class="box">
   <% @rides.each do |ride| %>
-    <%= render :partial => 'ride', :locals => {:ride => ride, :header => ride.name} %>
+    <%= render :partial => 'ride', :locals => {:ride => ride, :header => ride.name, :editable => false} %>
   <% end %>
 </div>
 

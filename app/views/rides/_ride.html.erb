@@ -1,5 +1,12 @@
     <div class="ride">
-      <h3><%= header %></h3>
+      <h3 class="left"><%= header %></h3>
+      <% if editable %>
+        <div class="left edit">
+          <%= link_to "edit", edit_admin_ride_path(ride) %>  
+        </div>
+      <% end %>
+      <div class="clear"></div>
+      
       <% ride.routes.each do |route| %>
         <%= render :partial => "routes/route", :locals => {:route => route, :display_details => false} %>
       <% end %>

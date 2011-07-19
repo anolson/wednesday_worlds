@@ -1,6 +1,6 @@
 <h2><%= @ride.name %></h2>
 
 <div class="box">
-  <%= render :partial => 'ride', :locals => {:ride => @ride, :header => "Routes"} %>
+  <%= render :partial => 'ride', :locals => {:ride => @ride, :header => "Routes", :editable => false} %>
 </div>
 

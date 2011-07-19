@@ -1,7 +1,8 @@
-<h2>Rides</h2>
 
-<div class="box copy">
-  <div class="center">
-    <p>Yay!</p>
-  </div>
+<h2 class="left">Rides</h2> <div class="left new"><%= link_to "Create new ride.", new_admin_ride_path %></div>
+
+<div class="clear box">
+  <% @rides.each do |ride| %>
+    <%= render :partial => 'rides/ride', :locals => {:ride => ride, :header => ride.name, :editable => true} %>
+  <% end %>
 </div>
