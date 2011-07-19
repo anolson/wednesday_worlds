@@ -3,11 +3,13 @@
 <div class="box copy">
   <div class="center">
     <%= form_tag('/admin/session') do %>
-      <%= submit_tag("Signin with Twitter") %>
+      <%= image_submit_tag("sign-in-with-twitter.png") %>
     <% end %>    
     
     
     <p><%= session[:screen_name] if signed_in? %></p>
+    
+    <p><%= flash[:alert] %></p>
     
   </div>
 </div>
