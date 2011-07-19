@@ -28,6 +28,9 @@ tabor_occurrence = Occurrence.create(
   :recurrence_ends_at => '2011-10-12 18:00', 
   :begins_at => '2011-05-11 18:00', 
   :route => tabor)
+  
+Administrator.create(:name => 'Andrew Olson', :twitter_screen_name => 'andrew_olson')
+  
 # 
 # andrew_gold = Ride.create(
 #   :name => 'Andrew Gold', 

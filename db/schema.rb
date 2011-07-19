@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100601183714) do
+ActiveRecord::Schema.define(:version => 20110719151054) do
+
+  create_table "administrators", :force => true do |t|
+    t.string   "name"
+    t.string   "twitter_screen_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "occurrences", :force => true do |t|
     t.boolean  "recurs"
