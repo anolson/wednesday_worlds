@@ -1,0 +1,39 @@
+<h2 class="left"><%= @ride.name %> - <%= @route.name %></h2>
+
+<div class="clear box">
+  
+  <%= form_for [:admin, @ride, @route] do |f| %>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %><br />
+
+    <%= f.label :description, 'Description' %>
+    <%= f.text_area :description %><br />
+    
+    <%= f.label :map, 'Map' %>
+    <%= f.text_field :map_url %><br />
+    
+    <%= f.fields_for :occurrence do |occurrence| %>
+      <%= occurrence.label :date, 'Begin date' %>
+      <%= occurrence.datetime_select :begins_at %><br />
+      
+      <%= field_set_tag 'Recurrence' do %>
+        <%= occurrence.label :recurs, 'Recurs' %>
+        <%= occurrence.select :recurs, [['Yes', true], ['No', false]] %><br />
+      
+        <div id="recurrence_details">
+          <%= occurrence.label :recurrence_type, 'Recurrence type' %>
+          <%= occurrence.select :recurrence_type, [['Weekly', 'weekly'], ['Bi-Weekly', 'bi-weekly']] %><br />
+
+          <%= occurrence.label :recurrence_ends_at, 'Recurrence end' %>
+          <%= occurrence.datetime_select :recurrence_ends_at %><br />            
+        </div>
+
+      <% end %>
+      
+    <% end %>
+    <br/>
+    
+    <%= f.submit %>
+  <% end %>
+  
+</div>

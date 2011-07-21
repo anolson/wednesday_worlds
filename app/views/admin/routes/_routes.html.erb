@@ -1,0 +1,14 @@
+<div class="edit"> <%= link_to "Create new route", new_admin_ride_route_path(@ride) %> </div>
+<% if @ride.routes.empty? %>
+  <p class="center">Looks like there aren't any routes!</p>
+<% else %>
+  <table border="0" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Map</th>
+      <th></th>
+    </tr>
+    <%= render :partial => 'route', :collection => @ride.routes %>
+  </table>
+<% end %>

@@ -1,5 +1,5 @@
 class Ride < ActiveRecord::Base
-  has_many :routes
+  has_many :routes, :dependent => :destroy
   
   def this_weeks_route
     routes.each do |route| 

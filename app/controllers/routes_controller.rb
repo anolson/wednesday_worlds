@@ -14,8 +14,6 @@ class RoutesController < ApplicationController
   # GET /rides/1/routes/1.xml
   def show
     @route = Route.find(params[:id])
-    
-    pp @route
 
     respond_to do |format|
       format.html # show.html.erb

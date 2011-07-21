@@ -1,8 +1,5 @@
-
-<h2 class="left">Rides</h2> <div class="left new"><%= link_to "Create new ride.", new_admin_ride_path %></div>
+<h2 class="left">Rides</h2>
 
 <div class="clear box">
-  <% @rides.each do |ride| %>
-    <%= render :partial => 'rides/ride', :locals => {:ride => ride, :header => ride.name, :editable => true} %>
-  <% end %>
+  <%= render :partial => 'rides' %>
 </div>

@@ -1,0 +1,12 @@
+<%= form_for [:admin, @ride] do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :location, 'Location' %>
+  <%= f.text_field :location %><br />
+  
+  <%= f.label :currently_active, 'Current' %>    
+  <%= f.select :currently_active, [['Yes', true], ['No', false]] %><br />
+  
+  <%= f.submit %>
+<% end %>
