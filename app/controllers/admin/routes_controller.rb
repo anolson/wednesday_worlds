@@ -1,4 +1,4 @@
-class Admin::RoutesController < ApplicationController
+class Admin::RoutesController < Admin::AdminController
   before_filter :find_ride
 
   def index; end

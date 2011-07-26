@@ -1,4 +1,4 @@
-class Admin::RidesController < ApplicationController
+class Admin::RidesController < Admin::AdminController
   def index
     @rides = Ride.all
   end
