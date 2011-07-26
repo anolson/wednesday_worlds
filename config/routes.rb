@@ -5,8 +5,6 @@ WednesdayWorlds::Application.routes.draw do
   end
   
   namespace :admin do
-   
-    
     resource :session, :only => [:create, :new, :destroy] do
        get :callback, :on => :member
     end
@@ -14,8 +12,9 @@ WednesdayWorlds::Application.routes.draw do
     resources :rides do
       resources :routes
     end
+    match '/' => redirect("/admin/rides")
   end
-  
+
   match 'login' => 'admin/sessions#new'
   match 'logout' => 'admin/sessions#destroy'
   
