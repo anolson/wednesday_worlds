@@ -1,4 +1,5 @@
 class Admin::AdminController < ApplicationController
+  layout 'admin'
   before_filter :verify_admin_authentication
     
   private  
