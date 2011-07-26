@@ -1,7 +1,7 @@
 class Admin::SessionsController < Admin::AdminController
   skip_filter :verify_admin_authentication, :only => [:new, :create, :callback]
   
-  rescue_from OAuth::Unauthorized, :with => :redirect_with_alert
+  rescue_from OAuth::Unauthorized, :with => :force_sign_in
   
   def new; end
   
@@ -21,6 +21,9 @@ class Admin::SessionsController < Admin::AdminController
   end
   
   def destroy
+    reset_session
+    @current_admin = nil
+    redirect_to login_path
   end
   
   private  
@@ -36,7 +39,11 @@ class Admin::SessionsController < Admin::AdminController
       redirect_to_intended_path
     end
   
-    def redirect_with_alert(alert = "Awhoops.  Please signin again.")
+    def force_sign_in(exception)
+      redirect_with_alert "Awhoops.  Please signin again."
+    end
+  
+    def redirect_with_alert(alert)
       reset_session
       redirect_to login_path, :alert => alert
     end
