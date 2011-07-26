@@ -1,8 +1,5 @@
     <div class="ride">
       <h3><%= header %></h3>
-      <div class="left edit">
-        <%= link_to "edit", edit_admin_ride_path(ride) %>  
-      </div>
       
       <% ride.routes.each do |route| %>
         <%= render :partial => "routes/route", :locals => {:route => route, :display_details => false} %>

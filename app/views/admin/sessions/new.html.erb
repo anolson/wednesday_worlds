@@ -1,13 +1,11 @@
-<h2>Admin login</h2>
+<h2>Administrivia</h2>
 
 <div class="box copy">
   <div class="center">
+    <p class="center">Sign in with Twitter to manage the site, Yo!</p>
     <%= form_tag('/admin/session') do %>
       <%= image_submit_tag("sign-in-with-twitter.png") %>
     <% end %>    
-    
-    
-    <p><%= session[:screen_name] if signed_in? %></p>
     
     <p><%= flash[:alert] %></p>
     
