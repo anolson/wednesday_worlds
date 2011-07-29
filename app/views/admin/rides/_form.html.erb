@@ -9,4 +9,5 @@
   <%= f.select :currently_active, [['Yes', true], ['No', false]] %><br />
   
   <%= f.submit %>
+  <%= link_to 'Cancel', admin_rides_path, :class => 'cancel' %>
 <% end %>

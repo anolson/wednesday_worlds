@@ -16,6 +16,7 @@ h4 {margin:10px 0 5px 0;}
 
 .big {font-size:20px; line-height:16px; vertical-align:top;}
 .box{border:3px solid #BBB; background-color:#FFF; padding:10px;}
+.cancel{font-size:12px; margin:2px; color:#B00;}
 .center{text-align:center;}
 .clear{clear:both;}
 .container{width:600px;margin:0px auto; padding-bottom:10px;}
