@@ -29,14 +29,14 @@ class Admin::SessionsController < Admin::AdminController
   private  
     def sign_in_user(screen_name = "")
       reset_session
-      
-      # Check that screen name is in the Admin table
       admin = Administrator.find_by_twitter_screen_name(screen_name)
       
-      redirect_with_alert("Looks like you don't have admin access.  E-mail hello@wednesdayworlds.com to get access.") if admin.nil?    
-      
-      session[:screen_name] = admin.twitter_screen_name
-      redirect_to_intended_path
+      if(admin)
+        session[:screen_name] = admin.twitter_screen_name
+        redirect_to_intended_path
+      else
+        redirect_with_alert("Looks like you don't have admin access.  E-mail hello@wednesdayworlds.com to get access.") 
+      end
     end
   
     def force_sign_in(exception)
