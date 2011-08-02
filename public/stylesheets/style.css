@@ -58,6 +58,8 @@ h4 {margin:10px 0 5px 0;}
 #logout{margin:10px 0; padding:5px 0; font-size:12px; color:#888;}
 #logout a{color:#FFF; padding:5px; background:#888; border-radius:3px;}
 #logout a:hover{background:#AAA;}
+#share #facebook_like {display:inline;float:left; width:auto;}
+#share #twitter_follow {display:inline;float:left; width:auto;}
 #wrapper{width:100%;}
 #wrapper.content{border-bottom:1px solid #DEF;}
 #wrapper.footer{background:#333;border-top:1px solid #333;}

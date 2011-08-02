@@ -29,15 +29,18 @@
               <%= link_to "This week", root_path %>
             </li>
             <li>
-              <%= link_to "Twitter", "http://twitter.com/wednesdayworlds" %>
-            </li>
-            <li>
               <%= link_to "Google Group", "http://groups.google.com/group/wednesdayworlds" %>
             </li>
           </ul>
         </div>
-        <div class="clear"></div>
-        <small>&copy; 2010-2011 Andrew Olson</small>
+        <div class="clear">
+          <div class="left width_45">
+            <%= render :partial => 'common/copyright' %>
+          </div>
+          <div class="right width_45">
+            <%= render :partial => 'common/share' %>
+          </div>
+        </div>
       </div>
     </div>
 
