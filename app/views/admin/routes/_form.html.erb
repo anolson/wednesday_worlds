@@ -21,7 +21,7 @@
         <%= occurrence.select :recurrence_type, [['Weekly', 'weekly'], ['Bi-Weekly', 'bi-weekly']] %><br />
 
         <%= occurrence.label :recurrence_ends_at, 'Recurrence end' %>
-        <%= occurrence.datetime_select :recurrence_ends_at %><br />            
+        <%= occurrence.date_select :recurrence_ends_at %><br />
       </div>
 
     <% end %>

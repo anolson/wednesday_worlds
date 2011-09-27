@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110719151054) do
+ActiveRecord::Schema.define(:version => 20110927181524) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20110719151054) do
   create_table "occurrences", :force => true do |t|
     t.boolean  "recurs"
     t.string   "recurrence_type"
-    t.datetime "recurrence_ends_at"
+    t.date     "recurrence_ends_at"
     t.datetime "begins_at"
     t.integer  "route_id"
     t.datetime "created_at"
