@@ -10,7 +10,7 @@
   
   <%= f.fields_for :occurrence do |occurrence| %>
     <%= occurrence.label :date, 'Begin date' %>
-    <%= occurrence.datetime_select :begins_at %><br />
+    <%= occurrence.datetime_select :begins_at, :minute_step => 15 %><br />
     
     <%= field_set_tag 'Recurrence' do %>
       <%= occurrence.label :recurs, 'Recurs' %>
