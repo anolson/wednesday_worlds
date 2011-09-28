@@ -1,5 +1,6 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+//= require prototype
+//= require_self
+//= require_tree .
 
 document.observe("dom:loaded", function() {
   $('route_occurrence_attributes_recurs').observe('change', toggleRecurrenceDetails);
@@ -15,5 +16,3 @@ function toggleRecurrenceDetails() {
     $('recurrence_details').hide();
   }
 }
-
-

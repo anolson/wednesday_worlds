@@ -1,3 +1,7 @@
+/*
+*= require_self
+*= require_tree .
+*/
 body{font-family:"Lucida Grande";background:#333; color: #333;margin:0;padding:0;}
 
 a{color:#39F;text-decoration:none;}
@@ -63,4 +67,3 @@ h4 {margin:10px 0 5px 0;}
 #wrapper{width:100%;}
 #wrapper.content{border-bottom:1px solid #DEF;}
 #wrapper.footer{background:#333;border-top:1px solid #333;}
-
