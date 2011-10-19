@@ -1,7 +1,3 @@
-require "#{Rails.root}/app/helpers/application_helper"
-
-require 'twitter'
-
 class TwitterRideNotifier
   include ApplicationHelper
   

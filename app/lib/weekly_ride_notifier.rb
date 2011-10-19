@@ -1,5 +1,3 @@
-require 'twitter_ride_notifier'
-
 class WeeklyRideNotifier 
   def self.send_weekly_ride_notification
     ride = Ride.find_by_currently_active(true)
