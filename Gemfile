@@ -16,8 +16,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'memcache-client'
-  gem 'memcached', "0.19.7"
 end
 
 gem 'oauth', '~> 0.4.5'
