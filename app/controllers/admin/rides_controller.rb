@@ -22,7 +22,7 @@ class Admin::RidesController < Admin::AdminController
   end
   
   def update
-    reset_currently_active_url
+    reset_currently_active_ride
     
     @ride = Ride.find(params[:id])
     
