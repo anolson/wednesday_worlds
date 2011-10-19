@@ -1,7 +1,8 @@
       <div class="details">
         <div class="description"><%= route.description %></div>  
-        <div id="dateline"></div>
+        
         <% if(route.occurrence.occurs_later?) %>
+          <div id="dateline"></div>
           <script type="text/javascript" charset="utf-8">
             var route_dates = new Array();
             var highlight_date = "<%= format_date(route.occurrence.next_date) %>";
