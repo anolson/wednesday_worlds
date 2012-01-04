@@ -32,7 +32,6 @@ GEM
     addressable (2.2.6)
     arel (2.2.1)
     builder (3.0.0)
-    clockwork (0.3.1)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -133,7 +132,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  clockwork
   coffee-rails (~> 3.1.0)
   oauth (~> 0.4.5)
   pg

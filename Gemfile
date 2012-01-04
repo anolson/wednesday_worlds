@@ -21,4 +21,3 @@ end
 gem 'oauth', '~> 0.4.5'
 gem 'twitter', '~> 1.6.0'
 gem 'thin'
-gem 'clockwork'
