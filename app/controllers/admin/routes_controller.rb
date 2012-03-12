@@ -8,9 +8,9 @@ class Admin::RoutesController < Admin::AdminController
   end
   
   def create
-    @route = Route.new(params[:route])
+    # @route = Route.new(params[:route])
     
-    if(@route.save)
+    if(@route = @ride.routes.create(params[:route]))
       redirect_to admin_ride_routes_url(@ride)
     else
       render :action => :new
