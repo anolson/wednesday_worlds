@@ -4,7 +4,7 @@ class WeeklyRideNotifier
     
     if(ride && ride.this_weeks_route)
       #send the weekly ride tweet
-      # twitter_ride_notifier = TwitterRideNotifier.new
+      twitter_ride_notifier = TwitterRideNotifier.new
       twitter_ride_notifier.send_notification(ride)
       
       #send the weekly ride e-mail
