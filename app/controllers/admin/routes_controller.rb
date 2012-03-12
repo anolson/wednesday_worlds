@@ -11,7 +11,7 @@ class Admin::RoutesController < Admin::AdminController
     @route = Route.new(params[:route])
     
     if(@route.save)
-      redirect_to redirect_to admin_ride_routes_url(@ride)
+      redirect_to admin_ride_routes_url(@ride)
     else
       render :action => :new
     end
