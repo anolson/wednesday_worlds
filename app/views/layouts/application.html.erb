@@ -9,11 +9,13 @@
 </head>
 <body>
 
-  <div id="wrapper" class="content">
-    <div id="content">
-      <div class="container">
-        <%= yield %>
-      </div>
+  <div id="content" class="wrapper copy">
+    <div id="title">
+      <h2><%= content_for :page_title %></h2>
+    </div>
+
+    <div class="container">
+      <%= yield %>
     </div>
   </div>
 

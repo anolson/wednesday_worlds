@@ -1,8 +1,8 @@
 <% if(@ride.nil? || @ride.this_weeks_route.nil?) %>
-<h2>There aren't any current rides planned.</h2>
-<h1>No ride this week.</h1>
+  <% page_title "There are no current rides planned." %>
+  <h1>No ride this week.</h1>
 <% else  %>
-  <h2><%= @ride.name %></h2>
+  <% page_title @ride.name %>
   <h1>
     <%= @ride.location %> 
     <%=format_time(@ride.this_weeks_route.occurrence.begins_at) %>
