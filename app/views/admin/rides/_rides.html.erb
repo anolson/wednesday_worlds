@@ -1,4 +1,4 @@
-<div class="edit"> <%= link_to "Create new ride", new_admin_ride_path %> </div>
+<%= edit_link "Create new ride", new_admin_ride_path %>
 
 <% if @rides.empty? %>
   <p class="center">Looks like there aren't any rides!</p>

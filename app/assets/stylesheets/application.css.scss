@@ -2,72 +2,6 @@
 *= require_self
 *= require_tree .
 */
-/*body{font-family:"Lucida Grande";background:#333; color: #333;margin:0;padding:0;}
-
-a{color:#39F;text-decoration:none;}
-li{padding-bottom:4px;}
-
-select, textarea{margin:5px 0 10px 0;}
-input{font-size:16px; padding:5px; margin:5px 0 10px 0;}
-input[type="submit"]{font-size:12px;}
-input[type="checkbox"]{vertical-align:middle;}
-label{display:block; font-weight:bold;}
-
-table{border-collapse:collapse; width:100%; font-size:12px; text-align:left;}
-td{border:1px solid #CCC; border-left:0; border-right:0;}
-
-h4 {margin:10px 0 5px 0;}
-
-.back_to{font-size:12px;}
-.big {font-size:20px; line-height:16px; vertical-align:top;}
-.box{border:3px solid #BBB; background-color:#FFF; padding:10px;}
-.cancel{font-size:12px; margin:2px; color:#B00;}
-.center{text-align:center;}
-.clear{clear:both;}
-.container{width:600px;margin:0px auto; padding-bottom:10px;}
-.copy{font-family:"Helvetica Neue"; font-size:14px;}
-.description {padding-bottom:50px;}
-.edit{font-size:12px; margin:-10px -10px 10px -10px; padding:10px; background:#EEE; text-align:right;}
-.left{float:left;}
-.light{color:#AAA;}
-.lighter{color:#CCC;}
-.map {font-size:12px;}
-.new{font-size:12px; margin:15px 10px;}
-.ride h3 {padding:0 5px;}
-.right{float:right;}
-.route {font-size:13px; margin:10px 0 20px 0; padding:0 5px;}
-.route .details {border-top:1px dotted #BBB; margin-top:5px; padding-top:10px; font-size:14px;}
-.route .title {font-size:16px; margin-bottom:2px;}
-.route .description {margin-bottom:10px;}
-.route .location {margin:5px 0;}
-.route .date {margin:5px 0;}
-.route .all_dates {font-size:12px;}
-.route .all_dates table {border: 1px solid #BBB; border-collapse:collapse;}
-.text_left{text-align:left;}
-.text_right{text-align:right;}
-.video {font-size:12px;}
-.video a {color:#999;}
-.video iframe {border:3px solid #BBB;}
-.width_45{width:45%;padding:5px;}
-.admin #content{min-height:400px;background:#F5F5F5;}
-#content{min-height:400px;background:#9DF;background:-moz-linear-gradient(0% 85% 90deg,#9DF,#DEF);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#DEF),to(#9DF));}
-#content h1{font-size:132px;margin:0;padding:0;font-family:"Times";color:#333;}
-#content h2{font-size:22px;margin:0;padding:10px 0;color:#036;font-family:"Arial";}
-#content .route_link{text-align:right;}
-#dateline{text-align: center; overflow:auto; position:relative; border:1px solid #BBB; padding:25px 0 10px 0;}
-#footer{padding-top:20px;color:#DDD;font-size:12px;background:#555;background:-moz-linear-gradient(100% 85% 90deg,#333,#555);background:-webkit-gradient(linear,0% 0%,0% 85%,from(#555),to(#333));}
-#footer h5{color:#FFF;border-bottom:1px solid #FFF;padding-bottom:5px;}
-#footer ul{padding:0;}
-#footer li{list-style-type:none; padding-bottom:4px;}
-#logout{margin:10px 0; padding:5px 0; font-size:12px; color:#888;}
-#logout a{color:#FFF; padding:5px; background:#888; border-radius:3px;}
-#logout a:hover{background:#AAA;}
-#share #facebook_like {display:inline;float:left; width:auto;}
-#share #twitter_follow {display:inline;float:left; width:auto;}
-#wrapper{width:100%;}
-#wrapper.content{border-bottom:1px solid #DEF;}
-#wrapper.footer{background:#333;border-top:1px solid #333;}*/
-
 
 $black: #333;
 $grey: #BBB;
@@ -76,6 +10,10 @@ $white: #FFF;
 
 $page_width: 600px;
 
+html, body {
+  height: 100%;
+  margin:0; padding:0;
+}
 
 html {
 	background: url(/assets/background.jpg) no-repeat center center fixed;
@@ -83,33 +21,27 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	margin: 0;
-	padding: 0;
 }
 
 body {
   color: $black;
-  font-family:"HelveticaNeueCondensed", Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family:Helvetica, sans-serif;
   font-size:16px;
 }
 
-a{color:#39F;text-decoration:none;}
-
+a {
+  color:#69F;text-decoration:none;
+}
 
 footer {
-  position:absolute;
-  bottom:0;
+  bottom: 0;
+  position: absolute;
   width:100%;
   height:60px;   /* Height of the footer */
   background:$black;
   border-top:1px solid #333;
   color:$light_grey;
   font-size:12px;
-
-  a:hover { text-decoration: underline; }
-
   
   .container {
     width:$page_width;
@@ -132,7 +64,13 @@ footer {
   }
 }
 
+#main {
+  min-height: 100%;
+  position: relative;
+}
+
 #content {
+  padding: 60px 0 120px 0;
   color:$black;
   
   h3 {
@@ -142,16 +80,18 @@ footer {
   #title {
     border-radius:10px 10px 0 0;
     background:$black;
+    border-bottom: 1px solid #39F;
     h2 {
       margin: 0;
       padding:15px;
       color: $light_grey;
       line-height:18px;
+      font-weight: normal;
     }  
   }
   .container {
     background: $light_grey;
-    padding:10px 20px;
+    padding:10px 15px;
     border-radius:0 0 10px 10px;
     h1 {     
       font-family:"Times";
@@ -174,13 +114,23 @@ footer {
       font-size:14px; 
       margin-bottom:20px; 
       
-      #dateline{text-align: center; overflow:auto; position:relative; border:1px solid #BBB; padding:25px 0 10px 0;}
+      #dateline {
+        text-align: center; 
+        overflow:auto; 
+        position:relative; 
+        border:1px solid #BBB; 
+        padding:25px 0 10px 0;
+      }
       
-      
-      .all_dates {font-size:12px;}
-      
-      .all_dates table {border: 1px solid #BBB; border-collapse:collapse;}
-      
+      .all_dates {
+        font-size:12px;
+        
+        table {
+          border: 1px solid #BBB;
+          border-collapse:collapse;
+        }
+      }
+  
       .description {
         margin-bottom:10px;
       }
@@ -202,25 +152,37 @@ footer {
   }
 }
 
-.back_to{font-size:12px;}
-.big {font-size:20px; line-height:16px; vertical-align:top;}
-
-.cancel{font-size:12px; margin:2px; color:#B00;}
-
-.copy {
-  font-family:"HelveticaNeueCondensed", sans-serif;
+.back_to {
+  font-size:12px;
 }
 
-.clear {clear:both;}
+.clear {
+  clear:both;
+}
 
-.left {float:left;}
-.light{color:#AAA;}
-.lighter{color:#CCC;}
-.right {float:right;}
+.left {
+  float:left;
+}
 
+.light {
+  color:#AAA;
+}
 
-.map {font-size:12px;}
-.new{font-size:12px; margin:15px 10px;}
+.lighter {
+  color:#CCC;
+}
+
+.map {
+  font-size:12px;
+}
+
+.new{
+  font-size:12px; margin:15px 10px;
+}
+
+.right {
+  float:right;
+}
 
 .text-center {
   text-align:center;
@@ -231,7 +193,6 @@ footer {
 }
 
 .wrapper {
-  margin:60px auto;
+  margin:0 auto;
   width:$page_width;
 }
-

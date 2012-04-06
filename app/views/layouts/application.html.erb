@@ -8,18 +8,20 @@
   <%= render :partial => 'common/analytics' %>
 </head>
 <body>
+  <div id="main">
+    <div class="wrapper">
+      <div id="content" class="copy">
+        <div id="title">
+          <h2><%= content_for :page_title %></h2>
+        </div>
 
-  <div id="content" class="wrapper copy">
-    <div id="title">
-      <h2><%= content_for :page_title %></h2>
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>  
     </div>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= render :partial => 'common/footer' %>    
   </div>
-
-  <%= render :partial => 'common/footer' %>
-
 </body>
 </html>

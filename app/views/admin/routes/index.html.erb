@@ -1,6 +1,4 @@
-<h2 class="left"><%= @ride.name %> - Routes</h2>
+<% page_title "#{@ride.name} - Routes" %>
 
-<div class="clear box">
-  <%= render :partial => 'routes' %> <br/>
-  <%= link_to "Back to rides" , admin_rides_path, :class => "back_to" %>
-</div>
+<%= render :partial => 'routes' %> <br/>
+<%= link_to "Back to rides" , admin_rides_path, :class => "back_to" %>

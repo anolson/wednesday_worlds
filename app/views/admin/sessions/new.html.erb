@@ -1,13 +1,10 @@
-<h2>Administrivia</h2>
+<% page_title "Administrivia" %>
 
-<div class="box copy">
-  <div class="center">
-    <p class="center">Sign in with Twitter to manage the site, Yo!</p>
-    <%= form_tag('/admin/session') do %>
-      <%= image_submit_tag("sign-in-with-twitter.png") %>
-    <% end %>    
-    
-    <p><%= flash[:alert] %></p>
-    
-  </div>
+<div class="text-center">
+  <p>Sign in with Twitter to manage the site, Yo!</p>
+  <%= form_tag('/admin/session') do %>
+    <%= image_submit_tag("sign-in-with-twitter.png") %>
+  <% end %>    
+  
+  <p><%= flash[:alert] %></p>  
 </div>

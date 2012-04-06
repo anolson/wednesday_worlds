@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="admin">
 <head>
   <title>WednesdayWorlds</title>
   <%= stylesheet_link_tag :application %>
@@ -8,17 +8,22 @@
   <%= render :partial => 'common/analytics' %>
 </head>
 <body class="admin">
+  <div id="main">
+    <div class="wrapper">
+      <%= render :partial => 'admin/common/logout' %>
+      <div id="content" class="copy">
+        <div id="title">
+          <h2 class="left"><%= content_for :page_title %></h2>
+          <div class="edit"> <%= content_for :edit_link %> </div>
+          <div class="clear"></div>
+        </div>
 
-  <div id="wrapper" class="content">
-    <div id="content">
-      <div class="container">
-        <%= render :partial => 'admin/common/logout' %>
-        <%= yield %>
+        <div class="container">
+          <%= yield %>
+        </div>
       </div>
     </div>
+    <%= render :partial => 'common/footer' %>
   </div>
-
-  <%= render :partial => 'common/footer' %>
-
 </body>
 </html>
