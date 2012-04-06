@@ -134,6 +134,11 @@ footer {
 
 #content {
   color:$black;
+  
+  h3 {
+    margin: 10px 0;
+  }
+  
   #title {
     border-radius:10px 10px 0 0;
     background:$black;
@@ -164,16 +169,58 @@ footer {
         }
       }
     }
+    
+    .route {
+      font-size:14px; 
+      margin-bottom:20px; 
+      
+      #dateline{text-align: center; overflow:auto; position:relative; border:1px solid #BBB; padding:25px 0 10px 0;}
+      
+      
+      .all_dates {font-size:12px;}
+      
+      .all_dates table {border: 1px solid #BBB; border-collapse:collapse;}
+      
+      .description {
+        margin-bottom:10px;
+      }
+      
+      .details {
+        border-top:1px dotted #BBB; 
+        margin-top:5px; padding-top:10px; 
+      }
+      
+      .location, .date {
+        margin-top:5px;
+      }
+      
+      .title {
+        font-size:15px; 
+        margin-bottom:2px;
+      }  
+    }
   }
 }
+
+.back_to{font-size:12px;}
+.big {font-size:20px; line-height:16px; vertical-align:top;}
+
+.cancel{font-size:12px; margin:2px; color:#B00;}
 
 .copy {
   font-family:"HelveticaNeueCondensed", sans-serif;
 }
 
-.left {float:left;}
-.right {float:right;}
 .clear {clear:both;}
+
+.left {float:left;}
+.light{color:#AAA;}
+.lighter{color:#CCC;}
+.right {float:right;}
+
+
+.map {font-size:12px;}
+.new{font-size:12px; margin:15px 10px;}
 
 .text-center {
   text-align:center;
@@ -187,3 +234,4 @@ footer {
   margin:60px auto;
   width:$page_width;
 }
+

@@ -1,5 +1,3 @@
-<h2><%= @route.ride.name %></h2>
+<% page_title @route.ride.name %>
 
-<div class="box">
-  <%= render :partial => 'route', :locals => {:route => @route, :display_details => true} %>
-</div>
+<%= render :partial => 'route', :locals => {:route => @route, :display_details => true} %>
