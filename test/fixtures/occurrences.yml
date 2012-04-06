@@ -1,9 +1,9 @@
 weekly_current:
  id: 1
- recurrence_ends_at: <%= Date.today.end_of_month %>
+ recurrence_ends_at: <%= Date.today.end_of_month + 1 %>
  recurrence_type: weekly
  recurs: true
- begins_at: <%= Date.today.beginning_of_month %>
+ begins_at: <%= Date.today.beginning_of_month + 1 %>
  route_id: 1
 
 weekly: 

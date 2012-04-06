@@ -8,6 +8,6 @@ class RideMailer < ActionMailer::Base
     @ride = ride
     
     mail(:to => "wednesdayworlds@googlegroups.com",
-         :subject => "WednesdayWorlds - #{format_date(@ride.this_weeks_route.occurrence.this_weeks_date)}")
+         :subject => "WednesdayWorlds - #{format_date(@ride.routes.this_week.occurrence.next_date)}")
   end
 end

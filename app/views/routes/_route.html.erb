@@ -10,14 +10,14 @@
     
     <div class="date">
       
-      <% if(route.occurrence.occurs_later?) %>
+      <% if(route.occurrence.later?) %>
         <span><%= format_date(route.occurrence.next_date) %></span> at
         <span><%= format_time(route.occurrence.begins_at) %></span>
       <% end %>
       
-      <% if(route.occurrence.occurs_this_week?) %>
+      <% if(route.occurrence.this_week?) %>
         <small class="light">this week</small>
-      <% elsif(route.occurrence.occurs_next_week?) %>
+      <% elsif(route.occurrence.next_week?) %>
         <small class="light">next week</small>
       <% end%>      
     </div>

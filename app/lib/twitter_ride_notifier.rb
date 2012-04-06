@@ -15,6 +15,6 @@ class TwitterRideNotifier
   end
   
   def ride_tweet(ride)
-    %(#{format_date(ride.this_weeks_route.occurrence.this_weeks_date)}. #{ride.location}. #{format_time(ride.this_weeks_route.occurrence.begins_at)}. #{ride.this_weeks_route.name} #fb.) 
+    %(#{format_date(ride.routes.this_week.occurrence.next_date)}. #{ride.location}. #{format_time(ride.routes.this_week.occurrence.begins_at)}. #{ride.routes.this_weeks.name} #fb.) 
   end
 end

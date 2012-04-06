@@ -5,9 +5,9 @@
   </head>  
   <body>  
     <span><%= @ride.location %></span> <br/>
-    <span><%= format_time(@ride.this_weeks_route.occurrence.begins_at) %></span>
+    <span><%= format_time(@ride.routes.this_week.occurrence.begins_at) %></span>
     <p>
-      The ride this week is <%= link_to @ride.this_weeks_route.name, ride_route_url(@ride, @ride.this_weeks_route, :host => 'wednesdayworlds.org') %>
+      The ride this week is <%= link_to @ride.routes.this_week.name, ride_route_url(@ride, @ride.routes.this_week, :host => 'wednesdayworlds.org') %>
     </p>
     <p>
       <%= url_for "http://wednesdayworlds.org" %>

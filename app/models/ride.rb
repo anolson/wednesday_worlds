@@ -1,11 +1,9 @@
 class Ride < ActiveRecord::Base
-  has_many :routes, :dependent => :destroy
-  
-  def this_weeks_route
-    routes.each do |route| 
-      return route if(route.occurrence.occurs_this_week?)
+  has_many :routes, :dependent => :destroy do 
+    def this_week
+      all.detect do |route| 
+        route.occurrence.this_week?
+      end
     end
-    return nil
-  end
-  
+  end  
 end

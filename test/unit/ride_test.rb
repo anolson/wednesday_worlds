@@ -8,13 +8,13 @@ class RideTest < ActiveSupport::TestCase
   end
   
   test "this weeks route" do
-    ride = Ride.find_by_currently_active(true)
-    assert_equal 'Tabor loop', ride.this_weeks_route.name
+    ride = Ride.find_by_currently_active(true)  
+    assert_equal 'Tabor loop', ride.routes.this_week.name
   end
   
   test "this weeks route expired" do
     ride = Ride.find(3)
-    assert_equal nil, ride.this_weeks_route
+    assert_equal nil, ride.routes.this_week
   end
   
 end
