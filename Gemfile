@@ -14,6 +14,12 @@ group :development do
   gem 'sqlite3'
 end
 
+group :test do
+  gem 'guard-test'
+  gem 'rb-fsevent', :require => false
+  gem 'ruby-prof'
+end
+
 group :production do
   gem 'pg'
 end
