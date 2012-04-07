@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.3'
 
 group :assets do  
-  gem 'sass-rails', " ~> 3.1.0"  
-  gem 'coffee-rails', " ~> 3.1.0"  
-  gem 'uglifier'  
+  gem 'sass-rails', " ~> 3.2.5"  
+  gem 'coffee-rails', " ~> 3.2.2"  
+  gem "uglifier", "~> 1.2.4"
 end  
   
 gem 'prototype-rails'
