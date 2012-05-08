@@ -13,7 +13,7 @@ blacksburg_road_occurrence = Occurrence.create(
   :recurs => true, 
   :recurrence_type => 'bi-weekly', 
   :recurrence_ends_at => '2012-10-03',
-  :begins_at => '2012-04-04 18:00',
+  :begins_at => '2012-05-02 18:00',
   :route => blacksburg_road);
 
 tabor = Route.create(
@@ -26,7 +26,7 @@ tabor_occurrence = Occurrence.create(
   :recurs => true, 
   :recurrence_type => 'bi-weekly', 
   :recurrence_ends_at => '2012-10-10',
-  :begins_at => '2012-04-11 18:00',
+  :begins_at => '2012-05-09 18:00',
   :route => tabor)
   
 Administrator.create(:name => 'Andrew Olson', :twitter_screen_name => 'andrew_olson')
