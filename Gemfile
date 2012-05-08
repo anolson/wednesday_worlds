@@ -8,7 +8,7 @@ group :assets do
   gem "uglifier", "~> 1.2.4"
 end  
   
-gem 'prototype-rails'
+gem 'jquery-rails'
 
 group :development do 
   gem 'sqlite3'
