@@ -9,7 +9,7 @@
 </head>
 <body class="admin">
   <div id="main">
-    <div class="wrapper">
+    <%= page_wrapper do %>
       <%= render :partial => 'admin/common/logout' %>
       <div id="content" class="copy">
         <div id="title">
@@ -22,7 +22,8 @@
           <%= yield %>
         </div>
       </div>
-    </div>
+    <% end %>
+
     <%= render :partial => 'common/footer' %>
   </div>
 </body>
