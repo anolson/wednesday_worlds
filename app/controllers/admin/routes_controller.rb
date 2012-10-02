@@ -5,6 +5,7 @@ class Admin::RoutesController < Admin::AdminController
   
   def new
     @route = Route.new
+    @route.build_occurrence
   end
   
   def create
