@@ -15,15 +15,11 @@ module ApplicationHelper
     content_for :page_title, title
   end
 
-  def login_box
-    content_for :login_box, "login"
-  end
-
   def page_wrapper(&block)
     content_tag :div, :class => page_wrapper_classes, &block
   end
 
   def page_wrapper_classes
-     ['wrapper'] + Array(content_for :login_box)
+    ['wrapper'] + Array(login_box_class)
   end
 end
