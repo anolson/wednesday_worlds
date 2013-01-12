@@ -25,5 +25,5 @@ group :production do
 end
 
 gem 'oauth', '~> 0.4.5'
-gem 'twitter', '~> 1.6.0'
+gem 'twitter'
 gem 'thin'
