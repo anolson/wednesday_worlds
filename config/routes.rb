@@ -11,6 +11,7 @@ WednesdayWorlds::Application.routes.draw do
     
     resources :rides do
       resources :routes
+      resources :notifiers
     end
     match '/' => redirect("/admin/rides")
   end

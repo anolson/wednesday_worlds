@@ -4,4 +4,8 @@ class Notifier < ActiveRecord::Base
   def send_notification
     raise NotImpementedError.new
   end
+
+  def humanize_type
+    type.underscore.humanize
+  end
 end
