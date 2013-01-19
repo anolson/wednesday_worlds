@@ -1,4 +1,4 @@
-module SectionsHelper
+module Admin::SectionsHelper
   def section(title, header_link, partial)
     render 'admin/common/section', section_options(title, header_link, partial)
   end
