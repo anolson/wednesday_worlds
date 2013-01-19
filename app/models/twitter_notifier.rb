@@ -4,7 +4,6 @@ class TwitterNotifier < Notifier
   end
 
   private
-
   def client
     @client ||= Twitter::Client.new
   end

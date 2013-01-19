@@ -38,7 +38,7 @@ class Admin::RoutesController < Admin::AdminController
   end
 
   private
-    def find_ride
-      @ride = Ride.find(params[:ride_id])
-    end
+  def find_ride
+    @ride = Ride.find(params[:ride_id])
+  end
 end

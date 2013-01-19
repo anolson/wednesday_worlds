@@ -46,8 +46,8 @@ class Admin::RidesController < Admin::AdminController
 
 
   private
-    def reset_currently_active_ride
-      Ride.update_all(:currently_active => false)
-    end
+  def reset_currently_active_ride
+    Ride.update_all(:currently_active => false)
+  end
 
 end
