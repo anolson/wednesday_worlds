@@ -4,18 +4,18 @@
 
   <%= f.label :description, 'Description' %>
   <%= f.text_area :description %><br />
-  
+
   <%= f.label :map, 'Map' %>
   <%= f.text_field :map_url %><br />
-  
+
   <%= f.fields_for :occurrence do |occurrence| %>
     <%= occurrence.label :date, 'Begin date' %>
     <%= occurrence.datetime_select :begins_at, :minute_step => 15 %><br />
-    
+
     <%= field_set_tag 'Recurrence' do %>
       <%= occurrence.label :recurs, 'Recurs' %>
       <%= occurrence.select :recurs, [['Yes', true], ['No', false]] %><br />
-    
+
       <div id="recurrence_details">
         <%= occurrence.label :recurrence_type, 'Recurrence type' %>
         <%= occurrence.select :recurrence_type, [['Weekly', 'weekly'], ['Bi-Weekly', 'bi-weekly']] %><br />
@@ -25,11 +25,11 @@
       </div>
 
     <% end %>
-    
+
   <% end %>
   <br/>
-  
+
   <%= f.submit %>
-  <%= link_to 'Cancel', admin_ride_routes_path(@ride), :class => 'cancel' %>
-  
+  <%= link_to 'Cancel', admin_ride_path(@ride), :class => 'cancel' %>
+
 <% end %>

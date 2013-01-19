@@ -1,6 +1,16 @@
 class Admin::NotifiersController < Admin::AdminController
-  def index
-    @ride = Ride.find(params[:ride_id])
-    @notifiers = @ride.notifiers
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end

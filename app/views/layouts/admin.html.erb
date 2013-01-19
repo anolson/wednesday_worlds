@@ -12,15 +12,7 @@
     <%= page_wrapper do %>
       <%= render :partial => 'admin/common/logout' %>
       <div id="content" class="copy">
-        <div id="title">
-          <h2 class="left"><%= content_for :page_title %></h2>
-          <div class="edit"> <%= content_for :edit_link %> </div>
-          <div class="clear"></div>
-        </div>
-
-        <div class="container">
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
     <% end %>
 

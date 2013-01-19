@@ -1,29 +1,29 @@
   <div class="route">
-    <div class="title">
-      <big><%= link_to route.name, ride_route_path(route.ride, route)%></big> 
+    <div class="name">
+      <big><%= link_to route.name, ride_route_path(route.ride, route)%></big>
       <small><%= link_to "map", route.map_url %></small>
     </div>
 
     <div class="location">
-      <span class="light">Location:</span> <span><%= route.ride.location %></span>  
+      <span class="light">Location:</span> <span><%= route.ride.location %></span>
     </div>
-    
+
     <div class="date">
-      
+
       <% if(route.occurrence.later?) %>
         <span><%= format_date(route.occurrence.next_date) %></span> at
         <span><%= format_time(route.occurrence.begins_at) %></span>
       <% end %>
-      
+
       <% if(route.occurrence.this_week?) %>
         <small class="light">this week</small>
       <% elsif(route.occurrence.next_week?) %>
         <small class="light">next week</small>
-      <% end%>      
+      <% end%>
     </div>
 
     <% if(display_details) %>
       <%= render :partial => 'details', :locals => {:route => route} %>
     <% end %>
-          
+
   </div>

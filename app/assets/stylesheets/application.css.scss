@@ -16,11 +16,11 @@ html, body {
 }
 
 html {
-	background: url(/assets/background.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  background: url(/assets/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -42,11 +42,11 @@ footer {
   border-top:1px solid #555;
   color:$light_grey;
   font-size:12px;
-  
+
   .container {
     width:$page_width;
     margin:14px auto;
-        
+
     ul {
       padding:0;
       margin:0;
@@ -57,7 +57,7 @@ footer {
         display:inline;
       }
     }
-    
+
     #share {
       margin-top:10px;
     }
@@ -70,84 +70,88 @@ footer {
 }
 
 #content {
-  padding: 60px 0 120px 0;
-  color:$black;
-  
-  h3 {
-    margin: 10px 0;
-  }
-  
-  #title {
-    border-radius:10px 10px 0 0;
-    background:$black;
-    border-bottom: 5px solid #555;
-    h2 {
-      margin: 0;
-      padding:15px;
-      color: $light_grey;
-      line-height:18px;
-      font-weight: normal;
-    }  
-  }
-  .container {
-    background: $light_grey;
-    padding:10px 15px;
-    border-radius:0 0 10px 10px;
-    h1 {     
-      font-family:"Times";
-      font-size:132px;
-      margin:0;
-      padding-bottom:10px;
+  padding-bottom: 80px;
+  section  {
+    padding: 60px 0 40px 0;
+
+    color:$black;
+
+    h3 {
+      margin: 10px 0;
     }
-    
-    #video {
-      ul {
-        padding-left:10px;
-        list-style-type:none;
-        li {
-          margin:5px;
-        }
+
+    .title {
+      border-radius:10px 10px 0 0;
+      background:$black;
+      border-bottom: 5px solid #555;
+      h2 {
+        margin: 0;
+        padding:15px;
+        color: $light_grey;
+        line-height:18px;
+        font-weight: normal;
       }
     }
-    
-    .route {
-      font-size:14px; 
-      margin-bottom:20px; 
-      
-      #dateline {
-        text-align: center; 
-        overflow:auto; 
-        position:relative; 
-        border:1px solid #BBB; 
-        padding:25px 0 10px 0;
+    .container {
+      background: $light_grey;
+      padding:10px 15px;
+      border-radius:0 0 10px 10px;
+      h1 {
+        font-family:"Times";
+        font-size:132px;
+        margin:0;
+        padding-bottom:10px;
       }
-      
-      .all_dates {
-        font-size:12px;
-        
-        table {
-          border: 1px solid #BBB;
-          border-collapse:collapse;
+
+      #video {
+        ul {
+          padding-left:10px;
+          list-style-type:none;
+          li {
+            margin:5px;
+          }
         }
       }
-  
-      .description {
-        margin-bottom:10px;
+
+      .route {
+        font-size:14px;
+        margin-bottom:20px;
+
+        #dateline {
+          text-align: center;
+          overflow:auto;
+          position:relative;
+          border:1px solid #BBB;
+          padding:25px 0 10px 0;
+        }
+
+        .all_dates {
+          font-size:12px;
+
+          table {
+            border: 1px solid #BBB;
+            border-collapse:collapse;
+          }
+        }
+
+        .description {
+          margin-bottom:10px;
+        }
+
+        .details {
+          border-top:1px dotted #BBB;
+          margin-top:5px; padding-top:10px;
+        }
+
+        .location, .date {
+          margin-top:5px;
+        }
+
+        .name {
+          font-size:15px;
+          margin-bottom:2px;
+        }
       }
-      
-      .details {
-        border-top:1px dotted #BBB; 
-        margin-top:5px; padding-top:10px; 
-      }
-      
-      .location, .date {
-        margin-top:5px;
-      }
-      
-      .title {
-        font-size:15px; 
-        margin-bottom:2px;
-      }  
     }
   }
 }

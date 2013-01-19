@@ -4,15 +4,15 @@ html.admin {
 
 .admin {
   input {
-    font-size:16px; 
-    padding:5px; 
+    font-size:16px;
+    padding:5px;
     margin:5px 0 10px 0;
   }
-  
+
   input[type="submit"] {
     font-size:12px;
   }
-  
+
   input[type="checkbox"] {
     vertical-align:middle;
   }
@@ -26,55 +26,57 @@ html.admin {
   }
 
   table {
-    border-collapse:collapse; 
-    width:100%; 
-    font-size:12px; 
+    border-collapse:collapse;
+    width:100%;
+    font-size:12px;
     text-align:left;
   }
-  
+
   td {
-    border:1px solid #CCC; 
-    border-left:0; 
+    border:1px solid #CCC;
+    border-left:0;
     border-right:0;
   }
-  
+
   .cancel{
     font-size:12px;
     margin:2px;
     color:#B00;
   }
-    
+
   .edit{
-    font-size:12px; 
-    padding:17px 15px; 
+    font-size:12px;
+    padding:17px 15px;
     text-align:right;
   }
 
   .login {
     padding-top:24px;
   }
-  
+
   #content {
-    padding-top:0px
+    section {
+      padding-top:0px
+    }
   }
-  
+
   #logout {
-    margin:20px 0 10px 0; 
-    padding:5px 0; 
-    font-size:12px; 
+    margin:20px 0 10px 0;
+    padding:5px 0;
+    font-size:12px;
     color:#888;
 
     a {
-      color:#FFF; 
-      padding:5px; 
-      background:#888; 
+      color:#FFF;
+      padding:5px;
+      background:#888;
       border-radius:3px;
     }
-    
+
     a:hover {
       background:#AAA;
     }
-  }  
+  }
 }
 
 
