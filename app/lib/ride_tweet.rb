@@ -6,7 +6,7 @@ class RideTweet
   end
 
   def to_s
-    %(#{date}. #{location}. #{time}. #{route} #fb.) 
+    %(#{date}. #{location}. #{time}. #{route}.)
   end
 
   def date
