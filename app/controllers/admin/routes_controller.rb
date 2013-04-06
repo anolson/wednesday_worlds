@@ -7,10 +7,8 @@ class Admin::RoutesController < Admin::AdminController
   end
 
   def create
-    # @route = Route.new(params[:route])
-
     if(@route = @ride.routes.create(params[:route]))
-      redirect_to admin_ride_routes_url(@ride)
+      redirect_to admin_ride_url(@ride)
     else
       render :action => :new
     end
@@ -24,17 +22,15 @@ class Admin::RoutesController < Admin::AdminController
     @route = Route.find(params[:id])
 
     if(@route.update_attributes(params[:route]))
-      redirect_to admin_ride_routes_url(@ride)
+      redirect_to admin_ride_url(@ride)
     else
       render :action => :edit
     end
   end
 
   def destroy
-     @route = Route.find(params[:id])
-     @route.destroy
-
-     redirect_to admin_ride_routes_url(@ride)
+    Route.destroy(params[:id])
+    redirect_to admin_ride_url(@ride)
   end
 
   private
