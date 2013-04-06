@@ -3,6 +3,15 @@ html.admin {
 }
 
 .admin {
+
+  .field_with_errors {
+    display: inline;
+
+    label {
+      color: #C00;
+    }
+  }
+
   input {
     font-size:16px;
     padding:5px;
