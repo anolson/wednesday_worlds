@@ -1,0 +1,13 @@
+<%= form_for [:admin, @ride, @notifier.becomes(Notifier)] do |f| %>
+  <%= f.label :recipient %>
+  <%= f.text_field :recipient %><br />
+
+  <%= f.label :type %>
+  <%= f.select :type, Notifier::AVAILABLE_TYPES %><br />
+
+  <%= f.label :enabled %>
+  <%= f.select :enabled, [['Yes', true], ['No', false]] %><br />
+
+  <%= f.submit %>
+  <%= link_to 'Cancel', admin_ride_path(@ride), :class => 'cancel' %>
+<% end %>
