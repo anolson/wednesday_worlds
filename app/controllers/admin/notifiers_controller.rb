@@ -1,13 +1,12 @@
-class Admin::RoutesController < Admin::AdminController
+class Admin::NotifiersController < Admin::AdminController
   before_filter :find_ride
 
   def new
-    @route = Route.new
-    @route.build_occurrence
+    @notifier = Notifier.new
   end
 
   def create
-    if(@route = @ride.routes.create(params[:route]))
+    if(@notifier = @ride.notifiers.create(params[:notifier]))
       redirect_to admin_ride_url(@ride)
     else
       render :action => :new
@@ -15,13 +14,13 @@ class Admin::RoutesController < Admin::AdminController
   end
 
   def edit
-    @route = Route.find(params[:id])
+    @notifier = Notifier.find(params[:id])
   end
 
   def update
-    @route = Route.find(params[:id])
+    @notifier = Notifier.find(params[:id])
 
-    if(@route.update_attributes(params[:route]))
+    if(@notifier.update_attributes(params[:notifier]))
       redirect_to admin_ride_url(@ride)
     else
       render :action => :edit
@@ -29,11 +28,12 @@ class Admin::RoutesController < Admin::AdminController
   end
 
   def destroy
-    Route.destroy(params[:id])
+    Notifier.destroy(params[:id])
     redirect_to admin_ride_url(@ride)
   end
 
   private
+
   def find_ride
     @ride = Ride.find(params[:ride_id])
   end

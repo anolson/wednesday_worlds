@@ -9,19 +9,21 @@
 </head>
 <body>
   <div id="main">
-    <div class="wrapper">
+    <%= page_wrapper do %>
       <div id="content" class="copy">
-        <div id="title">
-          <h2><%= content_for :page_title %></h2>
-        </div>
+        <section>
+          <div class="title">
+            <h2><%= content_for :page_title %></h2>
+          </div>
 
-        <div class="container">
-          <%= yield %>
-        </div>
-      </div>  
-    </div>
+          <div class="container">
+            <%= yield %>
+          </div>
+        </section>
+      </div>
+    <% end %>
 
-    <%= render :partial => 'common/footer' %>    
+    <%= render :partial => 'common/footer' %>
   </div>
 </body>
 </html>

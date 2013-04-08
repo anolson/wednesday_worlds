@@ -1,24 +1,24 @@
 class Occurrence < ActiveRecord::Base
   belongs_to :route
-  
+
   def self.this_week
     today = Date.today
     (today.beginning_of_week..today.end_of_week)
   end
-  
+
   def self.next_week
     one_week_from_today = 1.week.since(Date.today)
     (one_week_from_today.beginning_of_week..one_week_from_today.end_of_week)
   end
-    
+
   def dates
     @dates ||= build_dates
   end
-  
+
   def next_date
     this_week || next_week || later
   end
-  
+
   def this_week
     detect_date { |date| occurs_this_week?(date) }
   end
@@ -28,9 +28,9 @@ class Occurrence < ActiveRecord::Base
   end
 
   def later
-    detect_date { |date| occurs_later?(date) } 
+    detect_date { |date| occurs_later?(date) }
   end
-  
+
   def this_week?
     this_week && true || false
   end
@@ -42,11 +42,10 @@ class Occurrence < ActiveRecord::Base
   def later?
     later && true || false
   end
-    
+
   private
-   
   def build_dates
-    dates = [self.begins_at]    
+    dates = [self.begins_at]
     if(recurs)
       while((dates.last <=> self.recurrence_ends_at) < 0)
         dates << next_occurrence(dates.last)
@@ -62,13 +61,13 @@ class Occurrence < ActiveRecord::Base
       2.week.since(date)
     end
   end
-  
+
   def detect_date(&block)
     dates.detect do |date|
       yield date
-    end  
+    end
   end
-  
+
   def occurs_this_week?(date)
     occurs_during_week?(date, Occurrence.this_week)
   end
@@ -83,6 +82,6 @@ class Occurrence < ActiveRecord::Base
 
   def occurs_during_week?(date, week)
     ((date >= week.begin) && (date <= week.end))
-  end  
+  end
 end
 

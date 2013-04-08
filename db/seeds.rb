@@ -30,7 +30,7 @@ tabor_occurrence = Occurrence.create(
   :route => tabor)
   
 Administrator.create(:name => 'Andrew Olson', :twitter_screen_name => 'andrew_olson')
-  
+EmailNotifier.create(:recipient => 'anolson@gmail.com', :ride => ww)
 # 
 # andrew_gold = Ride.create(
 #   :name => 'Andrew Gold', 
