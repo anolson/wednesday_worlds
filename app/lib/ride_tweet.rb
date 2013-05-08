@@ -1,4 +1,5 @@
 class RideTweet
+  include ApplicationHelper
   attr_accessor :ride
 
   def initialize(ride)
