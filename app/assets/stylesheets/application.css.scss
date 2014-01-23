@@ -1,3 +1,137 @@
 /*
 *= require_self
 */
+
+body {
+  padding:0;
+  margin:0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  color: #9CF;
+  text-decoration: none;
+}
+
+header, section, footer {
+  padding: 100px;
+}
+
+footer {
+  border-top: 5px solid #DDD;
+  padding: 25px 100px;
+  background: #333;
+  color: #EFEFEF;
+}
+
+header {
+  background-image: image-url("header.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  padding-left:0;
+}
+
+
+ul.block li  {
+  padding:10px 0;
+}
+
+ul.block li span, ul.block li a {
+  background: #222;
+  color:#EFEFEF;
+  padding:5px;
+}
+
+#this-week span {
+  padding: 5px;
+  display: inline-block;
+}
+
+#this-week .title span {
+  background-color: #EEE;
+  color: #222;
+}
+
+#this-week .time-and-location span {
+  background-color: #222;
+  color: #EEE;
+}
+
+#this-week .route span {
+  background-color: #222;
+  color: #BBB;
+  font-style: italic;
+}
+
+#this-week h1, #this-week h2, #this-week h4 {
+  margin:10px 0;
+}
+
+
+#this-week h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 65px;
+}
+
+
+#rides {
+  color: #333;
+  border-top: 5px solid #DDD;
+  background-image: image-url("rides.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+#guidelines {
+  border-top: 5px solid #DDD;
+}
+
+
+#guidelines li  {
+  padding:10px 0;
+}
+
+
+#guidelines li span {
+  background: #222;
+  color:#EFEFEF;
+  padding:5px;
+}
+
+
+#about {
+  border-top: 5px solid #DDD;
+  background: #333;
+  color: #EFEFEF;
+}
+
+#get-in-touch {
+  border-top: 5px solid #DDD;
+  background: #EEE;
+}
+
+#get-in-touch .contribute a {
+  color: #999;
+}
+
+.box {
+  background: #333;
+  color:#eee;
+  width: 45%;
+  padding:10px;
+}
+
+.left { float: left; }
+.right { float: right; }
+.clear {clear:both;}
+.center {text-align: center;}

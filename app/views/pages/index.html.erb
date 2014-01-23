@@ -1,13 +1,5 @@
-<% if(@ride.nil? || @ride.routes.this_week.nil?) %>
-  <% page_title "There are no current rides planned." %>
-  <h1>No ride this week.</h1>
-<% else  %>
-  <% page_title @ride.name %>
-  <h1>
-    <%= @ride.location %> 
-    <%=format_time(@ride.routes.this_week.occurrence.begins_at) %>
-  </h1>     
-  <div class="text-right">
-    The ride this week is <%= link_to @ride.routes.this_week.name, ride_route_path(@ride, @ride.routes.this_week) %>
-  </div>
-<% end %>
+<%= render partial: 'this_week' %>
+<%= render partial: 'about' %>
+<%= render partial: 'rides' %>
+<%= render partial: 'guidelines' %>
+<%= render partial: 'get_in_touch' %>

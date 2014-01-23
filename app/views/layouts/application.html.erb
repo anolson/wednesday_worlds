@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WednesdayWorlds</title>
-  <%= stylesheet_link_tag :application %>
-  <%= csrf_meta_tag %>
-  <%= javascript_include_tag :application %>
-  <%= render :partial => 'common/analytics' %>
-</head>
-<body>
-  <div id="main">
-    <%= page_wrapper do %>
-      <div id="content" class="copy">
-        <section>
-          <div class="title">
-            <h2><%= content_for :page_title %></h2>
-          </div>
+  <head>
+    <title>WednesdayWorlds</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-          <div class="container">
-            <%= yield %>
-          </div>
-        </section>
-      </div>
-    <% end %>
+    <%= stylesheet_link_tag :application %>
+    <%= csrf_meta_tag %>
+    <%= javascript_include_tag :application %>
+    <%= render :partial => 'common/analytics' %>
+  </head>
+  <body>
+    <%= yield %>
 
-    <%= render :partial => 'common/footer' %>
-  </div>
-</body>
+    <footer>
+      &copy; 2010-2014 Andrew Olson
+    </footer>
+  </body>
 </html>
