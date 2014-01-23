@@ -19,8 +19,5 @@ WednesdayWorlds::Application.routes.draw do
   match 'login' => 'admin/sessions#new'
   match 'logout' => 'admin/sessions#destroy'
 
-  match 'guidelines' => 'pages#guidelines'
-  match 'about' => 'pages#about'
-  match 'contribute' => 'pages#contribute'
   root :to => "pages#index"
 end
