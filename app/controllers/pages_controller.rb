@@ -1,5 +1,11 @@
 class PagesController < ApplicationController
   def index
-    @ride = Ride.find_by_currently_active(true)
+    @ride = current_ride
+  end
+
+  private
+
+  def current_ride
+    Ride.active.first
   end
 end
