@@ -133,6 +133,14 @@ ul.block li span, ul.block li a {
   p {
     min-height: 200px;
   }
+
+  h2 {
+    small {
+      color: #AAA;
+      font-size: 18px;
+
+    }
+  }
 }
 
 .left { float: left; }
