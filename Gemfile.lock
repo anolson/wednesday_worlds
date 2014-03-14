@@ -93,6 +93,7 @@ GEM
     rb-fsevent (0.9.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.3.0)
     ruby-prof (0.13.0)
     sass (3.2.13)
     sass-rails (3.2.6)
@@ -136,6 +137,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.16)
   rb-fsevent
+  redcarpet
   ruby-prof
   sass-rails (~> 3.2.6)
   sqlite3

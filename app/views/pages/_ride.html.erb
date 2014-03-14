@@ -8,6 +8,9 @@
       <small class="light">next week</small>
     <% end%>
   </h2>
-  <p><%= ride.description %></p>
-  <%= link_to "View the map for this ride", ride.map_url %>
+  <div class='wrapper'>
+    <%= render_markdown ride.description %>
+  </div>
+
+  <%= link_to "View the map for this ride", ride.map_url, class: 'map' %>
 </div>

@@ -4,6 +4,7 @@ gem 'rails', '3.2.16'
 
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.5'
+gem 'redcarpet'
 gem 'twitter'
 gem 'thin'
 

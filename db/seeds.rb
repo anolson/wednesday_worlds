@@ -3,6 +3,16 @@ ww = Ride.create(
   :location => 'Bollo\'s',
   :currently_active => true)
 
+tabor_copy = <<-BBURG
+Out and back on Blackburg Rd
+
+From Bollo's, we head down Ellet/Cedar Run and across Luster's Gate Rd. We re-group at the intersection of Blacksburg Rd, where the B group is given a head start (~ 1 min).
+
+The first sprint is at Sandy Ridge. We re-group again there and head back in on Blacksburg Rd.
+
+The next sprint is at Dry Run Rd. Finally, we finish at the top of Harding.
+BBURG
+
 blacksburg_road = Route.create(
   :name => 'Blacksburg road',
   :description => 'Out and back on Blacksburg rd.',
@@ -16,9 +26,19 @@ blacksburg_road_occurrence = Occurrence.create(
   :begins_at => '2012-05-02 18:00',
   :route => blacksburg_road);
 
+tabor_copy = <<-TABOR
+Out Tabor Rd, back on Blackburg Rd
+
+From Bollo's, we head out N. Main St to Mt Tabor Rd. We re-group at Slusser's Chapel, where the B group is given a head start (~2-3 mins).
+
+We ride out Mt Tabor Rd and make a right turn onto Sandy Ridge Rd.
+
+The only sprint is at Dry Run Rd.  Finally, we finish at the top of Harding.
+TABOR
+
 tabor = Route.create(
   :name => 'Mt Tabor road',
-  :description => 'Out Mt Tabor Rd, back Blacksburg Rd',
+  :description => tabor_copy,
   :map_url => 'http://bit.ly/bSpQAT',
   :ride => ww)
 

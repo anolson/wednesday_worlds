@@ -1,7 +1,7 @@
 ### For next release
 
 * This week/next week for ride/routes view (done)
-* Routes copy
+* Routes copy (done)
 * Remove unused views
 * Misc css updates
 
