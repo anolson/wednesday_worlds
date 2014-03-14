@@ -1,22 +1,48 @@
-== Wednesday Worlds
+## Wednesday Worlds
 
 This is the Rails 3 web application that runs http://wednesdayworlds.org
 
-=== Download the source
-  
-  git://github.com/anolson/wednesday_worlds.git
-  
-=== Getting Started
-  
-  $ cd wednesday_worlds
-  $ rake
-  $ rails s
+### Download the source
 
-=== License
+```
+$ git clone git://github.com/anolson/wednesday_worlds.git
+```
+
+### Getting Started
+
+```
+$ cd wednesday_worlds
+$ rake
+$ rails s
+```
+
+### Deploy to Heroku
+
+#### Staging
+
+```
+$ git push staging master
+```
+
+From a feature branch:
+
+```
+$ git push staging feature:master
+```
+
+
+#### Production
+
+```
+$ git push heroku master
+```
+
+
+### License
 
 (The MIT License)
 
-Copyright © 2010 Andrew Olson.
+Copyright © 2010-2014 Andrew Olson.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
