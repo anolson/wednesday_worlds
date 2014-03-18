@@ -1,5 +1,0 @@
-<% page_title "Rides" %>
-
-<% @rides.each do |ride| %>
-  <%= render :partial => 'ride', :locals => {:ride => ride, :header => ride.name, :editable => false} %>
-<% end %>

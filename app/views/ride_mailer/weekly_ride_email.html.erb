@@ -1,16 +1,16 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-  <head>  
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"  />  
-  </head>  
-  <body>  
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"  />
+  </head>
+  <body>
     <span><%= @ride.location %></span> <br/>
     <span><%= format_time(@ride.routes.this_week.occurrence.begins_at) %></span>
     <p>
-      The ride this week is <%= link_to @ride.routes.this_week.name, ride_route_url(@ride, @ride.routes.this_week, :host => 'wednesdayworlds.org') %>
+      The ride this week is <%= @ride.routes.this_week.name %>
     </p>
     <p>
       <%= url_for "http://wednesdayworlds.org" %>
     </p>
-  </body> 
-</html> 
+  </body>
+</html>

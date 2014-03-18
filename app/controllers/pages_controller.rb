@@ -1,15 +1,11 @@
 class PagesController < ApplicationController
   def index
-    @ride = Ride.find_by_currently_active(true)
+    @ride = current_ride
   end
 
-  def guidelines
+  private
+
+  def current_ride
+    Ride.active.first
   end
-  
-  def about
-  end
-  
-  def contribute
-  end
-    
 end

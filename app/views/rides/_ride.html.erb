@@ -1,7 +1,0 @@
-    <div class="ride">
-      <h3><%= header %></h3>
-      
-      <% ride.routes.each do |route| %>
-        <%= render :partial => "routes/route", :locals => {:route => route, :display_details => false} %>
-      <% end %>
-    </div>

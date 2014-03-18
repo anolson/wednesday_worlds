@@ -1,4 +1,6 @@
 class Ride < ActiveRecord::Base
+  scope :active, lambda { where(currently_active: true) }
+
   has_many :notifiers
   has_many :routes, :dependent => :destroy do 
     def this_week
