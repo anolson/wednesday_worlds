@@ -4,7 +4,7 @@ ruby '2.2.0'
 gem 'rails', '3.2.17'
 
 gem 'jquery-rails'
-gem 'oauth', '~> 0.4.5'
+gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
 gem 'twitter'
 gem 'thin'
@@ -17,6 +17,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'heroku'
 end
 
 group :test do
