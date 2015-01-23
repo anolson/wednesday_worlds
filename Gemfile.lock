@@ -167,7 +167,7 @@ DEPENDENCIES
   guard-test
   heroku
   jquery-rails
-  oauth (~> 0.4.5)
+  oauth (~> 0.4.7)
   pg
   rails (= 3.2.17)
   rb-fsevent
