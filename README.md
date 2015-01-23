@@ -37,6 +37,13 @@ $ git push staging feature:master
 $ git push heroku master
 ```
 
+### Todo
+
+- [] Add a timeline of all rides
+- [] Move /admin into an engine
+- [] Test::Unit -> RSpec
+- [] Refactor `Occurrence`
+- [] Update to Rails 4.2/Ruby 2.2
 
 ### License
 
