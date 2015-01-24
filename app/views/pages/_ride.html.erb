@@ -5,7 +5,9 @@
     </h2>
 
     <h4>
-      <%= format_date ride.occurrence.next_date %>
+      <% if ride.occurrence.next_date %>
+        <%= format_date ride.occurrence.next_date %>
+      <% end %>
 
       <% if(ride.occurrence.this_week?) %>
         <small>this week</small>
