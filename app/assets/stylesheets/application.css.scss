@@ -128,18 +128,24 @@ ul.block li span, ul.block li a {
   background: #333;
   color:#eee;
   width: 45%;
-  padding:10px;
 
-
-  .wrapper {
-    min-height: 250px;
+  header, div {
+    padding: 10px
   }
 
-  h2 {
-    small {
-      color: #AAA;
-      font-size: 18px;
+  .wrapper {
+    min-height: 300px;
+  }
 
+  header {
+    background: #444;
+
+    h2, h4 {
+      margin: 15px 0;
+      small {
+        color: #AAA;
+        font-size: 18px;
+      }
     }
   }
 }
