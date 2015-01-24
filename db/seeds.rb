@@ -3,7 +3,7 @@ ww = Ride.create(
   :location => 'Bollo\'s',
   :currently_active => true)
 
-tabor_copy = <<-BBURG
+bburg_copy = <<-BBURG
 Out and back on Blackburg Rd
 
 From Bollo's, we head down Ellet/Cedar Run and across Luster's Gate Rd. We re-group at the intersection of Blacksburg Rd, where the B group is given a head start (~ 1 min).
@@ -15,7 +15,7 @@ BBURG
 
 blacksburg_road = Route.create(
   :name => 'Blacksburg road',
-  :description => 'Out and back on Blacksburg rd.',
+  :description => bburg_copy,
   :map_url => 'http://bit.ly/bCG3Lf',
   :ride => ww)
 
