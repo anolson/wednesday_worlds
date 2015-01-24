@@ -14,8 +14,12 @@ a {
   text-decoration: none;
 }
 
-header, section, footer {
+header, footer {
   padding: 100px;
+}
+
+section {
+  padding: 50px 100px
 }
 
 footer {
