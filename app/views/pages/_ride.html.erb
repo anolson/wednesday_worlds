@@ -1,16 +1,27 @@
 <div class="box <%= cycle('left', 'right') %>">
-  <h2>
-    <%= ride.name %>
+  <header>
+    <h2>
+      <%= ride.name %>
+    </h2>
 
-    <% if(ride.occurrence.this_week?) %>
-      <small class="light">this week</small>
-    <% elsif(ride.occurrence.next_week?) %>
-      <small class="light">next week</small>
-    <% end%>
-  </h2>
+    <h4>
+      <% if ride.occurrence.next_date %>
+        <%= format_date ride.occurrence.next_date %>
+      <% end %>
+
+      <% if(ride.occurrence.this_week?) %>
+        <small>this week</small>
+      <% elsif(ride.occurrence.next_week?) %>
+        <small>next week</small>
+      <% end%>
+    </h4>
+  </header>
+
   <div class='wrapper'>
     <%= render_markdown ride.description %>
   </div>
 
-  <%= link_to "View the map for this ride", ride.map_url, class: 'map' %>
+  <div>
+    <%= link_to "View the map for this ride", ride.map_url, class: 'map' %>
+  </div>
 </div>

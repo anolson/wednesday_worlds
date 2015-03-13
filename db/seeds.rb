@@ -1,9 +1,12 @@
+this_wednesday = Date.current.beginning_of_week + 2.days
+next_wednesday = (Date.current + 1.week).beginning_of_week + 2.days
+
 ww = Ride.create(
   :name => 'Wednesday Worlds',
   :location => 'Bollo\'s',
   :currently_active => true)
 
-tabor_copy = <<-BBURG
+bburg_copy = <<-BBURG
 Out and back on Blackburg Rd
 
 From Bollo's, we head down Ellet/Cedar Run and across Luster's Gate Rd. We re-group at the intersection of Blacksburg Rd, where the B group is given a head start (~ 1 min).
@@ -15,15 +18,15 @@ BBURG
 
 blacksburg_road = Route.create(
   :name => 'Blacksburg road',
-  :description => 'Out and back on Blacksburg rd.',
+  :description => bburg_copy,
   :map_url => 'http://bit.ly/bCG3Lf',
   :ride => ww)
 
 blacksburg_road_occurrence = Occurrence.create(
   :recurs => true,
   :recurrence_type => 'bi-weekly',
-  :recurrence_ends_at => '2012-10-03',
-  :begins_at => '2012-05-02 18:00',
+  :recurrence_ends_at => "#{this_wednesday + 8.weeks}",
+  :begins_at => "#{this_wednesday} 18:00",
   :route => blacksburg_road);
 
 tabor_copy = <<-TABOR
@@ -45,8 +48,8 @@ tabor = Route.create(
 tabor_occurrence = Occurrence.create(
   :recurs => true,
   :recurrence_type => 'bi-weekly',
-  :recurrence_ends_at => '2012-10-10',
-  :begins_at => '2012-05-09 18:00',
+  :recurrence_ends_at => "#{next_wednesday + 8.weeks}",
+  :begins_at => "#{next_wednesday} 18:00",
   :route => tabor)
 
 Administrator.create(:name => 'Andrew Olson', :twitter_screen_name => 'andrew_olson')

@@ -27,6 +27,7 @@ class Admin::SessionsController < Admin::AdminController
   end
 
   private
+
   def sign_in_user(screen_name = "")
     reset_session
     admin = Administrator.find_by_twitter_screen_name(screen_name)
@@ -49,14 +50,21 @@ class Admin::SessionsController < Admin::AdminController
   end
 
   def oauth_consumer
-    @oauth_consumer ||= OAuth::Consumer.new(ENV['TWITTER_API_CONSUMER_KEY'], ENV['TWITTER_API_CONSUMER_SECRET'], :site => 'https://api.twitter.com', :authorize_path => '/oauth/authenticate')
+    @oauth_consumer ||= OAuth::Consumer.new(
+      ENV['TWITTER_API_CONSUMER_KEY'],
+      ENV['TWITTER_API_CONSUMER_SECRET'],
+      site: 'https://api.twitter.com',
+      scheme: :header,
+      authorize_path: '/oauth/authenticate'
+    )
   end
 
   def client(access_token)
-    Twitter.configure do |config|
-      config.oauth_token = access_token.token
-      config.oauth_token_secret = access_token.secret
+    Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV['TWITTER_API_CONSUMER_KEY']
+      config.consumer_secret = ENV['TWITTER_API_CONSUMER_SECRET']
+      config.access_token = access_token.token
+      config.access_token_secret = access_token.secret
     end
-    @client ||= Twitter::Client.new
   end
 end
