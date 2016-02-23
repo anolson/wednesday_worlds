@@ -3,23 +3,23 @@ class Event < ActiveRecord::Base
   belongs_to :route
 
   def self.this_week
-    where(begins_at: all_week(Time.current)).first
+    where(begins_at: Time.current.all_week).first
   end
 
   def self.next_week
-    where(begins_at: all_week(1.week.from_now)).first
-  end
-
-  def self.all_week(time)
-    time.beginning_of_week..time.end_of_week
+    where(begins_at: Time.current.next_week.all_week).first
   end
 
   def this_week?
-    self == self.class.this_week
+    during_week?(Time.current)
   end
 
   def next_week?
-    self == self.class.next_week
+    during_week?(Time.current.next_week)
+  end
+
+  def during_week?(time)
+    begins_at.between?(time.all_week.begin, time.all_week.end)
   end
 
   def send_notifications
