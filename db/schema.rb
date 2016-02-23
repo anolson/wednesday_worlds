@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(:version => 20160302010622) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "occurrences", :force => true do |t|
-    t.boolean  "recurs"
-    t.string   "recurrence_type"
-    t.date     "recurrence_ends_at"
-    t.datetime "begins_at"
-    t.integer  "route_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "rides", :force => true do |t|
     t.string   "name"
     t.string   "location"
