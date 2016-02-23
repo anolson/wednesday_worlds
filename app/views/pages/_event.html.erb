@@ -1,0 +1,25 @@
+<div class="box <%= cycle('left', 'right') %>">
+  <header>
+    <h2>
+      <%= event.route.name %>
+    </h2>
+
+    <h4>
+      <%= format_date event.begins_at %>
+
+      <% if(event.this_week?) %>
+        <small>this week</small>
+      <% elsif(event.next_week?) %>
+        <small>next week</small>
+      <% end%>
+    </h4>
+  </header>
+
+  <div class='wrapper'>
+    <%= render_markdown event.route.description %>
+  </div>
+
+  <div>
+    <%= link_to "View the map for this ride", event.route.map_url, class: 'map' %>
+  </div>
+</div>

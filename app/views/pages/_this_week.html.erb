@@ -1,25 +1,25 @@
 <header id="this-week">
-  <% if(@ride.nil? || @ride.routes.this_week.nil?) %>
+  <% if @this_week %>
+    <div class="title">
+      <h1><span><%= @this_week.ride.name %></span></h1>
+    </div>
+
+    <div class="time-and-location">
+      <h1>
+        <span><%= format_time(@this_week.begins_at) %> &mdash; <%= @this_week.ride.location %></span>
+      </h1>
+    </div>
+
+    <div class="route">
+      <h4><span>The ride this week is  <%= @this_week.route.name %>.</span></h4>
+    </div>
+  <% else  %>
     <div class="title">
       <h1><span>Wednesday Worlds</span></h1>
     </div>
 
     <div class="route">
       <h4><span>No ride this week</span></h4>
-    </div>
-  <% else  %>
-    <div class="title">
-      <h1><span><%= @ride.name %></span></h1>
-    </div>
-
-    <div class="time-and-location">
-      <h1>
-        <span><%= format_time(@ride.routes.this_week.occurrence.begins_at) %> &mdash; <%= @ride.location %></span>
-      </h1>
-    </div>
-
-    <div class="route">
-      <h4><span>The ride this week is  <%= @ride.routes.this_week.name %>.</span></h4>
     </div>
   <% end %>
 </header>

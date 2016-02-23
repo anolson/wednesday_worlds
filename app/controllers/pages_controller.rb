@@ -1,11 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @ride = current_ride
-  end
-
-  private
-
-  def current_ride
-    Ride.active.first
+    @this_week = Event.this_week
+    @next_week = Event.next_week
   end
 end
