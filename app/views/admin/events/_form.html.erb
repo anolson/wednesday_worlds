@@ -1,0 +1,10 @@
+<%= form_for [:admin, @ride, @event] do |f| %>
+  <%= f.label :begins_at %>
+  <%= f.datetime_select :begins_at, minute_step: 15 %>
+
+  <%= f.label :route_id %>
+  <%= f.collection_select :route_id, Route.all, :id, :name %><br />
+
+  <%= f.submit %>
+  <%= link_to 'Cancel', admin_ride_path(@ride), :class => 'cancel' %>
+<% end %>

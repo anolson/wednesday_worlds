@@ -1,8 +1,4 @@
 class Admin::RidesController < Admin::AdminController
-  def index
-    @rides = Ride.all
-  end
-
   def new
     @ride = Ride.new
   end
@@ -15,9 +11,9 @@ class Admin::RidesController < Admin::AdminController
     @ride = Ride.new(params[:ride])
 
     if(@ride.save)
-      redirect_to admin_rides_url
+      redirect_to admin_dashboard_path
     else
-      render :action => :new
+      render :new
     end
   end
 
@@ -26,14 +22,12 @@ class Admin::RidesController < Admin::AdminController
   end
 
   def update
-    reset_currently_active_ride
-
     @ride = Ride.find(params[:id])
 
     if(@ride.update_attributes(params[:ride]))
-      redirect_to admin_rides_path
+      redirect_to admin_dashboard_path
     else
-      render :action => :edit
+      render :edit
     end
   end
 
@@ -41,13 +35,6 @@ class Admin::RidesController < Admin::AdminController
     @ride = Ride.find(params[:id])
     @ride.destroy
 
-    redirect_to admin_rides_url
+    redirect_to admin_dashboard_path
   end
-
-
-  private
-  def reset_currently_active_ride
-    Ride.update_all(:currently_active => false)
-  end
-
 end

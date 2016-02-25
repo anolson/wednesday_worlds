@@ -1,6 +1,5 @@
 <tr>
   <td><%= link_to ride.name, admin_ride_path(ride) %></td>
   <td><%= ride.location %></td>
-  <td><%= ride.currently_active ? 'Yes' : 'No' %></td>
   <td><%= link_to "Edit", edit_admin_ride_path(ride) %> <%= link_to image_tag("delete.png"), admin_ride_path(ride), :method => :delete %></td>
 </tr>

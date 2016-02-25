@@ -3,7 +3,7 @@
   <td><%= truncate(route.description) %></td>
   <td><%= link_to route.map_url, route.map_url %></td>
   <td class="text-right">
-    <%= link_to "Edit", edit_admin_ride_route_path(route.ride, route) %>
-    <%= link_to image_tag("delete.png"), admin_ride_route_path(route.ride, route), :method => :delete %>
+    <%= link_to "Edit", edit_admin_route_path(route) %>
+    <%= link_to image_tag("delete.png"), admin_route_path(route), :method => :delete %>
   </td>
 </tr>

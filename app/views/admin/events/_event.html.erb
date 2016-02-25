@@ -1,0 +1,10 @@
+<tr>
+  <td><%= event.begins_at.to_date.to_formatted_s(:long)  %></td>
+  <td><%= event.begins_at.to_time.to_formatted_s(:time)  %></td>
+
+  <td><%= link_to event.route.name, admin_route_path(event.route) %></td>
+  <td class="text-right">
+    <%= link_to "Edit", edit_admin_ride_event_path(event.ride, event) %>
+    <%= link_to image_tag("delete.png"), admin_ride_event_path(event.ride, event), :method => :delete %>
+  </td>
+</tr>
