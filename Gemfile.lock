@@ -104,6 +104,11 @@ GEM
       activesupport (= 3.2.21)
       bundler (~> 1.0)
       railties (= 3.2.21)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (3.2.21)
       actionpack (= 3.2.21)
       activesupport (= 3.2.21)
@@ -170,6 +175,7 @@ DEPENDENCIES
   oauth (~> 0.4.7)
   pg
   rails (= 3.2.21)
+  rails_12factor
   rb-fsevent
   redcarpet
   ruby-prof
@@ -178,3 +184,6 @@ DEPENDENCIES
   thin
   twitter
   uglifier (~> 1.2.4)
+
+BUNDLED WITH
+   1.10.5
