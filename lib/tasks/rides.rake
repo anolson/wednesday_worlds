@@ -9,6 +9,8 @@ namespace "rides" do
     date = Date.parse(args.date)
     wednesdays = 33.times.map { |i| date + i.weeks }
 
+    ride.events.destroy_all
+
     wednesdays.zip(template).each { |wednesday, params|
       ride.events.create(
         begins_at: "#{wednesday} #{params[:time]}",
