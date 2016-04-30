@@ -1,4 +1,4 @@
-<% if @ride.routes.empty? %>
+<% if @routes.empty? %>
   <p class="center">Looks like there aren't any routes!</p>
 <% else %>
   <table border="0" cellspacing="0" cellpadding="5">
@@ -8,6 +8,6 @@
       <th>Map</th>
       <th></th>
     </tr>
-    <%= render :partial => 'admin/routes/route', :collection => @ride.routes %>
+    <%= render :partial => 'admin/routes/route', :collection => @routes %>
   </table>
 <% end %>

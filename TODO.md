@@ -19,3 +19,22 @@
 ### Misc
 
 * Add a timeline view of all routes/occurences
+
+### Simplify domain model
+
+* Drop occurrences table, remove Occurrence model.
+
+* Update rides table, Update Route model
+  * Add route_id
+  * Add begins_at
+  * Drop name
+  * Drop location
+  * Drop curently_active
+
+* Update routes table, Update Route model
+  * Drop ride_id
+
+* Add a rake task that creates rides for an entire year
+  * Accept a single date as input
+  * Create a template that represents a year of rides.
+  * Populate rides based on this template and initial date.

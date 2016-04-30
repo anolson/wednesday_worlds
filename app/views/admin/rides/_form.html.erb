@@ -4,10 +4,7 @@
 
   <%= f.label :location, 'Location' %>
   <%= f.text_field :location %><br />
-  
-  <%= f.label :currently_active, 'Current' %>    
-  <%= f.select :currently_active, [['Yes', true], ['No', false]] %><br />
-  
+
   <%= f.submit %>
-  <%= link_to 'Cancel', admin_rides_path, :class => 'cancel' %>
+  <%= link_to 'Cancel', admin_dashboard_path, :class => 'cancel' %>
 <% end %>

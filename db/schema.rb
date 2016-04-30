@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725013025) do
+ActiveRecord::Schema.define(:version => 20160302010622) do
 
   create_table "administrators", :force => true do |t|
     t.string   "name"
     t.string   "twitter_screen_name"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.datetime "begins_at"
+    t.integer  "ride_id"
+    t.integer  "route_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notifiers", :force => true do |t|
@@ -29,22 +37,11 @@ ActiveRecord::Schema.define(:version => 20120725013025) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "occurrences", :force => true do |t|
-    t.boolean  "recurs"
-    t.string   "recurrence_type"
-    t.date     "recurrence_ends_at"
-    t.datetime "begins_at"
-    t.integer  "route_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
   create_table "rides", :force => true do |t|
     t.string   "name"
     t.string   "location"
-    t.boolean  "currently_active"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "routes", :force => true do |t|
@@ -54,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120725013025) do
     t.integer  "ride_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "slug"
   end
 
 end

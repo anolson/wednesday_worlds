@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails', '3.2.21'
+gem 'rails', '3.2.22.2'
 
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
@@ -28,4 +28,5 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end

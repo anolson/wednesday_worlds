@@ -20,7 +20,7 @@ class Admin::AdminController < ApplicationController
   end
 
   def redirect_to_intended_path
-    session[:return_to] ? redirect_to(session[:return_to]) : redirect_to(admin_rides_path)
+    session[:return_to] ? redirect_to(session[:return_to]) : redirect_to(admin_dashboard_path)
     session[:return_to] = nil
   end
 end

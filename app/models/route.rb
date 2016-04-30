@@ -1,6 +1,7 @@
 class Route < ActiveRecord::Base
-  belongs_to :ride
-  has_one :occurrence, :dependent => :destroy
+  has_many :events
 
-  accepts_nested_attributes_for :occurrence
+  def self.for_slug(slug)
+    where(slug: slug).first
+  end
 end
