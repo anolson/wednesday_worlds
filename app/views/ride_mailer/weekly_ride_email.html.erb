@@ -4,10 +4,10 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"  />
   </head>
   <body>
-    <span><%= @ride.location %></span> <br/>
-    <span><%= format_time(@ride.routes.this_week.occurrence.begins_at) %></span>
+    <span><%= @event.ride.location %></span> <br/>
+    <span><%= format_time(@event.begins_at) %></span>
     <p>
-      The ride this week is <%= @ride.routes.this_week.name %>
+      The ride this week is <%= @event.route.name %>
     </p>
     <p>
       <%= url_for "http://wednesdayworlds.org" %>

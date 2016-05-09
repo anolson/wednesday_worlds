@@ -1,7 +1,7 @@
-<%= @ride.location %>
-<%= format_time(@ride.routes.this_week.occurrence.begins_at) %>
+<%= @event.ride.location %>
+<%= format_time(@event.begins_at) %>
 
-The ride this week is <%= @ride.routes.this_week.name %>
+The ride this week is <%= @event.route.name %>
 
 ==========================
 <%= url_for "http://wednesdayworlds.org" %>
