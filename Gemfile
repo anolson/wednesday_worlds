@@ -6,6 +6,7 @@ gem 'rails', '3.2.22.2'
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
+gem 'test-unit', '~> 3.0'
 gem 'twitter'
 gem 'thin'
 
@@ -24,7 +25,6 @@ group :test do
   gem 'guard-test'
   gem 'rb-fsevent', :require => false
   gem 'ruby-prof'
-  gem 'test-unit', '~> 3.0'
 end
 
 group :production do
