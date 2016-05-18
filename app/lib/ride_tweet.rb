@@ -1,9 +1,8 @@
 class RideTweet
   include ApplicationHelper
-  attr_accessor :event, :ride
+  attr_accessor :event
 
   def initialize(event)
-    @ride = event.ride
     @event = event
   end
 
