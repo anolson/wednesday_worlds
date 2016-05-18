@@ -1,6 +1,6 @@
 class TwitterNotifier < Notifier
-  def send_notification
-    client.update RideTweet.new(ride).to_s
+  def send_notification(event)
+    client.update RideTweet.new(event).to_s
   end
 
   private

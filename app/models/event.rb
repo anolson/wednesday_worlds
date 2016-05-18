@@ -24,7 +24,7 @@ class Event < ActiveRecord::Base
 
   def send_notifications
     ride.notifiers.each do |notifier|
-      notifier.send_notification
+      notifier.send_notification(self)
     end
   end
 end

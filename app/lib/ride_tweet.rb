@@ -1,9 +1,9 @@
 class RideTweet
   include ApplicationHelper
-  attr_accessor :ride
+  attr_accessor :event
 
-  def initialize(ride)
-    @ride = ride
+  def initialize(event)
+    @event = event
   end
 
   def to_s
@@ -11,22 +11,18 @@ class RideTweet
   end
 
   def date
-    format_date(this_week.occurrence.next_date)
+    format_date(event.begins_at)
   end
 
   def location
-    ride.location
+    event.ride.location
   end
 
   def time
-    format_time(this_week.occurrence.begins_at)
+    format_time(event.begins_at)
   end
 
   def route
-    this_week.name
-  end
-
-  def this_week
-    ride.routes.this_week
+    event.route.name
   end
 end
