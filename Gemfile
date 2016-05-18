@@ -24,6 +24,7 @@ group :test do
   gem 'guard-test'
   gem 'rb-fsevent', :require => false
   gem 'ruby-prof'
+  gem 'test-unit', '~> 3.0'
 end
 
 group :production do
