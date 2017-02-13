@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 ruby '2.2.3'
 
 gem 'rails', '3.2.22.2'
@@ -22,9 +22,12 @@ group :development do
 end
 
 group :test do
-  gem 'guard-test'
-  gem 'rb-fsevent', :require => false
-  gem 'ruby-prof'
+  gem 'capybara'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
 end
 
 group :production do
