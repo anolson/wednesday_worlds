@@ -1,5 +1,5 @@
 <%= render partial: 'this_week' %>
 <%= render partial: 'about' %>
-<%= render partial: 'rides' %>
+<%= render partial: 'rides', locals: { events: @events } %>
 <%= render partial: 'guidelines' %>
 <%= render partial: 'get_in_touch' %>

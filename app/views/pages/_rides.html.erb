@@ -1,6 +1,8 @@
-<section id="rides">
-  <h2>Rides</h2>
-  <a name="rides"></a>
-  <%= render partial: 'event', collection: [@this_week, @next_week] %>
-  <div class="clear"></div>
-</section>
+<% if events.any? %>
+  <section id="rides">
+    <h2>Rides</h2>
+    <a name="rides"></a>
+    <%= render partial: 'event', collection: events %>
+    <div class="clear"></div>
+  </section>
+<% end %>
