@@ -6,8 +6,7 @@ RSpec.describe EventMailer do
     let(:formatted_date) { event.begins_at.strftime("%b %e") }
     let(:recipient) { "wednesdayworlds@googlegroups.com" }
 
-    let(:mail) { EventMailer.event_notification(recipient, event) }
-
+    subject(:mail) { EventMailer.event_notification(recipient, event) }
 
     it "renders the headers" do
       expect(mail.subject).to eq("WednesdayWorlds - #{formatted_date}")
