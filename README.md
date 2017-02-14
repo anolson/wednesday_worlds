@@ -34,7 +34,13 @@ $ git push staging feature:master
 #### Production
 
 ```
-$ git push heroku master
+$ git push production master
+```
+
+#### Generate events
+
+```
+$ rake events:generate[YYYY-MM-DD]
 ```
 
 ### License
