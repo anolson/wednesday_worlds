@@ -1,19 +1,20 @@
-namespace "rides" do
-  desc "Generate ride events (specify the start date with DATE)"
-  task "create_events", [:date] => :environment do |t, args|
+namespace "events" do
+  desc "Generate events for an entire year (specify the start date with [date])"
+  task "generate", [:date] => :environment do |t, args|
     if args.date.blank?
       raise "Please specify a start date with ['YYYY-MM-DD']"
     end
 
     ride = Ride.first
     date = Date.parse(args.date)
-    wednesdays = 33.times.map { |i| date + i.weeks }
+    days = 33.times.map { |i| date + i.weeks }
 
     ride.events.destroy_all
 
-    wednesdays.zip(template).each { |wednesday, params|
+    days.zip(template).each { |day, params|
+      puts "Creating event #{day}"
       ride.events.create(
-        begins_at: "#{wednesday} #{params[:time]}",
+        begins_at: "#{day} #{params[:time]}",
         route: Route.for_slug(params[:route]))
     }
   end
@@ -51,8 +52,8 @@ namespace "rides" do
       { time: "17:30", route: "bburg" },
       { time: "17:30", route: "bburg-short" },
       { time: "17:30", route: "bburg-short" },
-      { time: "17:30", route: "bburg-short" },
-      { time: "17:30", route: "bburg-short" }
+      { time: "17:15", route: "bburg-short" },
+      { time: "17:15", route: "bburg-short" }
     ]
   end
 end
