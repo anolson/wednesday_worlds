@@ -4,7 +4,7 @@ module Admin::LinkHelper
   end
 
   def link_to_new_notifier
-    link_to 'Create new notification', new_admin_ride_notifier_path(@ride)
+    link_to 'Create new notifier', new_admin_ride_notifier_path(@ride)
   end
 
   def link_to_new_ride
