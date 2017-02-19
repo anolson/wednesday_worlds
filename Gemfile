@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '4.0.13'
+gem 'rails', '4.1.16'
 
-gem "uglifier", "~> 1.2.4"
+gem "uglifier"
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
-gem 'sass-rails', '~> 4.0', '>= 4.0.5'
+gem 'sass-rails'
 gem 'thin'
 gem 'twitter'
 
