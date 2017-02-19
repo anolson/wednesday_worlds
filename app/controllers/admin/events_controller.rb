@@ -6,7 +6,7 @@ class Admin::EventsController < Admin::AdminController
   end
 
   def create
-    if(@event = @ride.events.create(params[:event]))
+    if @event = @ride.events.create(event_params)
       redirect_to admin_dashboard_path
     else
       render :new
@@ -20,7 +20,7 @@ class Admin::EventsController < Admin::AdminController
   def update
     @event = Event.find(params[:id])
 
-    if(@event.update_attributes(params[:event]))
+    if @event.update_attributes(event_params)
       redirect_to admin_dashboard_path
     else
       render :edit
@@ -36,5 +36,9 @@ class Admin::EventsController < Admin::AdminController
 
   def find_ride
     @ride = Ride.find(params[:ride_id])
+  end
+
+  def event_params
+    params.require(:event).permit(:begins_at, :route_id)
   end
 end

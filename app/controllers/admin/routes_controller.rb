@@ -4,7 +4,7 @@ class Admin::RoutesController < Admin::AdminController
   end
 
   def create
-    if @route = Route.create(params[:route])
+    if @route = Route.create(route_params)
       redirect_to admin_dashboard_path
     else
       render :action => :new
@@ -18,7 +18,7 @@ class Admin::RoutesController < Admin::AdminController
   def update
     @route = Route.find(params[:id])
 
-    if @route.update_attributes(params[:route])
+    if @route.update_attributes(route_params)
       redirect_to admin_dashboard_path
     else
       render :action => :edit
@@ -28,5 +28,11 @@ class Admin::RoutesController < Admin::AdminController
   def destroy
     Route.destroy(params[:id])
     redirect_to admin_dashboard_path
+  end
+
+  private
+
+  def route_params
+    params.require(:route).permit(:name, :description, :map_url)
   end
 end

@@ -26,37 +26,23 @@ body {
 }
 
 a {
-  color:#69F;text-decoration:none;
+  color:#69F;
+  text-decoration:none;
 }
 
 footer {
-  bottom: 0;
   position: absolute;
+  bottom: 0;
   width:100%;
-  height:40px;   /* Height of the footer */
-  background:$black;
-  border-top:1px solid #555;
-  color:$light_grey;
-  font-size:12px;
+  height:35px;
+  margin-top: -20px;
+  background: $black;
+  color: $light_grey;
+  font-size:13px;
 
   .container {
     width:$page_width;
-    margin:14px auto;
-
-    ul {
-      padding:0;
-      margin:0;
-      float:right;
-      li {
-        padding-left:5px;
-        list-style-type:none;
-        display:inline;
-      }
-    }
-
-    #share {
-      margin-top:10px;
-    }
+    margin:10px auto;
   }
 }
 
@@ -65,95 +51,7 @@ footer {
   position: relative;
 }
 
-#content {
-  padding-bottom: 80px;
-  section  {
-    padding: 60px 0 40px 0;
-
-    color:$black;
-
-    h3 {
-      margin: 10px 0;
-    }
-
-    .title {
-      border-radius:10px 10px 0 0;
-      background:$black;
-      border-bottom: 5px solid #555;
-      h2 {
-        margin: 0;
-        padding:15px;
-        color: $light_grey;
-        line-height:18px;
-        font-weight: normal;
-      }
-    }
-    .container {
-      background: $light_grey;
-      padding:10px 15px;
-      border-radius:0 0 10px 10px;
-      h1 {
-        font-family:"Times";
-        font-size:132px;
-        margin:0;
-        padding-bottom:10px;
-      }
-
-      #video {
-        ul {
-          padding-left:10px;
-          list-style-type:none;
-          li {
-            margin:5px;
-          }
-        }
-      }
-
-      .route {
-        font-size:14px;
-        margin-bottom:20px;
-
-        #dateline {
-          text-align: center;
-          overflow:auto;
-          position:relative;
-          border:1px solid #BBB;
-          padding:25px 0 10px 0;
-        }
-
-        .all_dates {
-          font-size:12px;
-
-          table {
-            border: 1px solid #BBB;
-            border-collapse:collapse;
-          }
-        }
-
-        .description {
-          margin-bottom:10px;
-        }
-
-        .details {
-          border-top:1px dotted #BBB;
-          margin-top:5px; padding-top:10px;
-        }
-
-        .location, .date {
-          margin-top:5px;
-        }
-
-        .name {
-          font-size:15px;
-          margin-bottom:2px;
-        }
-      }
-    }
-  }
-}
-
 .admin {
-
   .field_with_errors {
     display: inline;
 
@@ -189,12 +87,12 @@ footer {
     width:100%;
     font-size:12px;
     text-align:left;
-  }
 
-  td {
-    border:1px solid #CCC;
-    border-left:0;
-    border-right:0;
+    td {
+      border:1px solid #CCC;
+      border-left:0;
+      border-right:0;
+    }
   }
 
   .cancel{
@@ -214,14 +112,33 @@ footer {
   }
 
   #content {
-    section {
-      padding-top:0px
+    padding-bottom: 80px;
+    section  {
+      padding:0;
+      padding-bottom: 40px;
+      color:$black;
+      .title {
+        border-radius:10px 10px 0 0;
+        background:$black;
+        border-bottom: 5px solid #555;
+        h2 {
+          margin: 0;
+          padding:15px;
+          color: $light_grey;
+          line-height:18px;
+          font-weight: normal;
+        }
+      }
+      .container {
+        background: $light_grey;
+        padding:10px 15px;
+        border-radius:0 0 10px 10px;
+      }
     }
   }
 
   #logout {
-    margin:20px 0 10px 0;
-    padding:5px 0;
+    padding:20px 0;
     font-size:12px;
     color:#888;
 
@@ -248,22 +165,6 @@ footer {
 
 .left {
   float:left;
-}
-
-.light {
-  color:#AAA;
-}
-
-.lighter {
-  color:#CCC;
-}
-
-.map {
-  font-size:12px;
-}
-
-.new{
-  font-size:12px; margin:15px 10px;
 }
 
 .right {

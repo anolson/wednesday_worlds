@@ -6,7 +6,10 @@ class Admin::NotifiersController < Admin::AdminController
   end
 
   def create
-    if(@notifier = @ride.notifiers.create(params[:notifier]))
+    @notifier = @ride.notifiers.new(notifier_params)
+
+    if @notifier.valid?
+      @notifier.save
       redirect_to admin_ride_url(@ride)
     else
       render :action => :new
@@ -20,7 +23,7 @@ class Admin::NotifiersController < Admin::AdminController
   def update
     @notifier = Notifier.find(params[:id])
 
-    if(@notifier.update_attributes(params[:notifier]))
+    if @notifier.update_attributes(notifier_params)
       redirect_to admin_ride_url(@ride)
     else
       render :action => :edit
@@ -36,5 +39,9 @@ class Admin::NotifiersController < Admin::AdminController
 
   def find_ride
     @ride = Ride.find(params[:ride_id])
+  end
+
+  def notifier_params
+    params.require(:notifier).permit(:enabled, :type, :recipient)
   end
 end

@@ -8,9 +8,9 @@ class Admin::RidesController < Admin::AdminController
   end
 
   def create
-    @ride = Ride.new(params[:ride])
+    @ride = Ride.new(ride_params)
 
-    if(@ride.save)
+    if @ride.save
       redirect_to admin_dashboard_path
     else
       render :new
@@ -24,7 +24,7 @@ class Admin::RidesController < Admin::AdminController
   def update
     @ride = Ride.find(params[:id])
 
-    if(@ride.update_attributes(params[:ride]))
+    if @ride.update_attributes(ride_params)
       redirect_to admin_dashboard_path
     else
       render :edit
@@ -36,5 +36,11 @@ class Admin::RidesController < Admin::AdminController
     @ride.destroy
 
     redirect_to admin_dashboard_path
+  end
+
+  private
+
+  def ride_params
+    params.require(:ride).permit(:name, :location)
   end
 end
