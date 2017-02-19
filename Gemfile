@@ -1,21 +1,16 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '3.2.22.5'
+gem 'rails', '4.0.13'
 
+gem "uglifier", "~> 1.2.4"
+gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
-gem 'strong_parameters'
-gem 'test-unit', '~> 3.0'
-gem 'twitter'
+gem 'sass-rails', '~> 4.0', '>= 4.0.5'
 gem 'thin'
-
-group :assets do
-  gem 'sass-rails', " ~> 3.2.6"
-  gem 'coffee-rails', " ~> 3.2.2"
-  gem "uglifier", "~> 1.2.4"
-end
+gem 'twitter'
 
 group :development do
   gem 'sqlite3'
