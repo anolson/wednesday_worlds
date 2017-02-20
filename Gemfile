@@ -17,6 +17,7 @@ group :development do
   gem 'heroku'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
