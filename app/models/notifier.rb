@@ -3,8 +3,6 @@ class Notifier < ActiveRecord::Base
 
   belongs_to :ride
 
-  attr_accessible :recipient, :type, :enabled, :ride
-
   validates_presence_of :recipient
 
   def send_notification
