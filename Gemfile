@@ -15,6 +15,8 @@ gem 'twitter'
 group :development do
   gem 'sqlite3'
   gem 'heroku'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
