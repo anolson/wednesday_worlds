@@ -1,6 +1,6 @@
 ### Framework
 
-* Update to Rails 4 + 5.
+* Update to Rails 5.
 * Try http://tachyons.io
 
 ### Refactor

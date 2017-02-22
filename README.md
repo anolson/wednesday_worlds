@@ -1,6 +1,6 @@
 ## Wednesday Worlds
 
-This is the Rails 3 web application that runs http://wednesdayworlds.org
+This is the Rails web application that runs http://wednesdayworlds.org
 
 ### Download the source
 
@@ -12,8 +12,7 @@ $ git clone git://github.com/anolson/wednesday_worlds.git
 
 ```
 $ cd wednesday_worlds
-$ rake
-$ rails s
+$ bin/setup
 ```
 
 ### Deploy to Heroku

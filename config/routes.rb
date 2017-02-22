@@ -13,11 +13,11 @@ WednesdayWorlds::Application.routes.draw do
 
     resources :routes
 
-    match '/' => redirect("/admin/dashboard")
+    get '/' => redirect("/admin/dashboard")
   end
 
-  match 'login' => 'admin/sessions#new'
-  match 'logout' => 'admin/sessions#destroy'
+  get 'login' => 'admin/sessions#new'
+  get 'logout' => 'admin/sessions#destroy'
 
-  root :to => "pages#index"
+  root "pages#index"
 end
