@@ -12,8 +12,7 @@ $ git clone git://github.com/anolson/wednesday_worlds.git
 
 ```
 $ cd wednesday_worlds
-$ rake
-$ rails s
+$ bin/setup
 ```
 
 ### Deploy to Heroku
