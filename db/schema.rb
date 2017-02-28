@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228021410) do
-
-  create_table "administrators", force: :cascade do |t|
-    t.string   "name"
-    t.string   "twitter_screen_name"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
+ActiveRecord::Schema.define(version: 20170228033544) do
 
   create_table "events", force: :cascade do |t|
     t.datetime "begins_at"
