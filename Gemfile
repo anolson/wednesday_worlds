@@ -3,7 +3,7 @@ ruby '2.2.3'
 
 gem 'rails', '4.2.8'
 
-gem "uglifier"
+gem 'bcrypt'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
@@ -11,6 +11,8 @@ gem 'redcarpet'
 gem 'sass-rails'
 gem 'thin'
 gem 'twitter'
+gem 'uglifier'
+
 
 group :development do
   gem 'sqlite3'
