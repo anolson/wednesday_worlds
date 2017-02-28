@@ -29,5 +29,5 @@ bburg_road_short = Route.create(
   map_url: 'https://goo.gl/maps/uRRtKRmnsQw',
   slug: 'bburg-short')
 
-Administrator.create(:name => 'Andrew Olson', :twitter_screen_name => 'andrew_olson')
+User.create(:emal => 'anolson@gmail.com', password: 'secret')
 EmailNotifier.create(:recipient => 'anolson@gmail.com', ride: ww)
