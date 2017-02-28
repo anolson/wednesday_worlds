@@ -1,26 +1,29 @@
 class Admin::AdminController < ApplicationController
   layout 'admin'
-  before_filter :verify_admin_authentication
+  before_action :require_user
+
+  delegate :current_user, :current_user=, to: :user_session
+  helper_method :current_user, :signed_in?
 
   private
-  def verify_admin_authentication
+
+  def require_user
     unless signed_in?
       session[:return_to] = request.fullpath
-      redirect_to login_path
+      redirect_to signin_path
     end
   end
 
   def signed_in?
-    current_admin != nil
-  end
-  helper_method "signed_in?"
-
-  def current_admin
-    @current_admin ||= Administrator.find_by_twitter_screen_name(session[:screen_name])
+    user_session.current_user != nil
   end
 
   def redirect_to_intended_path
     session[:return_to] ? redirect_to(session[:return_to]) : redirect_to(admin_dashboard_path)
     session[:return_to] = nil
+  end
+
+  def user_session
+    @user_session ||= UserSession.new(session)
   end
 end

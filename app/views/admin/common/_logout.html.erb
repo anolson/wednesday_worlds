@@ -1,4 +1,4 @@
-<% if @current_admin %>
-  <div id="logout" class="text-right">Signed in as <strong><%= "@#{@current_admin.twitter_screen_name}" %></strong> <%= link_to "Logout", logout_path %></div>
+<% if signed_in? %>
+  <div id="logout" class="text-right">Signed in as <strong><%= "#{current_user.email}" %></strong> <%= link_to "Signout", signout_path %></div>
 <% end %>
 
