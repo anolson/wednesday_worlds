@@ -13,12 +13,11 @@ gem 'thin'
 gem 'twitter'
 gem 'uglifier'
 
-
 group :development do
-  gem 'sqlite3'
   gem 'heroku'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
 end
 
@@ -28,8 +27,9 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
+  gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :production do
