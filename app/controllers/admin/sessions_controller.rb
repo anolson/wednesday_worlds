@@ -6,26 +6,27 @@ class Admin::SessionsController < Admin::AdminController
 
   def create
     if user = User.authenticate(params[:session][:email], params[:session][:password])
-      signin(user)
+      sign_in(user)
     else
-      render 'new', alert: "Email + password don't match"
+      flash.now.alert = "Email + password don't match :("
+      render "new", status: :unauthorized
     end
   end
 
   def destroy
-    signout
+    sign_out
     redirect_to signin_path
   end
 
   private
 
-  def signin(user)
+  def sign_in(user)
     reset_session
     self.current_user = user.id
     redirect_to_intended_path
   end
 
-  def signout
+  def sign_out
     reset_session
     self.current_user = nil
   end

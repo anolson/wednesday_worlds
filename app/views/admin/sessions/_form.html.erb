@@ -12,6 +12,10 @@
   </div>
 
   <div class="submit-field">
-    <%= form.submit "Login" %>
+    <%= form.submit "Signin" %>
   </div>
 <% end %>
+
+<div class="text-center alert">
+  <p><%= flash[:alert] %></p>
+</div>
