@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def index
     @this_week = Event.this_week
-    @next_week = Event.next_week
-    @events = [@this_week, @next_week].compact
+    @events = Event.next_two
   end
 end
