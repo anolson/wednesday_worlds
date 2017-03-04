@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   belongs_to :ride
   belongs_to :route
 
-  scope :next_two, -> { where("begins_at < ?", Time.current.beginning_of_week).limit(2) }
+  scope :upcoming, -> { where("begins_at > ?", Time.current.beginning_of_week).limit(2) }
 
   def self.this_week
     where(begins_at: Time.current.all_week).first
