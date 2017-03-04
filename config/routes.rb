@@ -16,8 +16,8 @@ WednesdayWorlds::Application.routes.draw do
     get '/' => redirect("/admin/dashboard")
   end
 
-  get 'login' => 'admin/sessions#new'
-  get 'logout' => 'admin/sessions#destroy'
+  get 'signin' => 'admin/sessions#new'
+  get 'signout' => 'admin/sessions#destroy'
 
   root "pages#index"
 end
