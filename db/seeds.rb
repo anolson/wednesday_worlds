@@ -13,7 +13,7 @@ bburg_road = Route.create(
   map_url: 'https://goo.gl/maps/ZaucV',
   slug: 'bburg')
 
-Event.create(:begins_at => "#{this_wednesday} 18:00", ride: ww, route: bburg_road)
+Event.create(begins_at: "#{this_wednesday} 18:00", ride: ww, route: bburg_road)
 
 tabor = Route.create(
   name: 'Mt Tabor road',
@@ -21,7 +21,7 @@ tabor = Route.create(
   map_url: 'https://goo.gl/maps/MS2kw',
   slug: 'tabor')
 
-Event.create(:begins_at => "#{next_wednesday} 18:00", ride: ww, route: tabor)
+Event.create(begins_at: "#{next_wednesday} 18:00", ride: ww, route: tabor)
 
 bburg_road_short = Route.create(
   name: 'Blacksburg Rd (short)',
@@ -29,5 +29,5 @@ bburg_road_short = Route.create(
   map_url: 'https://goo.gl/maps/uRRtKRmnsQw',
   slug: 'bburg-short')
 
-User.create(:emal => 'anolson@gmail.com', password: 'secret')
-EmailNotifier.create(:recipient => 'anolson@gmail.com', ride: ww)
+User.create(email: 'anolson@gmail.com', password: 'secret')
+EmailNotifier.create(recipient: 'anolson@gmail.com', ride: ww)
