@@ -1,5 +1,7 @@
 class TwitterNotifier < Notifier
   def send_notification(event)
+    return unless enabled?
+
     client.update RideTweet.new(event).to_s
   end
 
