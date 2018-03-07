@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
 gem 'sass-rails'
-gem 'thin'
+gem 'puma'
 gem 'twitter'
 gem 'uglifier'
 
