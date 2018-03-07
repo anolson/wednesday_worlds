@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    date.strftime("%b %e")
+    date.strftime("%b %-e")
   end
 
   def page_title(title)

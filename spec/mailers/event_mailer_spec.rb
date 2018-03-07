@@ -9,7 +9,24 @@ RSpec.describe EventMailer do
 
     subject(:mail) { EventMailer.event_notification(recipient, event) }
 
-    it "renders the headers" do
+
+    context "with a day of the month < 10" do
+      before { event.begins_at = Time.current.beginning_of_month }
+
+      it "renders the subject correctly" do
+        expect(mail.subject).to eq("WednesdayWorlds - #{month} #{day}")
+      end
+    end
+
+    context "with a day of the month >= 10" do
+      before { event.begins_at = Time.current.end_of_month }
+
+      it "renders the subject correctly" do
+        expect(mail.subject).to eq("WednesdayWorlds - #{month} #{day}")
+      end
+    end
+
+    it "renders the headers correctly" do
       expect(mail.subject).to eq("WednesdayWorlds - #{month} #{day}")
       expect(mail.to).to eq([recipient])
       expect(mail.from).to eq(["hello@wednesdayworlds.org"])
