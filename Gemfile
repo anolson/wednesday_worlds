@@ -14,7 +14,7 @@ gem 'twitter'
 gem 'uglifier'
 
 group :development do
-  gem 'spring'
+  gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
