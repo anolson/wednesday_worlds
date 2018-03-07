@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.0'
 
-gem 'rails', '4.2.8'
+gem 'rails', '4.2.10'
 
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
