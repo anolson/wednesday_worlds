@@ -14,7 +14,6 @@ gem 'twitter'
 gem 'uglifier'
 
 group :development do
-  gem 'heroku'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'sqlite3'

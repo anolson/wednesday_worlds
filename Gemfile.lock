@@ -65,7 +65,6 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.4)
-    excon (0.55.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
     factory_girl (4.4.0)
@@ -77,18 +76,6 @@ GEM
       multipart-post (>= 1.2, < 3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    heroku (3.43.999)
-      heroku-api (= 0.4.2)
-      launchy (= 2.4.3)
-      multi_json (= 1.11.2)
-      net-ssh (= 2.9.2)
-      net-ssh-gateway (= 1.2.0)
-      netrc (= 0.10.3)
-      rest-client (= 1.6.8)
-      rubyzip (= 1.1.7)
-    heroku-api (0.4.2)
-      excon (~> 0.45)
-      multi_json (~> 1.8)
     hike (1.2.3)
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
@@ -98,8 +85,6 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.6)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -113,10 +98,6 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.0.0)
-    net-ssh (2.9.2)
-    net-ssh-gateway (1.2.0)
-      net-ssh (>= 2.6.5)
-    netrc (0.10.3)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     oauth (0.4.7)
@@ -159,11 +140,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
-    rdoc (5.1.0)
     redcarpet (2.3.0)
-    rest-client (1.6.8)
-      mime-types (~> 1.16)
-      rdoc (>= 2.4.2)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -181,7 +158,6 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    rubyzip (1.1.7)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -243,7 +219,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2, >= 4.2.1)
   database_cleaner
   factory_girl_rails
-  heroku
   jquery-rails
   oauth (~> 0.4.7)
   pg
@@ -265,4 +240,4 @@ RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.14.5
+   1.16.1
