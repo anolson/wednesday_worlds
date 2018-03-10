@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.5.0'
 
-gem 'rails', '4.2.8'
+gem 'rails', '4.2.10'
 
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
@@ -9,12 +9,12 @@ gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
 gem 'sass-rails'
-gem 'thin'
+gem 'puma'
 gem 'twitter'
 gem 'uglifier'
 
 group :development do
-  gem 'spring'
+  gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
