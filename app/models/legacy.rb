@@ -1,0 +1,2 @@
+class Legacy
+end
