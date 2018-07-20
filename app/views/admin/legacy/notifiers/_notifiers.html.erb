@@ -1,0 +1,12 @@
+<% if @ride.notifiers.empty? %>
+  <p class="center">Looks like there aren't any notifiers!</p>
+<% else %>
+  <table border="0" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Type</th>
+      <th>Recipient</th>
+      <th></th>
+    </tr>
+    <%= render :partial => 'admin/legacy/notifiers/notifier', :collection => @ride.notifiers %>
+  </table>
+<% end %>

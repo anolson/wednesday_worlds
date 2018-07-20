@@ -1,0 +1,12 @@
+<% if @rides.empty? %>
+  <p class="center">Looks like there aren't any rides!</p>
+<% else %>
+  <table border="0" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+    <%= render :partial => 'admin/legacy/rides/ride', :collection => @rides %>
+  </table>
+<% end %>

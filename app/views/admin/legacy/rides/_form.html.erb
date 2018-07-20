@@ -1,0 +1,10 @@
+<%= form_for [:admin, :legacy, @ride] do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :location, 'Location' %>
+  <%= f.text_field :location %><br />
+
+  <%= f.submit %>
+  <%= link_to 'Cancel', admin_legacy_dashboard_path, :class => 'cancel' %>
+<% end %>
