@@ -3,7 +3,7 @@ ruby '2.5.0'
 
 gem 'rails', '4.2.10'
 
-gem 'administrate', '~> 0.10.0'
+gem 'administrate', '~> 0.11.0'
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails'
