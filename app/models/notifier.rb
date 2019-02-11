@@ -5,6 +5,12 @@ class Notifier < ActiveRecord::Base
 
   validates_presence_of :recipient
 
+  def self.model_name
+    return super if self == Notifier
+
+    Notifier.model_name
+  end
+
   def send_notification
     raise NotImpementedError.new
   end
