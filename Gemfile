@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.0'
 
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
 
 gem 'administrate', '~> 0.11.0'
 gem 'bcrypt'
