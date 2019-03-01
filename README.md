@@ -1,6 +1,6 @@
 ## Wednesday Worlds
 
-This is the Rails web application that runs http://wednesdayworlds.org
+This is the Rails web application that runs https://wednesdayworlds.org
 
 ### Download the source
 
