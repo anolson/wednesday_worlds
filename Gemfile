@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby '2.5.7'
 
-gem 'rails', '4.2.11.1'
+gem 'rails', '5.2.4.2'
 
 gem 'bcrypt'
-gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
@@ -17,7 +17,6 @@ group :development do
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
-  gem 'web-console', '~> 2.0'
 end
 
 group :test do
