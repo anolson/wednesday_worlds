@@ -1,5 +1,5 @@
 class Admin::SessionsController < Admin::AdminController
-  skip_filter :require_user, :only => [:new, :create]
+  skip_before_action :require_user, :only => [:new, :create]
 
   def new
   end
