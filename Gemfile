@@ -12,11 +12,13 @@ gem 'sass-rails'
 gem 'puma'
 gem 'twitter'
 gem 'uglifier'
+gem 'bootsnap', require: false
 
 group :development do
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
+  gem 'listen'
 end
 
 group :test do
