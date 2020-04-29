@@ -4,8 +4,6 @@ ruby '2.5.8'
 gem 'rails', '5.2.4.2'
 
 gem 'bcrypt'
-gem 'coffee-rails'
-gem 'jquery-rails'
 gem 'oauth', '~> 0.4.7'
 gem 'redcarpet'
 gem 'sass-rails'
