@@ -1,5 +1,5 @@
 class Admin::NotifiersController < Admin::AdminController
-  before_filter :find_ride
+  before_action :find_ride
 
   def new
     @notifier = Notifier.new
