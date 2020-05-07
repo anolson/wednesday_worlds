@@ -4,8 +4,6 @@
   <title>Admin | WednesdayWorlds</title>
   <%= stylesheet_link_tag :admin %>
   <%= csrf_meta_tag %>
-  <%= javascript_include_tag :application %>
-  <%= render :partial => 'common/analytics' %>
 </head>
 <body class="admin">
   <div id="main">
@@ -18,5 +16,7 @@
 
     <%= render :partial => 'common/footer' %>
   </div>
+  <%= javascript_include_tag :application %>
+  <%= render :partial => 'common/analytics' %>
 </body>
 </html>
