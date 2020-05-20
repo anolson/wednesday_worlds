@@ -252,7 +252,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 2.5.8p224
+   ruby 2.6.6p146
 
 BUNDLED WITH
    2.1.4
