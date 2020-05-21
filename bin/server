@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rm -f ./tmp/pids/server.pid
+
+echo "Starting Rails Server..."
+bin/rails server --port $PORT --binding 0.0.0.0

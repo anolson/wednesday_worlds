@@ -15,6 +15,7 @@ ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
+ENV BUNDLE_PATH=/usr/local/bundle
 COPY Gemfile Gemfile.lock $APP_HOME/
 RUN bundle config set deployment true && \
     bundle config build.nokogiri --use-system-libraries && \
@@ -25,4 +26,4 @@ USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
 
-CMD bin/rails server --port $PORT --binding 0.0.0.0
+CMD bin/server
