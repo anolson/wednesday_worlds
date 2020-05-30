@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.8'
 
-gem 'rails', '5.2.4.2'
+gem 'rails', '5.2.4.3'
 
 gem 'bcrypt'
 gem 'oauth', '~> 0.4.7'
