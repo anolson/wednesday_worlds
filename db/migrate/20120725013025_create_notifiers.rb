@@ -1,4 +1,4 @@
-class CreateNotifiers < ActiveRecord::Migration
+class CreateNotifiers < ActiveRecord::Migration[4.2]
   def change
     create_table :notifiers do |t|
       t.boolean :enabled

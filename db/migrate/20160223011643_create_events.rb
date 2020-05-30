@@ -1,4 +1,4 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEvents < ActiveRecord::Migration[4.2]
   def up
     create_table :events do |t|
       t.datetime :begins_at

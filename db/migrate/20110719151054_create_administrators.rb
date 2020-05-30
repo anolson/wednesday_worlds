@@ -1,4 +1,4 @@
-class CreateAdministrators < ActiveRecord::Migration
+class CreateAdministrators < ActiveRecord::Migration[4.2]
   def self.up
     create_table :administrators do |t|
       t.string :name

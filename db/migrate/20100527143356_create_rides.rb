@@ -1,4 +1,4 @@
-class CreateRides < ActiveRecord::Migration
+class CreateRides < ActiveRecord::Migration[4.2][4.2]
   def self.up
     create_table :rides do |t|
       t.string :name
