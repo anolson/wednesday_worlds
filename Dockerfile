@@ -7,7 +7,6 @@ RUN apk --no-cache add \
     nodejs \
     postgresql-client \
     postgresql-dev \
-    sqlite-dev \
     tzdata
 RUN gem install bundler:2.1.4
 
@@ -25,5 +24,7 @@ RUN adduser -D appuser
 USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
+
+RUN bin/rake assets:precompile
 
 CMD bin/server
