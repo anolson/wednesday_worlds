@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2017_02_28_033544) do
     t.datetime "begins_at"
     t.integer "ride_id"
     t.integer "route_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "notifiers", force: :cascade do |t|
@@ -25,15 +25,15 @@ ActiveRecord::Schema.define(version: 2017_02_28_033544) do
     t.string "type"
     t.string "recipient"
     t.integer "ride_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "rides", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2017_02_28_033544) do
     t.text "description"
     t.string "map_url"
     t.integer "ride_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "slug"
   end
 

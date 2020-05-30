@@ -1,4 +1,4 @@
-class DropAdministrators < ActiveRecord::Migration
+class DropAdministrators < ActiveRecord::Migration[4.2]
   def up
     drop_table :administrators
   end

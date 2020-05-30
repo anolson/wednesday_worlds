@@ -1,4 +1,4 @@
-class CreateOccurrences < ActiveRecord::Migration
+class CreateOccurrences < ActiveRecord::Migration[4.2]
   def self.up
     create_table :occurrences do |t|
       t.boolean :recurs
