@@ -12,3 +12,10 @@
 
 * Add a timeline/graph  of all routes/occurences
 
+### Docker
+* Use docker-compose ✅
+* Drop sqlite3 ✅
+* Drop FactoryGirl ✅
+* Review Dockerfile
+* Update README.md with docker usage
+* .dockerignore
