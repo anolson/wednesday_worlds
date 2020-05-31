@@ -15,7 +15,8 @@
 ### Docker
 * Use docker-compose ✅
 * Drop sqlite3 ✅
-* Drop FactoryGirl ✅
+* Drop FactoryGirl
 * Review Dockerfile
+* Clean-up config/puma.rb
 * Update README.md with docker usage
 * .dockerignore
