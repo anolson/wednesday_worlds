@@ -5,9 +5,8 @@ db/*.sqlite3
 log/*.log
 tmp/*.txt
 tmp/cache/*
-tmp/pids/*
+tmp/pids/*.pid
 tmp/sessions/*
 tmp/sockets/*
-!tmp/pids/*
 !tmp/pids/.keep
 node_modules/*
