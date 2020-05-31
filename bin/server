@@ -3,5 +3,9 @@ set -e
 
 rm -f ./tmp/pids/server.pid
 
+echo "Installing gems.."
+bundle check || (bundle install && bundle clean)
+
 echo "Starting Rails Server..."
-bin/rails server --port $PORT --binding 0.0.0.0
+bundle exec puma -C config/puma.rb
+
