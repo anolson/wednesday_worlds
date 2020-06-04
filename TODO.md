@@ -16,7 +16,7 @@
 * Use docker-compose ✅
 * Drop sqlite3 ✅
 * Drop FactoryGirl ✅
-* Split Dockerfile into build stages
+* Split Dockerfile into build stages ✅
 * Review Dockerfile
 * Clean-up config/puma.rb
 * Update README.md with docker usage

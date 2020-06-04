@@ -10,7 +10,7 @@ services:
       - postgres
     volumes:
       - .:/app
-      - bundle:/usr/local/bundle
+      - bundle:/app/vendor/bundle
 
   postgres:
     image: postgres:12-alpine
