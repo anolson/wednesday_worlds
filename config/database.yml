@@ -13,3 +13,7 @@ development:
 test:
   <<: *default
   database: wednesdayworlds_test
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>

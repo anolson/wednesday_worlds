@@ -17,8 +17,8 @@
 * Drop sqlite3 ✅
 * Drop FactoryGirl ✅
 * Split Dockerfile into build stages ✅
+* Clean-up config/puma.rb ✅
 * Review Dockerfile
-* Clean-up config/puma.rb
 * Update README.md with docker usage
 * .dockerignore
 
@@ -33,7 +33,7 @@ docker build -t anolson/wednesday_worlds .
 ### Setup DB
 
 ```
-docker-compose run --rm bin/rails db:setup
+docker-compose run --rm web -- bin/rails db:setup
 ```
 
 ### Install gems
