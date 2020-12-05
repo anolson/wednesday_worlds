@@ -18,8 +18,8 @@
 * Drop FactoryGirl ✅
 * Split Dockerfile into build stages ✅
 * Clean-up config/puma.rb ✅
-* Review Dockerfile
-* Update README.md with docker usage
+* Review Dockerfile ✅
+* Update README.md with docker usage ✅
 * .dockerignore
 
 ## Notes
