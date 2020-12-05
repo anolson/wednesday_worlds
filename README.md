@@ -42,6 +42,40 @@ $ git push production master
 $ rake events:generate[YYYY-MM-DD]
 ```
 
+### Docker
+
+#### Building
+
+```
+$ docker-compose build web
+```
+
+#### Start the server
+
+```
+$ docker-compose up
+```
+
+#### Console
+
+```
+$ docker-compose run --rm web bin/rails s
+```
+
+#### Heroku
+
+```
+$ heroku container:login
+$ heroku container:push web --arg RAILS_ENV=production --app <app>
+$ heroku container:release web --app <app>
+```
+
+**Notes:**
+* Bundler needs to be configured with env vars (on Heroku)
+* Make sure that assets are compiled for production
+
+https://devcenter.heroku.com/articles/container-registry-and-runtime
+
 ### License
 
 (The MIT License)
