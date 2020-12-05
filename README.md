@@ -44,9 +44,10 @@ $ rake events:generate[YYYY-MM-DD]
 
 ### Docker
 
-#### Building
+#### Setup
 
 ```
+$ cp .env-sample .env
 $ docker-compose build web
 ```
 
@@ -59,7 +60,7 @@ $ docker-compose up
 #### Console
 
 ```
-$ docker-compose run --rm web bin/rails s
+$ docker-compose run --rm web bin/rails c
 ```
 
 #### Heroku
