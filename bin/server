@@ -7,5 +7,5 @@ echo "Installing gems.."
 bundle check || (bundle install && bundle clean)
 
 echo "Starting Rails Server..."
-bundle exec rails server
+bundle exec rails server -b 0.0.0.0
 
