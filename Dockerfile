@@ -30,6 +30,8 @@ RUN apk --no-cache add \
 RUN gem install bundler:2.1.4
 
 ENV APP_HOME /app
+ENV BUNDLE_PATH /app/vendor/bundle
+ENV BUNDLE_DEPLOYMENT true
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
@@ -39,9 +41,7 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
-RUN bundle config set deployment true && \
-    bundle config set path /app/vendor/bundle
-
-RUN bin/rake assets:precompile
+ARG RAILS_ENV
+RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:precompile; fi
 
 CMD ["bin/server"]
