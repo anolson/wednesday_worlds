@@ -1,0 +1,10 @@
+.git
+.gitignore
+.env
+
+/log/*
+/tmp/*
+
+!/log/.keep
+!/tmp/.keep
+!/tmp/pids/.keep

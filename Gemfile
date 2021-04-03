@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
-ruby '2.5.8'
+ruby '2.6.6'
 
-gem 'rails', '5.2.4.3'
+gem 'rails', '5.2.5'
 
 gem 'bcrypt'
+gem 'bootsnap', require: false
 gem 'oauth', '~> 0.4.7'
+gem 'pg'
+gem 'puma'
 gem 'redcarpet'
 gem 'sass-rails'
-gem 'puma'
 gem 'twitter'
 gem 'uglifier'
-gem 'bootsnap', require: false
 
 group :development do
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
-  gem 'sqlite3'
   gem 'listen'
 end
 
@@ -25,12 +25,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
-end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
 end

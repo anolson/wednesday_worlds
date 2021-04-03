@@ -1,0 +1,47 @@
+FROM ruby:2.6-alpine as build
+
+RUN apk --no-cache add \
+    build-base \
+    libxml2-dev \
+    libxslt-dev \
+    nodejs \
+    postgresql-client \
+    postgresql-dev \
+    tzdata
+RUN gem install bundler:2.1.4
+
+ENV APP_HOME /app
+RUN mkdir -p $APP_HOME/vendor/bundle
+WORKDIR $APP_HOME
+
+COPY Gemfile Gemfile.lock $APP_HOME/
+RUN bundle config set deployment true && \
+    bundle config build.nokogiri --use-system-libraries && \
+    bundle install
+
+FROM ruby:2.6-alpine
+
+RUN apk --no-cache add \
+    libxml2-dev \
+    libxslt-dev \
+    nodejs \
+    postgresql-client \
+    tzdata
+RUN gem install bundler:2.1.4
+
+ENV APP_HOME /app
+ENV BUNDLE_PATH /app/vendor/bundle
+ENV BUNDLE_DEPLOYMENT true
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+RUN adduser -D appuser
+USER appuser
+
+COPY --chown=appuser:appuser . $APP_HOME
+COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
+
+ARG RAILS_ENV
+RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:precompile; fi
+
+CMD ["bin/server"]
