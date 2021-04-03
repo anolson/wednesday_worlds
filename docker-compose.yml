@@ -2,7 +2,9 @@ version: '3.4'
 
 services:
   web:
-    build: .
+    build:
+      context: .
+      target: development
     ports:
       - "3000:3000"
     env_file: .env
