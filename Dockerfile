@@ -19,7 +19,9 @@ RUN bundle config set deployment true && \
     bundle config build.nokogiri --use-system-libraries && \
     bundle install
 
-# Development image
+#####################
+# Development image #
+#####################
 FROM ruby:2.6-alpine as development
 
 RUN apk --no-cache add \
@@ -45,7 +47,9 @@ COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vend
 
 CMD ["bin/server"]
 
-# Production image
+####################
+# Production image #
+####################
 FROM ruby:2.6-alpine
 
 RUN apk --no-cache add \
