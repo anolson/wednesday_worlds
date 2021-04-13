@@ -63,9 +63,19 @@ $ docker-compose up
 $ docker-compose run --rm web bin/rails c
 ```
 
+#### Install gems
+
+```
+$ docker-compose run --rm web bundle install
+```
+
 #### Volumes
 
-The Dockerfile uses a multi-stage build process to reduce image size. After adding new gems to the image, they may not be available with when running with docker-compose. These would usually be installed with `bin/server`, but if they require native extensions then there's a good chance that you'll run into compilation issues. One workaround is to simply remove docker-compose volume with: `docker-compose down -v`
+Reset docker volumes (keep in mind this will remove all postgres data and bundled gems)
+
+```
+$ docker-compose down --volumes
+```
 
 #### Heroku
 
