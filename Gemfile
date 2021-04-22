@@ -5,7 +5,7 @@ gem 'rails', '5.2.5'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
-gem 'oauth', '~> 0.4.7'
+gem 'oauth', '~> 0.5.5'
 gem 'pg'
 gem 'puma'
 gem 'redcarpet'

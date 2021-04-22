@@ -111,7 +111,7 @@ GEM
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    oauth (0.4.7)
+    oauth (0.5.5)
     pg (1.2.3)
     pry (0.10.2)
       coderay (~> 1.1.0)
@@ -230,7 +230,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   listen
-  oauth (~> 0.4.7)
+  oauth (~> 0.5.5)
   pg
   pry
   puma
