@@ -72,7 +72,6 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
-ARG RAILS_ENV
-RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:precompile; fi
+RUN RAILS_ENV=production SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
 
 CMD ["bin/server"]
