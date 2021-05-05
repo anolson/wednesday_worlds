@@ -88,6 +88,7 @@ $ heroku container:release web --app <app>
 **Notes:**
 * Bundler needs to be configured with env vars (on Heroku)
 * Make sure that assets are compiled for production
+* Make sure to set `RAILS_SERVE_STATIC_FILES=true`
 
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
