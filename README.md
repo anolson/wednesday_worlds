@@ -88,7 +88,6 @@ $ heroku container:release web --app <app>
 
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
-
 ### License
 
 (The MIT License)
