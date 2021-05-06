@@ -20,20 +20,16 @@ $ bin/setup
 #### Staging
 
 ```
-$ git push staging master
-```
-
-From a feature branch:
+$ heroku container:push web --app wednesdayworlds-staging
+$ heroku container:release web --app  wednesdayworlds-staging
 
 ```
-$ git push staging feature:master
-```
-
 
 #### Production
 
 ```
-$ git push production master
+$ heroku container:push web --app wednesdayworlds
+$ heroku container:release web --app  wednesdayworlds
 ```
 
 #### Generate events
@@ -81,7 +77,7 @@ $ docker-compose down --volumes
 
 ```
 $ heroku container:login
-$ heroku container:push web --arg RAILS_ENV=production --app <app>
+$ heroku container:push web --app <app>
 $ heroku container:release web --app <app>
 ```
 
@@ -91,6 +87,7 @@ $ heroku container:release web --app <app>
 * Make sure to set `RAILS_SERVE_STATIC_FILES=true`
 
 https://devcenter.heroku.com/articles/container-registry-and-runtime
+
 
 ### License
 
