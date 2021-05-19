@@ -11,6 +11,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
+    - name: Copy .env
+      run: cp .env-sample .env
+
     - name: Start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
