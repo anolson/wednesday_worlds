@@ -14,10 +14,13 @@ jobs:
     - name: Copy .env
       run: cp .env-sample .env
 
-    - name: Start containers
+    - name: Setup /tmp dirs
+      run: sudo mkdir -p ./tmp/cache
+
+    - name: Build & start containers
       run: docker-compose up -d --build
 
-    - name: Run tests
+    - name: Run RSpec examples
       run: docker-compose run --rm web bundle exec rspec
 
     - name: Stop containers
