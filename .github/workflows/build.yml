@@ -4,25 +4,40 @@ on: [push]
 
 jobs:
   test:
-    timeout-minutes: 10
+    name: Test
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: secret
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    env:
+      RAILS_ENV: test
+      PGHOST: localhost
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
 
-    - name: Copy .env
-      run: cp .env-sample .env
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
 
-    - name: Setup /tmp dirs
-      run: sudo mkdir -p ./tmp/cache
+      - name: Setup test database
+        run: |
+          bin/rails db:setup
 
-    - name: Build & start containers
-      run: docker-compose up -d --build
-
-    - name: Run RSpec examples
-      run: docker-compose run --rm web bundle exec rspec
-
-    - name: Stop containers
-      if: always()
-      run: docker-compose down
+      - name: Setup RSpec examples
+        run: |
+          bin/rspec
