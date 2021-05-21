@@ -34,6 +34,10 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Ruby version
+        run: |
+          ruby -v
+
       - name: Setup test database
         run: |
           bin/rails db:setup
@@ -41,3 +45,4 @@ jobs:
       - name: Setup RSpec examples
         run: |
           bin/rspec
+
