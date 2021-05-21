@@ -21,10 +21,6 @@ jobs:
         ports:
           - 5432:5432
 
-    env:
-      RAILS_ENV: test
-      PGHOST: localhost
-
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -34,15 +30,13 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Ruby version
-        run: |
-          ruby -v
-
       - name: Setup test database
-        run: |
-          bin/rails db:setup
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
+        run: bin/rails db:setup
 
       - name: Setup RSpec examples
-        run: |
-          bin/rspec
+        run: bin/rspec
 
