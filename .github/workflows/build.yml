@@ -35,7 +35,7 @@ jobs:
           bundler-cache: true
 
       - name: Setup test database
-        run: bin/rails db:setup
+        run: bin/rails db:create
 
       - name: Setup RSpec examples
         run: bin/rails spec
