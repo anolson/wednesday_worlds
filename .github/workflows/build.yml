@@ -21,6 +21,10 @@ jobs:
         ports:
           - 5432:5432
 
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgresql://postgres:secret@localhost/wednesdayworlds_test
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -32,11 +36,8 @@ jobs:
 
       - name: Setup test database
         env:
-          RAILS_ENV: test
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: 5432
         run: bin/rails db:setup
 
       - name: Setup RSpec examples
-        run: bin/rspec
+        run: bin/rails spec
 
