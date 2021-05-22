@@ -61,6 +61,9 @@ jobs:
       - name: Login to Heroku container registry
         run: heroku container:login
 
+      - name: Pull image (staging)
+        run: heroku container:pull web --app=wednesdayworlds-staging
+
       - name: Build and push image (staging)
         run: heroku container:push web --app=wednesdayworlds-staging
 
