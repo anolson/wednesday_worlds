@@ -65,4 +65,4 @@ jobs:
         run: heroku container:push web --app=wednesdayworlds-staging
 
       - name: Release image (staging)
-        run: heroku container:push web --app=wednesdayworlds-staging
+        run: heroku container:release web --app=wednesdayworlds-staging
