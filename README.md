@@ -44,25 +44,31 @@ $ rake events:generate[YYYY-MM-DD]
 
 ```
 $ cp .env-sample .env
-$ docker-compose build web
+$ docker compose build web
 ```
 
 #### Start the server
 
 ```
-$ docker-compose up
+$ docker compose up
 ```
 
 #### Console
 
 ```
-$ docker-compose run --rm web bin/rails c
+$ docker compose run --rm web bin/rails c
 ```
 
 #### Install gems
 
 ```
-$ docker-compose run --rm web bundle install
+$ docker compose run --rm web bundle install
+```
+
+#### Run tests
+
+```
+$ docker compose run --rm test bin/rails spec
 ```
 
 #### Volumes
@@ -70,7 +76,7 @@ $ docker-compose run --rm web bundle install
 Reset docker volumes (keep in mind this will remove all postgres data and bundled gems)
 
 ```
-$ docker-compose down --volumes
+$ docker compose down --volumes
 ```
 
 #### Heroku
