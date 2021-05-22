@@ -61,11 +61,27 @@ jobs:
       - name: Login to Heroku container registry
         run: heroku container:login
 
-      - name: Pull image (staging)
-        run: heroku container:pull web --app=wednesdayworlds-staging
-
       - name: Build and push image (staging)
         run: heroku container:push web --app=wednesdayworlds-staging
 
       - name: Release image (staging)
         run: heroku container:release web --app=wednesdayworlds-staging
+
+  production-build:
+    name: Build (production)
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    needs: test
+
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Login to Heroku container registry
+        run: heroku container:login
+
+      - name: Build and push image (production)
+        run: heroku container:push web --app=wednesdayworlds
