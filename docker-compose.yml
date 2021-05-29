@@ -14,6 +14,18 @@ services:
       - .:/app
       - bundle:/app/vendor/bundle
 
+  test:
+    build:
+      context: .
+      target: development
+    environment:
+      - DATABASE_URL=postgresql://postgres:secret@postgres/wednesdayworlds_test
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - bundle:/app/vendor/bundle
+
   postgres:
     image: postgres:12-alpine
     ports:

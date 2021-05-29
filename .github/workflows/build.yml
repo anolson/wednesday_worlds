@@ -1,0 +1,87 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: secret
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgresql://postgres:secret@localhost/wednesdayworlds_test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Setup test database
+        run: bin/rails db:create db:schema:load
+
+      - name: Run RSpec
+        run: bin/rails spec
+
+  staging-build:
+    name: Build (staging)
+    runs-on: ubuntu-latest
+    needs: test
+
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Login to Heroku container registry
+        run: heroku container:login
+
+      - name: Build and push image (staging)
+        run: heroku container:push web --app=wednesdayworlds-staging
+
+      - name: Release image (staging)
+        run: heroku container:release web --app=wednesdayworlds-staging
+
+  production-build:
+    name: Build (production)
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    needs: test
+
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Login to Heroku container registry
+        run: heroku container:login
+
+      - name: Build and push image (production)
+        run: heroku container:push web --app=wednesdayworlds
