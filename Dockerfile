@@ -8,7 +8,7 @@ RUN apk --no-cache add \
     postgresql-client \
     postgresql-dev \
     tzdata
-RUN gem install bundler:2.1.4
+RUN gem install bundler:2.3.8
 
 ENV APP_HOME /app
 RUN mkdir -p $APP_HOME/vendor/bundle
@@ -32,7 +32,7 @@ RUN apk --no-cache add \
     postgresql-client \
     postgresql-dev \
     tzdata
-RUN gem install bundler:2.1.4
+RUN gem install bundler:2.3.8
 
 ENV APP_HOME /app
 ENV BUNDLE_PATH /app/vendor/bundle
@@ -58,7 +58,7 @@ RUN apk --no-cache add \
     nodejs \
     postgresql-client \
     tzdata
-RUN gem install bundler:2.1.4
+RUN gem install bundler:2.3.8
 
 ENV APP_HOME /app
 ENV BUNDLE_PATH /app/vendor/bundle
