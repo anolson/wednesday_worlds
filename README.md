@@ -29,13 +29,13 @@ $ heroku container:release web --app  wednesdayworlds-staging
 
 ```
 $ heroku container:push web --app wednesdayworlds
-$ heroku container:release web --app  wednesdayworlds
+$ heroku container:release web --app wednesdayworlds
 ```
 
 #### Generate events
 
 ```
-$ rake events:generate[YYYY-MM-DD]
+$ heroku run "bin/rake events:generate[YYYY-MM-DD]" --app=wednesdayworlds
 ```
 
 ### Docker
@@ -44,7 +44,7 @@ $ rake events:generate[YYYY-MM-DD]
 
 ```
 $ cp .env-sample .env
-$ docker compose build web
+$ docker compose build --pull web
 ```
 
 #### Start the server
@@ -98,7 +98,7 @@ https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 (The MIT License)
 
-Copyright © 2010-2021 Andrew Olson.
+Copyright © 2010-2022 Andrew Olson.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
