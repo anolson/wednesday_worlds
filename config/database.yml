@@ -1,12 +1,15 @@
 default: &default
+  adapter: postgresql
   encoding: utf8
   pool: 5
 
 development:
   <<: *default
+  database: wednesdayworlds_development
 
 test:
   <<: *default
+  database: wednesdayworlds_test
 
 production:
   url:  <%= ENV["DATABASE_URL"] %>
