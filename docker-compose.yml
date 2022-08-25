@@ -19,6 +19,7 @@ services:
       context: .
       target: development
     environment:
+      - RAILS_ENV=test
       - DATABASE_URL=postgresql://postgres:secret@postgres/wednesdayworlds_test
     depends_on:
       - postgres
