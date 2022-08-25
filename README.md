@@ -65,6 +65,12 @@ $ docker compose run --rm web bin/rails c
 $ docker compose run --rm web bundle install
 ```
 
+#### Update gems
+
+```
+$ docker compose run --rm web bundle update rails
+```
+
 #### Run tests
 
 ```
