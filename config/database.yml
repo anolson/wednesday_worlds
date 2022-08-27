@@ -2,15 +2,16 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: 5
+  url: <%= ENV["DATABASE_URL"] %>
 
 development:
   <<: *default
-  database: wednesdayworlds_development
+  database: wednesdayworlds
 
 test:
   <<: *default
   database: wednesdayworlds_test
 
 production:
-  url:  <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
