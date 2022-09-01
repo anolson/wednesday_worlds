@@ -1,17 +1,16 @@
 default: &default
-  adapter: postgresql
-  encoding: utf8
-  pool: 5
-  url: <%= ENV["DATABASE_URL"] %>
+  adapter: sqlite3
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: wednesdayworlds
+  database: db/development.sqlite3
 
 test:
   <<: *default
-  database: wednesdayworlds_test
+  database: db/test.sqlite3
 
 production:
-  url: <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  <<: *default
+  database: db/production.sqlite3

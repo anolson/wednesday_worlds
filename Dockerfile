@@ -5,8 +5,8 @@ RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
-    postgresql-dev \
+    sqlite-dev \
+    sqlite \
     tzdata
 RUN gem install bundler:2.3.21
 
@@ -29,8 +29,8 @@ RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
-    postgresql-dev \
+    sqlite-dev \
+    sqlite \
     tzdata
 RUN gem install bundler:2.3.21
 
@@ -56,7 +56,7 @@ RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
+    sqlite \
     tzdata
 RUN gem install bundler:2.3.21
 

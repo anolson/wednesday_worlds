@@ -6,7 +6,7 @@ gem 'rails', '5.2.8.1'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'oauth', '~> 0.5.5'
-gem 'pg'
+gem 'sqlite3', '~> 1.3.11'
 gem 'puma'
 gem 'redcarpet'
 gem 'sass-rails'

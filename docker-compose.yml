@@ -8,8 +8,6 @@ services:
     ports:
       - "3000:3000"
     env_file: .env
-    depends_on:
-      - postgres
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
@@ -20,23 +18,9 @@ services:
       target: development
     environment:
       - RAILS_ENV=test
-      - DATABASE_URL=postgresql://postgres:secret@postgres/wednesdayworlds_test
-    depends_on:
-      - postgres
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
 
-  postgres:
-    image: postgres:12-alpine
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=secret
-    volumes:
-      - postgresql:/var/lib/postgresql/data
-
 volumes:
   bundle:
-  postgresql:
