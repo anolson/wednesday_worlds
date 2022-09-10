@@ -9,7 +9,7 @@ gem 'oauth', '~> 0.5.5'
 gem 'sqlite3', '~> 1.3.11'
 gem 'puma'
 gem 'redcarpet'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'twitter'
 gem 'uglifier'
 
