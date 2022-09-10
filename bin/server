@@ -3,9 +3,13 @@ set -e
 
 rm -f ./tmp/pids/server.pid
 
-echo "Installing gems.."
+echo "Installing gems."
 bundle check || (bundle install && bundle clean)
 
-echo "Starting Rails Server..."
-bundle exec rails server -b 0.0.0.0
+echo "Restoring DB data."
+[ ! -f $LITESTREAM_DATA_PATH ] && litestream restore -v -if-replica-exists -o $LITESTREAM_DATA_PATH $LITESTREAM_REPLICA_URL
 
+ln -nfs $LITESTREAM_DATA_PATH $SQLITE_DATA_PATH
+
+echo "Starting Rails Server."
+litestream replicate -exec "bundle exec rails server -b 0.0.0.0 -p $PORT" $LITESTREAM_DATA_PATH $LITESTREAM_REPLICA_URL

@@ -11,6 +11,7 @@ services:
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
+      - litestream_data:/data
 
   test:
     build:
@@ -24,3 +25,4 @@ services:
 
 volumes:
   bundle:
+  litestream_data:

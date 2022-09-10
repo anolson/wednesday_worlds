@@ -1,3 +1,7 @@
+###################
+# App build stage #
+###################
+
 FROM ruby:2.6-alpine as build
 
 RUN apk --no-cache add \
@@ -24,6 +28,9 @@ RUN bundle config set deployment true && \
 #####################
 FROM ruby:2.6-alpine as development
 
+ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-arm64-static.tar.gz /tmp/litestream.tar.gz
+RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
+
 RUN apk --no-cache add \
     build-base \
     libxml2-dev \
@@ -32,14 +39,17 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata
+
 RUN gem install bundler:2.3.21
 
 ENV APP_HOME /app
+ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
-RUN mkdir $APP_HOME
+RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
 RUN adduser -D appuser
+RUN chown appuser:appuser $DATA_HOME
 USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
@@ -58,6 +68,7 @@ RUN apk --no-cache add \
     nodejs \
     sqlite \
     tzdata
+
 RUN gem install bundler:2.3.21
 
 ENV APP_HOME /app
