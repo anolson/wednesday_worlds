@@ -8,6 +8,8 @@ services:
     ports:
       - "3000:3000"
     env_file: .env
+    environment:
+      - APP_DATA_PATH=/app/db/development.sqlite3
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle

@@ -85,13 +85,16 @@ Reset docker volumes (keep in mind this will remove all postgres data and bundle
 $ docker compose down --volumes
 ```
 
-#### Heroku
+### Litestream Config
 
 ```
-$ heroku container:login
-$ heroku container:push web --app <app>
-$ heroku container:release web --app <app>
+LITESTREAM_REPLICATION=true
+LITESTREAM_REPLICA_URL=s3://wednesdayworlds/data/development.sqlite
+LITESTREAM_ACCESS_KEY_ID=<access_key_id>
+LITESTREAM_SECRET_ACCESS_KEY=<secret_access_key>
+LITESTREAM_DATA_PATH=/data/db/development.sqlite3
 ```
+
 
 **Notes:**
 * Bundler needs to be configured with env vars (on Heroku)
