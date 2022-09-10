@@ -72,12 +72,14 @@ RUN apk --no-cache add \
 RUN gem install bundler:2.3.21
 
 ENV APP_HOME /app
+ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 RUN adduser -D appuser
+RUN chown appuser:appuser $DATA_HOME
 USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
