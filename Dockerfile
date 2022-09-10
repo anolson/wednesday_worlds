@@ -75,7 +75,7 @@ ENV APP_HOME /app
 ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
-RUN mkdir $APP_HOME
+RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
 RUN adduser -D appuser
