@@ -66,6 +66,7 @@ RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
+    sqlite-dev \
     sqlite \
     tzdata
 
