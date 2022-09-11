@@ -6,20 +6,38 @@ rm -f ./tmp/pids/server.pid
 echo "Installing gems."
 bundle check || (bundle install && bundle clean)
 
-if [ -z "$LITESTREAM_REPLICATION" ]; then
-  # Remove symlink if it exists
-  [ -L "$APP_DATA_PATH" ] && rm -f $APP_DATA_PATH
 
+run_server() {
   echo "Starting Rails Server."
   bundle exec rails server -b 0.0.0.0 -p $PORT
-else
-  if  [ ! -f $LITESTREAM_DATA_PATH ]; then
+}
+
+run_server_with_replication() {
+  echo "Starting Rails Server (with litestream replication)."
+  litestream replicate -exec "bundle exec rails server -b 0.0.0.0 -p $PORT" $LITESTREAM_DATA_PATH $LITESTREAM_REPLICA_URL
+}
+
+restore_data() {
+  if [ ! -f $LITESTREAM_DATA_PATH ]; then
     echo "Restoring litestream data."
     litestream restore -v -if-replica-exists -o $LITESTREAM_DATA_PATH $LITESTREAM_REPLICA_URL
   fi
 
+  # Create symlink to the data path
   ln -nfs $LITESTREAM_DATA_PATH $APP_DATA_PATH
+}
 
-  echo "Starting Rails Server (with litestream replication)."
-  litestream replicate -exec "bundle exec rails server -b 0.0.0.0 -p $PORT" $LITESTREAM_DATA_PATH $LITESTREAM_REPLICA_URL
+if [ $STORAGE_MODE == "local" ]; then
+  # Remove symlink if it exists
+  [ -L "$APP_DATA_PATH" ] && rm -f $APP_DATA_PATH
+
+  run_server
+else
+  if [ $STORAGE_MODE == "restore_only" ]; then
+    restore_data
+    run_server
+  elif [ $STORAGE_MODE == "replication" ]; then
+    restore_data
+    run_server_with_replication
+  fi
 fi

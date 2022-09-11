@@ -10,6 +10,7 @@ services:
     env_file: .env
     environment:
       - APP_DATA_PATH=/app/db/development.sqlite3
+      - STORAGE_MODE=local
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle

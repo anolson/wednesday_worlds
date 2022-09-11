@@ -22,7 +22,6 @@ $ bin/setup
 ```
 $ heroku container:push web --app wednesdayworlds-staging
 $ heroku container:release web --app  wednesdayworlds-staging
-
 ```
 
 #### Production
@@ -85,7 +84,7 @@ Reset docker volumes (keep in mind this will remove all postgres data and bundle
 $ docker compose down --volumes
 ```
 
-### Litestream Config
+### Litestream config
 
 ```
 LITESTREAM_REPLICATION=true
@@ -95,6 +94,11 @@ LITESTREAM_SECRET_ACCESS_KEY=<secret_access_key>
 LITESTREAM_DATA_PATH=/data/db/development.sqlite3
 ```
 
+#### `STORAGE_MODE` config
+
+* `local` – DB only stored locally in `db` – useful for local development.
+* `restore_only` – DB restored from S3 (without replication) – useful if you need to replicate data from another host.
+* `replication` – DB restored from S3 (with replication)
 
 **Notes:**
 * Bundler needs to be configured with env vars (on Heroku)
