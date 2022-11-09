@@ -87,7 +87,7 @@ $ docker compose down --volumes
 ### Litestream config
 
 ```
-LITESTREAM_REPLICATION=true
+STORAGE_MODE=replication
 LITESTREAM_REPLICA_URL=s3://wednesdayworlds/data/development.sqlite
 LITESTREAM_ACCESS_KEY_ID=<access_key_id>
 LITESTREAM_SECRET_ACCESS_KEY=<secret_access_key>
