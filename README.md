@@ -88,7 +88,7 @@ $ docker compose down --volumes
 
 ```
 STORAGE_MODE=replication
-LITESTREAM_REPLICA_URL=s3://wednesdayworlds/data/development.sqlite
+LITESTREAM_REPLICA_URL=s3://wednesdayworlds/data/development.sqlite3
 LITESTREAM_ACCESS_KEY_ID=<access_key_id>
 LITESTREAM_SECRET_ACCESS_KEY=<secret_access_key>
 LITESTREAM_DATA_PATH=/data/db/development.sqlite3
