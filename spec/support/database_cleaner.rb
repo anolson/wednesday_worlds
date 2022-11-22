@@ -1,8 +1,4 @@
 RSpec.configure do |config|
-  DatabaseCleaner.url_allowlist = [
-    proc { |uri| URI.parse(uri).path == "/wednesdayworlds_test" }
-  ]
-
   config.before(:suite) do
     DatabaseCleaner.clean_with(:deletion)
   end

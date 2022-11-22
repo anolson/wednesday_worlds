@@ -1,3 +1,7 @@
+###################
+# App build stage #
+###################
+
 FROM ruby:2.6-alpine as build
 
 RUN apk --no-cache add \
@@ -5,8 +9,8 @@ RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
-    postgresql-dev \
+    sqlite-dev \
+    sqlite \
     tzdata
 RUN gem install bundler:2.3.21
 
@@ -24,22 +28,28 @@ RUN bundle config set deployment true && \
 #####################
 FROM ruby:2.6-alpine as development
 
+ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-arm64-static.tar.gz /tmp/litestream.tar.gz
+RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
+
 RUN apk --no-cache add \
     build-base \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
-    postgresql-dev \
+    sqlite-dev \
+    sqlite \
     tzdata
+
 RUN gem install bundler:2.3.21
 
 ENV APP_HOME /app
+ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
-RUN mkdir $APP_HOME
+RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
 RUN adduser -D appuser
+RUN chown appuser:appuser $DATA_HOME
 USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
@@ -52,21 +62,28 @@ CMD ["bin/server"]
 ####################
 FROM ruby:2.6-alpine
 
+ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
+RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
+
 RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
     nodejs \
-    postgresql-client \
+    sqlite-dev \
+    sqlite \
     tzdata
+
 RUN gem install bundler:2.3.21
 
 ENV APP_HOME /app
+ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
-RUN mkdir $APP_HOME
+RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
 RUN adduser -D appuser
+RUN chown appuser:appuser $DATA_HOME
 USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
