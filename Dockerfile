@@ -2,7 +2,7 @@
 # App build stage #
 ###################
 
-FROM ruby:2.6-alpine as build
+FROM ruby:3.1-alpine as build
 
 RUN apk --no-cache add \
     build-base \
@@ -12,7 +12,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata
-RUN gem install bundler:2.3.21
+RUN gem install bundler:2.3.26
 
 ENV APP_HOME /app
 RUN mkdir -p $APP_HOME/vendor/bundle
@@ -26,7 +26,7 @@ RUN bundle config set deployment true && \
 #####################
 # Development image #
 #####################
-FROM ruby:2.6-alpine as development
+FROM ruby:3.1-alpine as development
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-arm64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
@@ -40,7 +40,7 @@ RUN apk --no-cache add \
     sqlite \
     tzdata
 
-RUN gem install bundler:2.3.21
+RUN gem install bundler:2.3.26
 
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
@@ -60,7 +60,7 @@ CMD ["bin/server"]
 ####################
 # Production image #
 ####################
-FROM ruby:2.6-alpine
+FROM ruby:3.1-alpine
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
@@ -73,7 +73,7 @@ RUN apk --no-cache add \
     sqlite \
     tzdata
 
-RUN gem install bundler:2.3.21
+RUN gem install bundler:2.3.26
 
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
