@@ -55,6 +55,7 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
+ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
 
 ####################
@@ -91,4 +92,5 @@ COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vend
 
 RUN RAILS_ENV=production SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
 
+ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
