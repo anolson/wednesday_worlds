@@ -12,7 +12,9 @@ restore_data() {
 }
 
 remove_symlink() {
-  [ -L "$APP_DATA_PATH" ] && rm -f $APP_DATA_PATH
+  if [ -L "$APP_DATA_PATH" ]; then
+    rm -f $APP_DATA_PATH
+  fi
 }
 
 if [ $STORAGE_MODE == "local" ]; then
