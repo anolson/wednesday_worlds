@@ -24,7 +24,7 @@ class Admin::RidesController < Admin::AdminController
   def update
     @ride = Ride.find(params[:id])
 
-    if @ride.update_attributes(ride_params)
+    if @ride.update(ride_params)
       redirect_to admin_dashboard_path
     else
       render :edit

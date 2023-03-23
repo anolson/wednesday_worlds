@@ -18,7 +18,7 @@ class Admin::RoutesController < Admin::AdminController
   def update
     @route = Route.find(params[:id])
 
-    if @route.update_attributes(route_params)
+    if @route.update(route_params)
       redirect_to admin_dashboard_path
     else
       render :action => :edit

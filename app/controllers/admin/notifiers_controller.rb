@@ -23,7 +23,7 @@ class Admin::NotifiersController < Admin::AdminController
   def update
     @notifier = Notifier.find(params[:id])
 
-    if @notifier.update_attributes(notifier_params)
+    if @notifier.update(notifier_params)
       redirect_to admin_ride_url(@ride)
     else
       render :action => :edit
