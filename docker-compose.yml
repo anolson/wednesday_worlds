@@ -22,6 +22,7 @@ services:
       target: development
     environment:
       - RAILS_ENV=test
+      - STORAGE_MODE=local
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
