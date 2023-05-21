@@ -10,6 +10,7 @@ gem 'sqlite3', '~> 1.5.4'
 gem 'puma'
 gem 'redcarpet'
 gem 'sassc-rails'
+gem 'sprockets-rails'
 gem 'twitter'
 gem 'uglifier'
 

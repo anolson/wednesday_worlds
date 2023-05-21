@@ -278,6 +278,7 @@ DEPENDENCIES
   sassc-rails
   spring (~> 2.0.2)
   spring-commands-rspec
+  sprockets-rails
   sqlite3 (~> 1.5.4)
   twitter
   uglifier
