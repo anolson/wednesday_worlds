@@ -11,6 +11,7 @@ services:
     environment:
       - APP_DATA_PATH=/app/db/development.sqlite3
       - STORAGE_MODE=local
+    stop_grace_period: "3s"
     volumes:
       - .:/app
       - bundle:/app/vendor/bundle
