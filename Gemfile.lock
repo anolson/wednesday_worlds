@@ -69,7 +69,7 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.16)
-    bootsnap (1.15.0)
+    bootsnap (1.18.3)
       msgpack (~> 1.2)
     buftok (0.2.0)
     builder (3.2.4)
@@ -131,9 +131,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.4)
+    mini_portile2 (2.8.5)
     minitest (5.19.0)
-    msgpack (1.4.5)
+    msgpack (1.7.2)
     multipart-post (2.0.0)
     naught (1.1.0)
     net-imap (0.4.10)
@@ -145,7 +145,7 @@ GEM
       timeout
     net-smtp (0.4.0.1)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.7.0)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -154,7 +154,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
     public_suffix (4.0.6)
-    puma (6.3.1)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -230,7 +230,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4)
+    sqlite3 (1.7.2)
       mini_portile2 (~> 2.8.0)
     thor (1.2.2)
     thread_safe (0.3.6)
@@ -281,7 +281,7 @@ DEPENDENCIES
   spring (~> 2.0.2)
   spring-commands-rspec
   sprockets-rails
-  sqlite3 (~> 1.5.4)
+  sqlite3 (~> 1.7.2)
   twitter
   uglifier
 
