@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 ruby '3.1.4'
 
-gem 'rails', '7.0.7'
+gem 'rails', '7.0.8.1'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'oauth', '~> 0.5.5'
-gem 'sqlite3', '~> 1.5.4'
+gem 'sqlite3', '~> 1.7.2'
 gem 'puma'
 gem 'redcarpet'
 gem 'sassc-rails'
