@@ -45,6 +45,8 @@ RUN gem install bundler:2.3.26
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
+ENV RAILS_ENV development
+
 RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
@@ -80,6 +82,8 @@ ENV APP_HOME /app
 ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
+ENV RAILS_ENV production
+
 RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
@@ -90,7 +94,7 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
-RUN RAILS_ENV=production SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
+RUN SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
