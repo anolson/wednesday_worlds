@@ -1,5 +1,5 @@
 # Name of your application. Used to uniquely configure containers.
-service: wednesday_worlds
+service: wednesdayworlds
 
 # Name of the container image.
 image: anolson/wednesday_worlds
