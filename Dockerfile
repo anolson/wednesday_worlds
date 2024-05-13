@@ -32,6 +32,7 @@ ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestrea
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 RUN apk --no-cache add \
+    curl \
     build-base \
     libxml2-dev \
     libxslt-dev \
@@ -69,6 +70,7 @@ ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestrea
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 RUN apk --no-cache add \
+    curl \
     libxml2-dev \
     libxslt-dev \
     nodejs \
