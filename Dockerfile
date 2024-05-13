@@ -96,6 +96,8 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
+RUN bundle exec bootsnap precompile app/ lib/
+
 RUN SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
