@@ -6,7 +6,8 @@ image: anolson/wednesday_worlds
 
 # Deploy to these servers.
 servers:
-  - 192.168.0.1
+  web:
+    - 157.245.128.86
 
 # Credentials for your image host.
 registry:
@@ -20,18 +21,21 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
   clear:
-    - APP_DATA_PATH=/app/db/production.sqlite3
-    - LITESTREAM_DATA_PATH=/data/db/production.sqlite3
-    - LITESTREAM_REPLICA_URL="s3://wednesdayworlds/data/staging.sqlite3"
-    - PORT=3000
-    - RAILS_LOG_TO_STDOUT=1
-    - STORAGE_MODE=local
-    - RAILS_SERVE_STATIC_FILES=true
+    APP_DATA_PATH: /app/db/production.sqlite3
+    LITESTREAM_DATA_PATH: /data/db/production.sqlite3
+    LITESTREAM_REPLICA_URL: "s3://wednesdayworlds/data/staging.sqlite3"
+    PORT: 3000
+    RAILS_LOG_TO_STDOUT: 1
+    STORAGE_MODE: restore_only
+    RAILS_SERVE_STATIC_FILES: true
 
   secret:
     - RAILS_MASTER_KEY
     - LITESTREAM_ACCESS_KEY_ID
     - LITESTREAM_SECRET_ACCESS_KEY
+
+builder:
+  multiarch: false
 
 # Use a different ssh user than root
 # ssh:
