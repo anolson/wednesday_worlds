@@ -19,5 +19,6 @@ WednesdayWorlds::Application.routes.draw do
   get 'signin' => 'admin/sessions#new'
   get 'signout' => 'admin/sessions#destroy'
 
+  get 'up' => 'pages#health'
   root "pages#index"
 end

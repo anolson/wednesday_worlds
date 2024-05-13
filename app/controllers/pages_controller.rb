@@ -3,4 +3,8 @@ class PagesController < ApplicationController
     @this_week = Event.this_week
     @events = Event.upcoming
   end
+
+  def health
+    head :ok
+  end
 end
