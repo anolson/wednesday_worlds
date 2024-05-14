@@ -37,10 +37,6 @@ env:
 builder:
   multiarch: false
 
-labels:
-  traefik.http.routers.wednesdayworlds.entrypoints: web
-  traefik.http.services.wednesdayworlds.loadbalancer.server.port: 80
-
 # Use a different ssh user than root
 # ssh:
 #   user: app
