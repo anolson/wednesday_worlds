@@ -58,6 +58,7 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
+EXPOSE 3000
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
 
@@ -100,5 +101,6 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 RUN SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
 
+EXPOSE 3000
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
