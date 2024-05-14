@@ -7,7 +7,7 @@ image: anolson/wednesday_worlds
 # Deploy to these servers.
 servers:
   web:
-    - 157.245.128.86
+    - 206.189.186.106
 
 # Credentials for your image host.
 registry:
