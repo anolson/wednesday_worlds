@@ -17,6 +17,9 @@ remove_symlink() {
   fi
 }
 
+echo "Installing gems."
+bundle check || (bundle install && bundle clean)
+
 if [ $STORAGE_MODE == "local" ]; then
   remove_symlink
 else

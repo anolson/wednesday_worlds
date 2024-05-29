@@ -18,6 +18,7 @@ group :development do
   gem 'spring', '~> 2.0.2'
   gem 'spring-commands-rspec'
   gem 'listen'
+  gem 'kamal'
 end
 
 group :test do

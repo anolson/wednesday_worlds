@@ -32,6 +32,7 @@ ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestrea
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 RUN apk --no-cache add \
+    curl \
     build-base \
     libxml2-dev \
     libxslt-dev \
@@ -45,6 +46,8 @@ RUN gem install bundler:2.3.26
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
+ENV RAILS_ENV development
+
 RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
@@ -55,6 +58,7 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
+EXPOSE 3000
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
 
@@ -67,6 +71,7 @@ ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestrea
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 RUN apk --no-cache add \
+    curl \
     libxml2-dev \
     libxslt-dev \
     nodejs \
@@ -80,6 +85,8 @@ ENV APP_HOME /app
 ENV DATA_HOME /data/db
 ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
+ENV RAILS_ENV production
+
 RUN mkdir -p $APP_HOME $DATA_HOME
 WORKDIR $APP_HOME
 
@@ -90,7 +97,10 @@ USER appuser
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
 
-RUN RAILS_ENV=production SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
+RUN bundle exec bootsnap precompile app/ lib/
 
+RUN SECRET_KEY_BASE=$(bin/rake secret) bin/rake assets:clean assets:precompile
+
+EXPOSE 3000
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
