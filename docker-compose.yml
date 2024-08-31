@@ -7,7 +7,7 @@ services:
       target: development
     ports:
       - "3000:3000"
-    env_file: .env
+    env_file: .env.development
     environment:
       - APP_DATA_PATH=/app/db/development.sqlite3
       - STORAGE_MODE=local
