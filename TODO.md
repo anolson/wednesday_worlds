@@ -41,3 +41,9 @@ docker-compose run --rm web -- bin/rails db:setup
 ```
 docker-compose run --rm bundle install
 ```
+
+
+* Update credentials with mailer config
+* Add development.key & production.key to 1P
+* Configure Heroku staging with production.key
+* Remove ENV config
