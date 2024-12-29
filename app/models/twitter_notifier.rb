@@ -9,10 +9,10 @@ class TwitterNotifier < Notifier
 
   def client
     Twitter::REST::Client.new do |config|
-      config.consumer_key = ENV['TWITTER_API_CONSUMER_KEY']
-      config.consumer_secret = ENV['TWITTER_API_CONSUMER_SECRET']
-      config.access_token = ENV['TWITTER_API_ACCESS_TOKEN']
-      config.access_token_secret = ENV['TWITTER_API_ACCESS_SECRET']
+      config.consumer_key = Rails.application.credentials.twitter.api_consumer_key
+      config.consumer_secret = Rails.application.credentials.twitter.api_consumer_secret
+      config.access_token = Rails.application.credentials.twitter.api_access_token
+      config.access_token_secret = Rails.application.credentials.twitter.api_access_secret
     end
   end
 end
