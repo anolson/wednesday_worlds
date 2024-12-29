@@ -38,6 +38,7 @@ jobs:
 
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
     steps:
       - name: Checkout
@@ -66,6 +67,7 @@ jobs:
 
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
     steps:
       - name: Checkout
