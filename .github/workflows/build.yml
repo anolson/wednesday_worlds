@@ -43,6 +43,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install.sh | sh
+
       - name: Login to Heroku container registry
         run: heroku container:login
 
@@ -67,6 +70,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install.sh | sh
 
       - name: Login to Heroku container registry
         run: heroku container:login
