@@ -8,10 +8,11 @@ RUN apk --no-cache add \
     build-base \
     libxml2-dev \
     libxslt-dev \
-    nodejs \
     sqlite-dev \
     sqlite \
-    tzdata
+    tzdata \
+    yarn
+
 RUN gem install bundler:2.3.26
 
 ENV APP_HOME /app
@@ -35,10 +36,10 @@ RUN apk --no-cache add \
     build-base \
     libxml2-dev \
     libxslt-dev \
-    nodejs \
     sqlite-dev \
     sqlite \
-    tzdata
+    tzdata \
+    yarn
 
 RUN gem install bundler:2.3.26
 
@@ -71,10 +72,10 @@ RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 RUN apk --no-cache add \
     libxml2-dev \
     libxslt-dev \
-    nodejs \
     sqlite-dev \
     sqlite \
-    tzdata
+    tzdata \
+    yarn
 
 RUN gem install bundler:2.3.26
 

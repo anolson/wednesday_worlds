@@ -9,10 +9,10 @@ gem 'oauth', '~> 0.5.5'
 gem 'sqlite3', '~> 1.7.2'
 gem 'puma'
 gem 'redcarpet'
-gem 'sassc-rails'
-gem 'sprockets-rails'
 gem 'twitter'
-gem 'uglifier'
+
+gem 'cssbundling-rails'
+gem 'sprockets-rails'
 
 group :development do
   gem 'spring', '~> 2.0.2'
