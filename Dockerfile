@@ -24,6 +24,9 @@ RUN bundle config set deployment true && \
     bundle config build.nokogiri --use-system-libraries && \
     bundle install
 
+COPY package.json yarn.lock $APP_HOME/
+RUN yarn install --immutable
+
 #####################
 # Development image #
 #####################
@@ -57,6 +60,7 @@ USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
+COPY --from=build --chown=appuser:appuser $APP_HOME/node_modules $APP_HOME/node_modules
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/server"]
@@ -94,6 +98,7 @@ USER appuser
 
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
+COPY --from=build --chown=appuser:appuser $APP_HOME/node_modules $APP_HOME/node_modules
 
 RUN bin/rake assets:clean assets:precompile
 
