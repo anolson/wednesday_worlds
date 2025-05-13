@@ -1,8 +1,3 @@
-/*
-*= require_self
-*/
-
-
 $black: #333;
 $grey: #BBB;
 $light_grey: #efefef;
@@ -16,7 +11,7 @@ html, body {
 }
 
 html {
-  background: image-url('ps_neutral.png');
+  background: url('ps_neutral.png');
 }
 
 body {

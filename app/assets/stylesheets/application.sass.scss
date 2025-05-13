@@ -1,6 +1,4 @@
-/*
-*= require_self
-*/
+// Entry point for your Sass build
 
 body {
   padding:0;
@@ -30,7 +28,7 @@ footer {
 }
 
 header {
-  background-image: image-url("header.png");
+  background-image: url("header.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -88,7 +86,7 @@ ul.block li span, ul.block li a {
 #rides {
   color: #333;
   border-top: 5px solid #DDD;
-  background-image: image-url("rides.png");
+  background-image: url("rides.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
