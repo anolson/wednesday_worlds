@@ -3,7 +3,7 @@
 .env
 .env.*
 .powenv
-db/*.sqlite3
+db/*.sqlite3*
 log/*.log
 tmp/*.txt
 tmp/cache/*
