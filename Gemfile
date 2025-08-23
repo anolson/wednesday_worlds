@@ -28,5 +28,5 @@ end
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 7.1'
 end
