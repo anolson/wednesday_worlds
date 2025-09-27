@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '3.1.5'
 
-gem 'rails', '7.0.8.7'
+gem 'rails', '7.1.5.2'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
@@ -28,5 +28,5 @@ end
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 7.1'
 end
