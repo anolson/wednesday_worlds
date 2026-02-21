@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '3.1.5'
+ruby '3.4.7'
 
 gem 'rails', '7.1.5.2'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'oauth', '~> 0.5.5'
-gem 'sqlite3', '~> 1.7.2'
+gem 'sqlite3', '~> 2.2.3'
 gem 'puma'
 gem 'redcarpet'
 gem 'twitter'
