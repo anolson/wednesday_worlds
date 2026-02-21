@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
-ruby '3.1.5'
+ruby '3.4.9'
 
 gem 'rails', '7.1.5.2'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
+gem 'observer'
 gem 'puma'
 gem 'redcarpet'
-gem 'sqlite3', '~> 1.7.2'
+gem 'sqlite3', '~> 2.9.0'
 
 gem 'cssbundling-rails'
 gem 'sprockets-rails'

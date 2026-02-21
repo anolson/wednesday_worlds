@@ -2,7 +2,7 @@
 # App build stage #
 ###################
 
-FROM ruby:3.1-alpine3.18 as build
+FROM ruby:3.4-alpine3.22 as build
 
 RUN apk --no-cache add \
     build-base \
@@ -11,6 +11,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
@@ -30,7 +31,7 @@ RUN yarn install --immutable
 #####################
 # Development image #
 #####################
-FROM ruby:3.1-alpine3.18 as development
+FROM ruby:3.4-alpine3.22 as development
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-arm64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
@@ -42,6 +43,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
@@ -68,7 +70,7 @@ CMD ["bin/server"]
 ####################
 # Production image #
 ####################
-FROM ruby:3.1-alpine3.18
+FROM ruby:3.4-alpine3.22
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
@@ -79,6 +81,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
