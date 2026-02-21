@@ -86,7 +86,6 @@ GEM
     bigdecimal (3.2.2)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
-    buftok (0.2.0)
     builder (3.3.0)
     capybara (2.18.0)
       addressable
@@ -110,10 +109,7 @@ GEM
     database_cleaner-core (2.0.1)
     date (3.4.1)
     diff-lcs (1.6.2)
-    domain_name (0.5.20170404)
-      unf (>= 0.0.5, < 1.0.0)
     drb (2.2.3)
-    equalizer (0.0.11)
     erb (4.0.4)
       cgi (>= 0.3.3)
     erubi (1.13.1)
@@ -125,15 +121,6 @@ GEM
     ffi (1.15.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    http (3.0.0)
-      addressable (~> 2.3)
-      http-cookie (~> 1.0)
-      http-form_data (>= 2.0.0.pre.pre2, < 3)
-      http_parser.rb (~> 0.6.0)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
-    http-form_data (2.1.0)
-    http_parser.rb (0.6.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.1)
@@ -154,16 +141,12 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    memoizable (0.4.2)
-      thread_safe (~> 0.3, >= 0.3.1)
-    method_source (0.8.2)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.25.5)
     msgpack (1.7.2)
-    multipart-post (2.0.0)
     mutex_m (0.3.0)
-    naught (1.1.0)
     net-imap (0.5.9)
       date
       net-protocol
@@ -178,12 +161,14 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oauth (0.5.14)
+    observer (0.1.2)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    pry (0.11.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
+    pry (0.16.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      reline (>= 0.6.0)
     psych (5.2.6)
       date
       stringio
@@ -256,7 +241,6 @@ GEM
       rspec-support (~> 3.13)
     rspec-support (3.13.5)
     securerandom (0.4.1)
-    simple_oauth (0.3.1)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -268,28 +252,13 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.2)
+    sqlite3 (2.9.2)
       mini_portile2 (~> 2.8.0)
     stringio (3.1.7)
     thor (1.4.0)
-    thread_safe (0.3.6)
     timeout (0.4.3)
-    twitter (6.2.0)
-      addressable (~> 2.3)
-      buftok (~> 0.2.0)
-      equalizer (~> 0.0.11)
-      http (~> 3.0)
-      http-form_data (~> 2.0)
-      http_parser.rb (~> 0.6.0)
-      memoizable (~> 0.4.0)
-      multipart-post (~> 2.0)
-      naught (~> 1.0)
-      simple_oauth (~> 0.3.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.5)
     websocket-driver (0.8.0)
       base64
       websocket-extensions (>= 0.1.0)
@@ -310,6 +279,7 @@ DEPENDENCIES
   factory_bot_rails
   listen
   oauth (~> 0.5.5)
+  observer
   pry
   puma
   rails (= 7.1.5.2)
@@ -318,11 +288,10 @@ DEPENDENCIES
   spring (~> 2.0.2)
   spring-commands-rspec
   sprockets-rails
-  sqlite3 (~> 1.7.2)
-  twitter
+  sqlite3 (~> 2.9.0)
 
 RUBY VERSION
-   ruby 3.1.5p252
+   ruby 3.4.8p72
 
 BUNDLED WITH
    2.3.26
