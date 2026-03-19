@@ -141,7 +141,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    method_source (0.8.2)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.25.5)
@@ -160,12 +160,14 @@ GEM
     nokogiri (1.18.9)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    observer (0.1.2)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    pry (0.11.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
+    pry (0.16.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      reline (>= 0.6.0)
     psych (5.2.6)
       date
       stringio
@@ -217,7 +219,7 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    redcarpet (3.5.1)
+    redcarpet (3.6.1)
     reline (0.6.2)
       io-console (~> 0.5)
     rspec-core (3.13.5)
@@ -249,7 +251,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.2)
+    sqlite3 (2.9.2)
       mini_portile2 (~> 2.8.0)
     stringio (3.1.7)
     thor (1.4.0)
@@ -275,6 +277,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   listen
+  observer
   pry
   puma
   rails (= 7.1.5.2)
@@ -283,10 +286,10 @@ DEPENDENCIES
   spring (~> 2.0.2)
   spring-commands-rspec
   sprockets-rails
-  sqlite3 (~> 1.7.2)
+  sqlite3 (~> 2.9.0)
 
 RUBY VERSION
-   ruby 3.1.5p252
+   ruby 3.4.9p82
 
 BUNDLED WITH
-   2.3.26
+   4.0.8
