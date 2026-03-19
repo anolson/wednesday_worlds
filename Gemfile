@@ -5,11 +5,9 @@ gem 'rails', '7.1.5.2'
 
 gem 'bcrypt'
 gem 'bootsnap', require: false
-gem 'oauth', '~> 0.5.5'
-gem 'sqlite3', '~> 1.7.2'
 gem 'puma'
 gem 'redcarpet'
-gem 'twitter'
+gem 'sqlite3', '~> 1.7.2'
 
 gem 'cssbundling-rails'
 gem 'sprockets-rails'
