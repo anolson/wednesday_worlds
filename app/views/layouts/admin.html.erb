@@ -2,7 +2,7 @@
 <html class="admin">
 <head>
   <title>Admin | WednesdayWorlds</title>
-  <%= stylesheet_link_tag :admin %>
+  <%= stylesheet_link_tag "admin" %>
   <%= csrf_meta_tag %>
 </head>
 <body class="admin">
@@ -16,7 +16,7 @@
 
     <%= render :partial => 'common/footer' %>
   </div>
-  <%= javascript_include_tag :application %>
+
   <%= render :partial => 'common/analytics' %>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "private": "true",
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/admin.sass.scss:./app/assets/builds/admin.css ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+  },
+  "dependencies": {
+    "sass": "^1.87.0"
+  }
+}

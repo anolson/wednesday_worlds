@@ -5,6 +5,8 @@ services:
     build:
       context: .
       target: development
+    depends_on:
+      - css
     ports:
       - "3000:3000"
     env_file: .env
@@ -16,6 +18,18 @@ services:
       - .:/app
       - bundle:/app/vendor/bundle
       - litestream_data:/data
+
+  css:
+    command: "bin/yarn build:css --watch"
+    build:
+      context: .
+      target: development
+    environment:
+      - STORAGE_MODE=local
+    tty: true
+    volumes:
+      - .:/app
+      - bundle:/app/vendor/bundle
 
   test:
     build:
