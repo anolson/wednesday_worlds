@@ -11,6 +11,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
@@ -42,6 +43,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
@@ -79,6 +81,7 @@ RUN apk --no-cache add \
     sqlite-dev \
     sqlite \
     tzdata \
+    yaml-dev \
     yarn
 
 RUN gem install bundler:2.3.26
