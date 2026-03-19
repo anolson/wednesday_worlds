@@ -1,5 +1,5 @@
 class Notifier < ApplicationRecord
-  AVAILABLE_TYPES = [["Email", "EmailNotifier"], ["Twitter", "TwitterNotifier"]]
+  AVAILABLE_TYPES = [["Email", "EmailNotifier"]]
 
   belongs_to :ride
 
