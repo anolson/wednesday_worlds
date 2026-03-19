@@ -14,7 +14,7 @@ RUN apk --no-cache add \
     yaml-dev \
     yarn
 
-RUN gem install bundler:2.3.26
+RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
 RUN mkdir -p $APP_HOME/vendor/bundle
@@ -46,7 +46,7 @@ RUN apk --no-cache add \
     yaml-dev \
     yarn
 
-RUN gem install bundler:2.3.26
+RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
@@ -59,6 +59,8 @@ WORKDIR $APP_HOME
 RUN adduser -D appuser
 RUN chown appuser:appuser $DATA_HOME
 USER appuser
+
+RUN bundle config set default_cli_command install --global
 
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
@@ -84,7 +86,7 @@ RUN apk --no-cache add \
     yaml-dev \
     yarn
 
-RUN gem install bundler:2.3.26
+RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
 ENV DATA_HOME /data/db
@@ -98,6 +100,8 @@ WORKDIR $APP_HOME
 RUN adduser -D appuser
 RUN chown appuser:appuser $DATA_HOME
 USER appuser
+
+RUN bundle config set default_cli_command install --global
 
 COPY --chown=appuser:appuser . $APP_HOME
 COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
