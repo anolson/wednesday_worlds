@@ -2,7 +2,7 @@
 # App build stage #
 ###################
 
-FROM ruby:3.4-alpine3.22 as build
+FROM ruby:3.4-alpine3.23 as build
 
 RUN apk --no-cache add \
     build-base \
@@ -31,7 +31,7 @@ RUN yarn install --immutable
 #####################
 # Development image #
 #####################
-FROM ruby:3.4-alpine3.22 as development
+FROM ruby:3.4-alpine3.23 as development
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-arm64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
@@ -72,7 +72,7 @@ CMD ["bin/server"]
 ####################
 # Production image #
 ####################
-FROM ruby:3.4-alpine3.22
+FROM ruby:3.4-alpine3.23
 
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
