@@ -17,7 +17,7 @@ RUN apk --no-cache add \
 RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
-RUN mkdir -p $APP_HOME/vendor/bundle
+ENV BUNDLE_PATH /usr/local/bundle
 WORKDIR $APP_HOME
 
 COPY Gemfile Gemfile.lock $APP_HOME/
@@ -49,8 +49,8 @@ RUN apk --no-cache add \
 RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
+ENV BUNDLE_PATH /usr/local/bundle
 ENV DATA_HOME /data/db
-ENV BUNDLE_PATH /app/vendor/bundle
 ENV RAILS_ENV development
 
 RUN mkdir -p $APP_HOME $DATA_HOME
@@ -63,7 +63,7 @@ USER appuser
 RUN bundle config set default_cli_command install --global
 
 COPY --chown=appuser:appuser . $APP_HOME
-COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
+COPY --from=build --chown=appuser:appuser $BUNDLE_PATH $BUNDLE_PATH
 COPY --from=build --chown=appuser:appuser $APP_HOME/node_modules $APP_HOME/node_modules
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
@@ -89,8 +89,8 @@ RUN apk --no-cache add \
 RUN gem install bundler:4.0.8
 
 ENV APP_HOME /app
+ENV BUNDLE_PATH /usr/local/bundle
 ENV DATA_HOME /data/db
-ENV BUNDLE_PATH /app/vendor/bundle
 ENV BUNDLE_DEPLOYMENT true
 ENV RAILS_ENV production
 
@@ -104,7 +104,7 @@ USER appuser
 RUN bundle config set default_cli_command install --global
 
 COPY --chown=appuser:appuser . $APP_HOME
-COPY --from=build --chown=appuser:appuser $APP_HOME/vendor/bundle $APP_HOME/vendor/bundle
+COPY --from=build --chown=appuser:appuser $BUNDLE_PATH $BUNDLE_PATH
 COPY --from=build --chown=appuser:appuser $APP_HOME/node_modules $APP_HOME/node_modules
 
 RUN bin/rake assets:clean assets:precompile

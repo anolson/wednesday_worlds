@@ -16,7 +16,6 @@ services:
     stop_grace_period: "3s"
     volumes:
       - .:/app
-      - bundle:/app/vendor/bundle
       - litestream_data:/data
 
   css:
@@ -29,7 +28,6 @@ services:
     tty: true
     volumes:
       - .:/app
-      - bundle:/app/vendor/bundle
 
   test:
     build:
@@ -40,8 +38,6 @@ services:
       - STORAGE_MODE=local
     volumes:
       - .:/app
-      - bundle:/app/vendor/bundle
 
 volumes:
-  bundle:
   litestream_data:
