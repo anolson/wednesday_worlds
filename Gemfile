@@ -8,7 +8,7 @@ gem 'bootsnap', require: false
 gem 'observer'
 gem 'puma'
 gem 'redcarpet'
-gem 'sqlite3', '~> 2.9.6'
+gem 'sqlite3', '~> 2.10.2'
 
 gem 'cssbundling-rails'
 gem 'sprockets-rails'
